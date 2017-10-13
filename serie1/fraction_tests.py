@@ -76,5 +76,9 @@ class FractionTests(unittest.TestCase):
     def test_float(self):
         self.assertEqual(float(self.a), 0.5)
 
-if __name__ == '__main__':
+
+def test_fraction():
     unittest.main()
+
+if __name__ == '__main__':
+    test_fraction()

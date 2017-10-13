@@ -4,9 +4,9 @@ from prime import Prime
 
 
 class Fraction:
-    def __init__(self, zaehler, nenner):
-        self.numerator = zaehler
-        self.denominator = nenner
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
         self.reduce()
 
     # Reduce and Clone this object

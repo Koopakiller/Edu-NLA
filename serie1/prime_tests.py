@@ -35,5 +35,10 @@ class PrimeTests(unittest.TestCase):
         self.assertEqual(Prime.get_greatest_common_divisor(-2, 1), 1)
         self.assertEqual(Prime.get_greatest_common_divisor(-2, -1), 1)
 
-if __name__ == '__main__':
+
+def test_prime():
     unittest.main()
+
+if __name__ == '__main__':
+    test_prime()
+
