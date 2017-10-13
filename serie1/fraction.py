@@ -3,7 +3,7 @@ import numpy
 from prime import Prime
 
 
-class Bruch:
+class Fraction:
     def __init__(self, zaehler, nenner):
         self.numerator = zaehler
         self.denominator = nenner
@@ -17,16 +17,16 @@ class Bruch:
         self.denominator = self.denominator / q
 
     def clone(self):
-        return Bruch(self.numerator, self.denominator)
+        return Fraction(self.numerator, self.denominator)
 
     # Calculation Operators
 
     def __add__(self, other):
-        if isinstance(other, Bruch):
-            return Bruch(self.numerator * other.denominator + other.numerator * self.denominator,
+        if isinstance(other, Fraction):
+            return Fraction(self.numerator * other.denominator + other.numerator * self.denominator,
                          self.denominator * other.denominator)
         if isinstance(other, int) or isinstance(other, long):
-            return self.__add__(Bruch(other, 1))
+            return self.__add__(Fraction(other, 1))
         raise TypeError()
 
     def __radd__(self, other):
@@ -39,31 +39,31 @@ class Bruch:
         return -self + other
 
     def __mul__(self, other):
-        if isinstance(other, Bruch):
-            return Bruch(self.numerator * other.numerator, self.denominator * other.denominator)
+        if isinstance(other, Fraction):
+            return Fraction(self.numerator * other.numerator, self.denominator * other.denominator)
         if isinstance(other, int) or isinstance(other, long):
-            return self.__mul__(Bruch(other, 1))
+            return self.__mul__(Fraction(other, 1))
         raise TypeError()
 
     def __rmul__(self, other):
         return self.__mul__(other)
 
     def __div__(self, other):
-        if isinstance(other, Bruch):
-            return self.__mul__(Bruch(other.denominator, other.numerator))
+        if isinstance(other, Fraction):
+            return self.__mul__(Fraction(other.denominator, other.numerator))
         if isinstance(other, int) or isinstance(other, long):
-            return self.__div__(Bruch(other, 1))
+            return self.__div__(Fraction(other, 1))
         raise TypeError()
 
     def __rdiv__(self, other):
-        if isinstance(other, Bruch):
-            return other.__mul__(Bruch(self.denominator, self.numerator))
+        if isinstance(other, Fraction):
+            return other.__mul__(Fraction(self.denominator, self.numerator))
         if isinstance(other, int) or isinstance(other, long):
-            return Bruch(other, 1).__div__(self)
+            return Fraction(other, 1).__div__(self)
         raise TypeError()
 
     def __neg__(self):
-        return Bruch(-self.numerator, self.denominator)
+        return Fraction(-self.numerator, self.denominator)
 
     # Equality Operators
 
@@ -71,8 +71,8 @@ class Bruch:
         if isinstance(other, float):
             return self.__float__() == other
         if isinstance(other, int) or isinstance(other, long):
-            other = Bruch(other, 1)
-        if not isinstance(other, Bruch):
+            other = Fraction(other, 1)
+        if not isinstance(other, Fraction):
             raise ValueError()
 
         a = self - other
@@ -85,8 +85,8 @@ class Bruch:
         if isinstance(other, float):
             return self.__float__() < other
         if isinstance(other, int) or isinstance(other, long):
-            other = Bruch(other, 1)
-        if not isinstance(other, Bruch):
+            other = Fraction(other, 1)
+        if not isinstance(other, Fraction):
             raise ValueError()
 
         return self.numerator * numpy.abs(other.denominator) * numpy.sign(self.denominator) \
