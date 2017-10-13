@@ -27,6 +27,26 @@ class BruchTests(unittest.TestCase):
         self.assertEqual(self.a != self.a, False)
         self.assertEqual(self.a != self.b, True)
         self.assertEqual(self.a != self.a2, False)
+        self.assertEqual(self.a, 0.5)
+        self.assertEqual(self.b, 2)
+
+        self.assertFalse(self.a < 0.4)
+        self.assertFalse(self.a < 0.5)
+        self.assertTrue(self.a <= 0.5)
+        self.assertTrue(self.a <= 0.6)
+        self.assertFalse(self.b <= 1)
+        self.assertTrue(self.b <= 2)
+        self.assertTrue(self.a <= 3)
+        self.assertTrue(Bruch(1, -2) < Bruch(1, 2))
+
+        self.assertTrue(self.a > 0)
+        self.assertFalse(self.a > 0.5)
+        self.assertTrue(self.a >= 0.5)
+        self.assertFalse(self.a >= 0.6)
+        self.assertTrue(self.b >= 1)
+        self.assertTrue(self.b >= 2)
+        self.assertFalse(self.a >= 3)
+        self.assertTrue(Bruch(-1, -2) > Bruch(-1, 2))
 
     def test_operator_basic_ops(self):
         self.assertEqual(self.a * self.b, Bruch(1, 1))
@@ -36,6 +56,14 @@ class BruchTests(unittest.TestCase):
         self.assertEqual(self.c - self.d, Bruch(2*3*7*5 - 3*5*2*7, 3*5*7*5))
         self.assertEqual(-self.a, Bruch(-1, 2))
         self.assertEqual(-self.a, Bruch(1, -2))
+        self.assertEqual(self.a + 1, Bruch(3, 2))
+        self.assertEqual(1 + self.a, Bruch(3, 2))
+        self.assertEqual(self.a * 3, Bruch(3, 2))
+        self.assertEqual(3 * self.a, Bruch(3, 2))
+        self.assertEqual(1/self.a, self.b)
+        self.assertEqual(self.a / 4, Bruch(1, 8))
+        self.assertEqual(self.a - 1, Bruch(-1, 2))
+        self.assertEqual(1 - self.a, self.a)
 
     def test_str(self):
         self.assertEqual(str(self.a), "1 / 2")
@@ -44,6 +72,9 @@ class BruchTests(unittest.TestCase):
         self.assertEqual(str(self.b), "2")
         self.assertEqual(str(Bruch(0, 1)), "0")
         self.assertEqual(str(Bruch(1, 0)), "NaN")
+
+    def test_float(self):
+        self.assertEqual(float(self.a), 0.5)
 
 if __name__ == '__main__':
     unittest.main()

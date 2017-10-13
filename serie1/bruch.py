@@ -1,3 +1,5 @@
+import numpy
+
 from prime import Prime
 
 
@@ -27,8 +29,14 @@ class Bruch:
             return self.__add__(Bruch(other, 1))
         raise TypeError()
 
+    def __radd__(self, other):
+        return self.__add__(other)
+
     def __sub__(self, other):
         return self.__add__(-other)
+
+    def __rsub__(self, other):
+        return -self + other
 
     def __mul__(self, other):
         if isinstance(other, Bruch):
@@ -37,11 +45,21 @@ class Bruch:
             return self.__mul__(Bruch(other, 1))
         raise TypeError()
 
+    def __rmul__(self, other):
+        return self.__mul__(other)
+
     def __div__(self, other):
         if isinstance(other, Bruch):
             return self.__mul__(Bruch(other.denominator, other.numerator))
         if isinstance(other, int) or isinstance(other, long):
-            return self.__div__(Bruch(1, other))
+            return self.__div__(Bruch(other, 1))
+        raise TypeError()
+
+    def __rdiv__(self, other):
+        if isinstance(other, Bruch):
+            return other.__mul__(Bruch(self.denominator, self.numerator))
+        if isinstance(other, int) or isinstance(other, long):
+            return Bruch(other, 1).__div__(self)
         raise TypeError()
 
     def __neg__(self):
@@ -60,9 +78,6 @@ class Bruch:
         a = self - other
         return a.numerator == 0 and a.denominator != 0
 
-    def __cmp__(self, other):
-        return self.__eq__(other)
-
     def __ne__(self, other):
         return not self.__eq__(other)
 
@@ -74,7 +89,8 @@ class Bruch:
         if not isinstance(other, Bruch):
             raise ValueError()
 
-        return self.numerator * other.denominator < other.denominator * self.denominator
+        return self.numerator * numpy.abs(other.denominator) * numpy.sign(self.denominator) \
+            < other.numerator * numpy.abs(self.denominator) * numpy.sign(other.denominator)
 
     def __le__(self, other):
         return self.__lt__(other) or self.__eq__(other)
