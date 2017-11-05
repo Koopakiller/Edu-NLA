@@ -2,7 +2,7 @@
 # Content: UnitTests for Sum-class
 
 import unittest
-
+from StringIO import StringIO
 from prime import Prime
 
 
@@ -37,8 +37,7 @@ class PrimeTests(unittest.TestCase):
 
 
 def test_prime():
-    unittest.main()
-
-if __name__ == '__main__':
-    test_prime()
-
+    stream = StringIO()
+    runner = unittest.TextTestRunner(stream=stream)
+    result = runner.run(unittest.makeSuite(PrimeTests))
+    return result

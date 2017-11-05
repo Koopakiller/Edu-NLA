@@ -2,17 +2,16 @@
 # Content: UnitTests for Sum-class
 
 import unittest
-
+from StringIO import StringIO
 from fraction import Fraction
 
 
 class FractionTests(unittest.TestCase):
-
     a = Fraction(1, 2)
     a2 = Fraction(5, 10)
     b = Fraction(2, 1)
-    c = Fraction(2*3, 3*5)
-    d = Fraction(2*7, 7*5)
+    c = Fraction(2 * 3, 3 * 5)
+    d = Fraction(2 * 7, 7 * 5)
 
     def test_init(self):
         x = Fraction(2, 4)
@@ -50,17 +49,17 @@ class FractionTests(unittest.TestCase):
 
     def test_operator_basic_ops(self):
         self.assertEqual(self.a * self.b, Fraction(1, 1))
-        self.assertEqual(self.c * self.d, Fraction(2*3*2*7, 3*5*5*7))
-        self.assertEqual(self.c / self.d, Fraction(2*3*5*7, 3*5*2*7))
-        self.assertEqual(self.c + self.d, Fraction(2*3*7*5 + 3*5*2*7, 3*5*7*5))
-        self.assertEqual(self.c - self.d, Fraction(2*3*7*5 - 3*5*2*7, 3*5*7*5))
+        self.assertEqual(self.c * self.d, Fraction(2 * 3 * 2 * 7, 3 * 5 * 5 * 7))
+        self.assertEqual(self.c / self.d, Fraction(2 * 3 * 5 * 7, 3 * 5 * 2 * 7))
+        self.assertEqual(self.c + self.d, Fraction(2 * 3 * 7 * 5 + 3 * 5 * 2 * 7, 3 * 5 * 7 * 5))
+        self.assertEqual(self.c - self.d, Fraction(2 * 3 * 7 * 5 - 3 * 5 * 2 * 7, 3 * 5 * 7 * 5))
         self.assertEqual(-self.a, Fraction(-1, 2))
         self.assertEqual(-self.a, Fraction(1, -2))
         self.assertEqual(self.a + 1, Fraction(3, 2))
         self.assertEqual(1 + self.a, Fraction(3, 2))
         self.assertEqual(self.a * 3, Fraction(3, 2))
         self.assertEqual(3 * self.a, Fraction(3, 2))
-        self.assertEqual(1/self.a, self.b)
+        self.assertEqual(1 / self.a, self.b)
         self.assertEqual(self.a / 4, Fraction(1, 8))
         self.assertEqual(self.a - 1, Fraction(-1, 2))
         self.assertEqual(1 - self.a, self.a)
@@ -78,7 +77,7 @@ class FractionTests(unittest.TestCase):
 
 
 def test_fraction():
-    unittest.main()
-
-if __name__ == '__main__':
-    test_fraction()
+    stream = StringIO()
+    runner = unittest.TextTestRunner(stream=stream)
+    result = runner.run(unittest.makeSuite(FractionTests))
+    return result
