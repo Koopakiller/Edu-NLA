@@ -1,7 +1,8 @@
-from fraction import Fraction
-from prime_tests import test_prime
-from fraction_tests import test_fraction
 from pprint import pprint
+
+from fraction_tests import test_fraction
+from prime_tests import test_prime
+from fraction import Fraction
 
 
 class Bruch(Fraction):
