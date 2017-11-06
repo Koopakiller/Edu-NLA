@@ -7,3 +7,4 @@ fraction module
     :special-members:
     :undoc-members:
     :inherited-members:
+    :exclude-members: __module__

@@ -47,6 +47,7 @@
     <span class="sd">&quot;&quot;&quot;Provides methods to obtain prime numbers and use them.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Prime.__init__"><a class="viewcode-back" href="../prime.html#prime.Prime.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This class should not be initialized. All substantial members are static.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
     <span class="c1"># Cache for already calculated prime numbers</span>
@@ -56,7 +57,7 @@
     <span class="k">def</span> <span class="nf">get_prime</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the prime number at the given index. The index starts with 0.</span>
 
-<span class="sd">        :param index: The index of the requested prime number.</span>
+<span class="sd">        :param int index: The index of the requested prime number.</span>
 <span class="sd">        :return: The prime number at position index.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">Prime</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
@@ -128,7 +129,14 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bruch.html">bruch module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fraction.html">fraction module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prime.html">prime module</a></li>
+</ul>
+<div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>

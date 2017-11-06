@@ -5,6 +5,7 @@ class Prime:
     """Provides methods to obtain prime numbers and use them."""
 
     def __init__(self):
+        """This class should not be initialized. All substantial members are static."""
         pass
 
     # Cache for already calculated prime numbers
@@ -14,7 +15,7 @@ class Prime:
     def get_prime(index):
         """Returns the prime number at the given index. The index starts with 0.
 
-        :param index: The index of the requested prime number.
+        :param int index: The index of the requested prime number.
         :return: The prime number at position index.
         """
         while len(Prime.cache) < index + 1:

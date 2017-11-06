@@ -7,6 +7,7 @@ from prime import Prime
 
 
 class PrimeTests(unittest.TestCase):
+    """Contains Tests for the Prime-class."""
 
     def test_get_prime(self):
         self.assertEqual(Prime.get_prime(0), 2)

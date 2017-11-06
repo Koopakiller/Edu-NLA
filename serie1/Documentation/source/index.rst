@@ -6,7 +6,7 @@
 Welcome to NLA Series 1's documentation!
 ========================================
 
-
+This is the documentation for the first NLA Series.
 
 
 Indices and tables

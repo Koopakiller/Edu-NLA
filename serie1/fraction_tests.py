@@ -7,6 +7,8 @@ from fraction import Fraction
 
 
 class FractionTests(unittest.TestCase):
+    """Contains Tests for the Fraction-class."""
+
     a = Fraction(1, 2)
     a2 = Fraction(5, 10)
     b = Fraction(2, 1)
