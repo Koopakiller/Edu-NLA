@@ -12,8 +12,8 @@ class Prime:
 
     @staticmethod
     def get_prime(index):
-        """
-        Returns the prime number at the given index. The index starts with 0.
+        """Returns the prime number at the given index. The index starts with 0.
+
         :param index: The index of the requested prime number.
         :return: The prime number at position index.
         """
@@ -24,8 +24,8 @@ class Prime:
 
     @staticmethod
     def append_next_to_cache():
-        """
-        Calculates the next prime number which is not in the cache.
+        """Calculates the next prime number which is not in the cache.
+
         :return: The added prime number.
         """
         num = Prime.cache[len(Prime.cache) - 1] + 2
@@ -42,10 +42,11 @@ class Prime:
 
     @staticmethod
     def get_prime_factors(num):
-        """
-        Returns the prime factors of the given number.
-        :param num: The number to split in prime factors.
+        """Returns the prime factors of the given number.
+
+        :param long num: The number to split in prime factors.
         :return: An array of prime factors of num.
+        :raises ValueError: if num is <= 1
         """
         if num <= 1:
             raise ValueError("num must be > 1")
@@ -64,8 +65,8 @@ class Prime:
 
     @staticmethod
     def get_greatest_common_divisor(a, b):
-        """
-        Calculates the greatest common divisor
+        """Calculates the greatest common divisor
+
         :param a: The first number.
         :param b: The second number.
         :return: The greatest common divisor of a and b.
