@@ -41,108 +41,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-bruch">
-<span id="bruch-module"></span><h1>bruch module<a class="headerlink" href="#module-bruch" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+  <div class="section" id="bruch-module">
+<h1>bruch module<a class="headerlink" href="#bruch-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bruch-class">
+<h2>Bruch class<a class="headerlink" href="#bruch-class" title="Permalink to this headline">¶</a></h2>
+<p>Bruch class exists only to fulfill the task. The actual implementation is in Fraction class.
+Bruch inherits from Fraction, thus it has all of the members of Fraction.
+See <a class="reference internal" href="fraction.html#fraction-class"><span class="std std-ref">Members of Fraction class</span></a>.</p>
+<span class="target" id="module-bruch"></span><dl class="class">
 <dt id="bruch.Bruch">
 <em class="property">class </em><code class="descclassname">bruch.</code><code class="descname">Bruch</code><span class="sig-paren">(</span><em>zaehler</em>, <em>nenner</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bruch.html#Bruch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bruch.Bruch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="fraction.html#fraction.Fraction" title="fraction.Fraction"><code class="xref py py-class docutils literal"><span class="pre">fraction.Fraction</span></code></a></p>
-<p>A derivate of the Fraction-class without other implementations.
+<p>A derivative of the Fraction-class without other implementations.
 For UnitTests see FractionTests.</p>
-<dl class="method">
-<dt id="bruch.Bruch.__add__">
-<code class="descname">__add__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__add__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds an integer or another fraction to this instance and returns the result.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to add; it can be a Fraction, int or long.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the result of the addition.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__div__">
-<code class="descname">__div__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__div__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Divides this instance by an integer or another fraction and returns the result.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to divide with; it can be a Fraction, int or long.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the result of the division.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__eq__">
-<code class="descname">__eq__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__eq__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compares this Fraction with another Fraction, float, int or long to value-equality.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to compare with; it can be another Fraction, float, int or long</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True, if the values are equal; otherwise False.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__float__">
-<code class="descname">__float__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__float__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the value of this instance into a float-value. The result must not be exact.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A approximated float-value of this instances value.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__ge__">
-<code class="descname">__ge__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__ge__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the value of this instance is greater or equal then another value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to compare with; it can be another Fraction float, int or long</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if this instances value is greater or equal then the other value; otherwise False.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__gt__">
-<code class="descname">__gt__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__gt__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the value of this instance is greater then another value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to compare with; it can be another Fraction float, int or long</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if this instances value is greater then the other value; otherwise False.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 <dl class="method">
 <dt id="bruch.Bruch.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>zaehler</em>, <em>nenner</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bruch.html#Bruch.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bruch.Bruch.__init__" title="Permalink to this definition">¶</a></dt>
@@ -159,204 +70,6 @@ For UnitTests see FractionTests.</p>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__le__">
-<code class="descname">__le__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__le__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the value of this instance is less or equal then another value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to compare with; it can be another Fraction float, int or long</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if this instances value is less or equal then the other value; otherwise False.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__lt__">
-<code class="descname">__lt__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__lt__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the value of this instance is less then another value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to compare with; it can be another Fraction float, int or long</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if this instances value is less then the other value; otherwise False.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__mul__">
-<code class="descname">__mul__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__mul__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multiplies an integer or another fraction with this instance and returns the result.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to multiply with; it can be a Fraction, int or long.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the result of the multiplication.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__ne__">
-<code class="descname">__ne__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__ne__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compares this Fraction with another Fraction, float, int or long to value-equality.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to compare with; it can be another Fraction, float, int or long</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">False, if the values are equal; otherwise True.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__neg__">
-<code class="descname">__neg__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__neg__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Negates the value of this instance and returns it.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the negated value of this instance</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__radd__">
-<code class="descname">__radd__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__radd__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds an integer or another fraction to this instance and returns the result.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to add; it can be a Fraction, int or long.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the result of the addition.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__rdiv__">
-<code class="descname">__rdiv__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__rdiv__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Divides an integer or another fraction with this instance and returns the result.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to divide; it can be a Fraction, int or long.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the result of the division.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__rmul__">
-<code class="descname">__rmul__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__rmul__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multiplies an integer or another fraction with this instance and returns the result.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to multiply with; it can be a Fraction, int or long.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the result of the multiplication.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__rsub__">
-<code class="descname">__rsub__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__rsub__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Subtracts an this instance from an integer or another fraction and returns the result.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to subtract from; it can be a Fraction, int or long.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the result of the subtraction.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__str__">
-<code class="descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__str__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a string representation for this instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
-<li>“NaN” if the denominator is 0;</li>
-<li>”0” if the denominator is 0;</li>
-<li>the numerator-value as a string if the denominator is 1;</li>
-<li>otherwise “numerator / denominator”</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.__sub__">
-<code class="descname">__sub__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.__sub__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Subtracts an integer or another fraction from this instance and returns the result.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> – The other value to subtract; it can be a Fraction, int or long.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Fraction instance with the result of the subtraction.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.clone">
-<code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.clone" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a copy of this instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A new instance with the same value as this fraction.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="bruch.Bruch.reduce">
-<code class="descname">reduce</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bruch.Bruch.reduce" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reduces the fraction as small as possible.</p>
 </dd></dl>
 
 </dd></dl>
@@ -389,6 +102,7 @@ For UnitTests see FractionTests.</p>
 </dd></dl>
 
 </div>
+</div>
 
 
           </div>
@@ -398,9 +112,20 @@ For UnitTests see FractionTests.</p>
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">bruch module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">bruch module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bruch-class">Bruch class</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="fraction.html">fraction module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prime.html">prime module</a></li>
+</ul>
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">bruch module</a><ul>
+<li><a class="reference internal" href="#bruch-class">Bruch class</a></li>
+</ul>
+</li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>
@@ -429,7 +154,7 @@ For UnitTests see FractionTests.</p>
       &copy;2017, Tom Lambert, Yuuma Odaka-Falush.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

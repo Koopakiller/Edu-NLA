@@ -61,7 +61,7 @@
     <span class="c1"># Reduce and Clone this object</span>
 
 <div class="viewcode-block" id="Fraction.reduce"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Reduces the fraction as small as possible.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Reduces the fraction by removing all common prime factors.&quot;&quot;&quot;</span>
         <span class="n">q</span> <span class="o">=</span> <span class="n">Prime</span><span class="o">.</span><span class="n">get_greatest_common_divisor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numerator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">numerator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">numerator</span> <span class="o">/</span> <span class="n">q</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">denominator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">denominator</span> <span class="o">/</span> <span class="n">q</span></div>
@@ -105,7 +105,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="o">-</span><span class="n">other</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Fraction.__rsub__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__rsub__">[docs]</a>    <span class="k">def</span> <span class="nf">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Subtracts an this instance from an integer or another fraction and returns the result.</span>
+        <span class="sd">&quot;&quot;&quot;Subtracts this instance from an integer or another fraction and returns the result.</span>
 
 <span class="sd">        :param other: The other value to subtract from; it can be a Fraction, int or long.</span>
 <span class="sd">        :return: A new Fraction instance with the result of the subtraction.</span>
@@ -166,7 +166,7 @@
     <span class="c1"># Equality Operators</span>
 
 <div class="viewcode-block" id="Fraction.__eq__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__eq__">[docs]</a>    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Compares this Fraction with another Fraction, float, int or long to value-equality.</span>
+        <span class="sd">&quot;&quot;&quot;Compares this Fraction with another Fraction, float, int or long for value-equality.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction, float, int or long</span>
 <span class="sd">        :return: True, if the values are equal; otherwise False.</span>
@@ -182,7 +182,7 @@
         <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">numerator</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">a</span><span class="o">.</span><span class="n">denominator</span> <span class="o">!=</span> <span class="mi">0</span></div>
 
 <div class="viewcode-block" id="Fraction.__ne__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__ne__">[docs]</a>    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Compares this Fraction with another Fraction, float, int or long to value-equality.</span>
+        <span class="sd">&quot;&quot;&quot;Compares this Fraction with another Fraction, float, int or long for value-inequality.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction, float, int or long</span>
 <span class="sd">        :return: False, if the values are equal; otherwise True.</span>
@@ -206,7 +206,7 @@
             <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">numerator</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Fraction.__le__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__le__">[docs]</a>    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is less or equal then another value.</span>
+        <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is less or equal than another value.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction float, int or long</span>
 <span class="sd">        :return: True if this instances value is less or equal then the other value; otherwise False.</span>
@@ -214,7 +214,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__lt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Fraction.__gt__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__gt__">[docs]</a>    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is greater then another value.</span>
+        <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is greater than another value.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction float, int or long</span>
 <span class="sd">        :return: True if this instances value is greater then the other value; otherwise False.</span>
@@ -222,7 +222,7 @@
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__le__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Fraction.__ge__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__ge__">[docs]</a>    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is greater or equal then another value.</span>
+        <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is greater or equal than another value.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction float, int or long</span>
 <span class="sd">        :return: True if this instances value is greater or equal then the other value; otherwise False.</span>
@@ -293,7 +293,7 @@
       &copy;2017, Tom Lambert, Yuuma Odaka-Falush.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
     </div>

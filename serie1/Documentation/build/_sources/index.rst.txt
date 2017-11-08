@@ -6,7 +6,12 @@
 Welcome to NLA Series 1's documentation!
 ========================================
 
-This is the documentation for the first NLA Series.
+This is our implementation for Series 1, Numerical Linear Algebra. 
+The main topic in the problem is object-oriented programming in Python, more specifically working with fractions. 
+The following documentation explains how our class Fraction and its associated programs work. 
+
+A number of automated unit tests were carried out to guarantee the correct execution of the Fraction and Prime classes.
+The tests were carried out in the implemented main program.
 
 
 Indices and tables

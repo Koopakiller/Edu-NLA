@@ -10,7 +10,7 @@ See :ref:`fraction-class`.
 
 .. automodule:: bruch
     :members:
+    :show-inheritance:
     :special-members:
     :undoc-members:
-    :inherited-members:
     :exclude-members: __module__

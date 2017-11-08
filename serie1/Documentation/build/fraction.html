@@ -41,8 +41,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-fraction">
-<span id="fraction-module"></span><h1>fraction module<a class="headerlink" href="#module-fraction" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fraction-module">
+<h1>fraction module<a class="headerlink" href="#fraction-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mathematical-background">
+<h2>Mathematical background<a class="headerlink" href="#mathematical-background" title="Permalink to this headline">¶</a></h2>
+<p>All calculations obey the rules governing adding, subtracting, multiplying and dividing fractions.
+Subtraction and division default to modified addition and multiplication, and the greatest common divisors are always reduced.</p>
+</div>
+<div class="section" id="module-fraction">
+<span id="members-of-fraction-class"></span><span id="fraction-class"></span><h2>Members of Fraction class<a class="headerlink" href="#module-fraction" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="fraction.Fraction">
 <em class="property">class </em><code class="descclassname">fraction.</code><code class="descname">Fraction</code><span class="sig-paren">(</span><em>numerator</em>, <em>denominator</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fraction.html#Fraction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fraction.Fraction" title="Permalink to this definition">¶</a></dt>
@@ -82,7 +89,7 @@
 <dl class="method">
 <dt id="fraction.Fraction.__eq__">
 <code class="descname">__eq__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fraction.html#Fraction.__eq__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fraction.Fraction.__eq__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compares this Fraction with another Fraction, float, int or long to value-equality.</p>
+<dd><p>Compares this Fraction with another Fraction, float, int or long for value-equality.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -112,7 +119,7 @@
 <dl class="method">
 <dt id="fraction.Fraction.__ge__">
 <code class="descname">__ge__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fraction.html#Fraction.__ge__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fraction.Fraction.__ge__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the value of this instance is greater or equal then another value.</p>
+<dd><p>Checks if the value of this instance is greater or equal than another value.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -128,7 +135,7 @@
 <dl class="method">
 <dt id="fraction.Fraction.__gt__">
 <code class="descname">__gt__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fraction.html#Fraction.__gt__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fraction.Fraction.__gt__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the value of this instance is greater then another value.</p>
+<dd><p>Checks if the value of this instance is greater than another value.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -162,7 +169,7 @@
 <dl class="method">
 <dt id="fraction.Fraction.__le__">
 <code class="descname">__le__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fraction.html#Fraction.__le__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fraction.Fraction.__le__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the value of this instance is less or equal then another value.</p>
+<dd><p>Checks if the value of this instance is less or equal than another value.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -210,7 +217,7 @@
 <dl class="method">
 <dt id="fraction.Fraction.__ne__">
 <code class="descname">__ne__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fraction.html#Fraction.__ne__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fraction.Fraction.__ne__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compares this Fraction with another Fraction, float, int or long to value-equality.</p>
+<dd><p>Compares this Fraction with another Fraction, float, int or long for value-inequality.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -288,7 +295,7 @@
 <dl class="method">
 <dt id="fraction.Fraction.__rsub__">
 <code class="descname">__rsub__</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fraction.html#Fraction.__rsub__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fraction.Fraction.__rsub__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Subtracts an this instance from an integer or another fraction and returns the result.</p>
+<dd><p>Subtracts this instance from an integer or another fraction and returns the result.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -354,11 +361,12 @@
 <dl class="method">
 <dt id="fraction.Fraction.reduce">
 <code class="descname">reduce</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fraction.html#Fraction.reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fraction.Fraction.reduce" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reduces the fraction as small as possible.</p>
+<dd><p>Reduces the fraction by removing all common prime factors.</p>
 </dd></dl>
 
 </dd></dl>
 
+</div>
 </div>
 
 
@@ -370,8 +378,21 @@
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bruch.html">bruch module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">fraction module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">fraction module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mathematical-background">Mathematical background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fraction">Members of Fraction class</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="prime.html">prime module</a></li>
+</ul>
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">fraction module</a><ul>
+<li><a class="reference internal" href="#mathematical-background">Mathematical background</a></li>
+<li><a class="reference internal" href="#module-fraction">Members of Fraction class</a></li>
+</ul>
+</li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>
@@ -400,7 +421,7 @@
       &copy;2017, Tom Lambert, Yuuma Odaka-Falush.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
