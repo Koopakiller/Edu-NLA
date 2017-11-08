@@ -1,5 +1,7 @@
-import numpy
+# Authors: Tom Lambert (lambertt) and Yuuma Odaka-Falush (odafaluy)
 
+
+import numpy
 from prime import Prime
 
 

@@ -1,5 +1,5 @@
-# Author: Tom Lambert
-# Content: UnitTests for Sum-class
+# Authors: Tom Lambert (lambertt) and Yuuma Odaka-Falush (odafaluy)
+# Content: UnitTests for fraction module
 
 import unittest
 from StringIO import StringIO

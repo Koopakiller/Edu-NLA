@@ -1,3 +1,6 @@
+# Authors: Tom Lambert (lambertt) and Yuuma Odaka-Falush (odafaluy)
+
+
 from __future__ import print_function
 from pprint import pprint
 
