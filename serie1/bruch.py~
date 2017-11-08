@@ -7,7 +7,7 @@ from fraction import Fraction
 
 
 class Bruch(Fraction):
-    """A derivative of the Fraction-class without other implementations.
+    """A derivate of the Fraction-class without other implementations.
     For UnitTests see FractionTests.
     """
 

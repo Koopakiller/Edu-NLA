@@ -19,7 +19,7 @@ class Fraction:
     # Reduce and Clone this object
 
     def reduce(self):
-        """Reduces the fraction by removing all common prime factors."""
+        """Reduces the fraction as small as possible."""
         q = Prime.get_greatest_common_divisor(self.numerator, self.denominator)
         self.numerator = self.numerator / q
         self.denominator = self.denominator / q
@@ -63,7 +63,7 @@ class Fraction:
         return self.__add__(-other)
 
     def __rsub__(self, other):
-        """Subtracts this instance from an integer or another fraction and returns the result.
+        """Subtracts an this instance from an integer or another fraction and returns the result.
 
         :param other: The other value to subtract from; it can be a Fraction, int or long.
         :return: A new Fraction instance with the result of the subtraction.
@@ -124,7 +124,7 @@ class Fraction:
     # Equality Operators
 
     def __eq__(self, other):
-        """Compares this Fraction with another Fraction, float, int or long for value-equality.
+        """Compares this Fraction with another Fraction, float, int or long to value-equality.
 
         :param other: The other value to compare with; it can be another Fraction, float, int or long
         :return: True, if the values are equal; otherwise False.
@@ -140,7 +140,7 @@ class Fraction:
         return a.numerator == 0 and a.denominator != 0
 
     def __ne__(self, other):
-        """Compares this Fraction with another Fraction, float, int or long for value-inequality.
+        """Compares this Fraction with another Fraction, float, int or long to value-equality.
 
         :param other: The other value to compare with; it can be another Fraction, float, int or long
         :return: False, if the values are equal; otherwise True.
@@ -164,7 +164,7 @@ class Fraction:
             < other.numerator * numpy.abs(self.denominator) * numpy.sign(other.denominator)
 
     def __le__(self, other):
-        """Checks if the value of this instance is less or equal than another value.
+        """Checks if the value of this instance is less or equal then another value.
 
         :param other: The other value to compare with; it can be another Fraction float, int or long
         :return: True if this instances value is less or equal then the other value; otherwise False.
@@ -172,7 +172,7 @@ class Fraction:
         return self.__lt__(other) or self.__eq__(other)
 
     def __gt__(self, other):
-        """Checks if the value of this instance is greater than another value.
+        """Checks if the value of this instance is greater then another value.
 
         :param other: The other value to compare with; it can be another Fraction float, int or long
         :return: True if this instances value is greater then the other value; otherwise False.
@@ -180,7 +180,7 @@ class Fraction:
         return not self.__le__(other)
 
     def __ge__(self, other):
-        """Checks if the value of this instance is greater or equal than another value.
+        """Checks if the value of this instance is greater or equal then another value.
 
         :param other: The other value to compare with; it can be another Fraction float, int or long
         :return: True if this instances value is greater or equal then the other value; otherwise False.
