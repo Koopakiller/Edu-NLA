@@ -1,3 +1,4 @@
+from __future__ import print_function
 from decimal import *
 import time
 
@@ -12,11 +13,21 @@ class Sum:
             result += addend
         return result
 
-    def sum_ordered_ascendends(self, addends):
+    def sum_ordered(self, addends):
         result = 0
         for addend in sorted(addends):
             result += addend
         return result
+
+    def sum_ordered_grouped_by_sign(self, addends):
+        pos = 0
+        neg = 0
+        for addend in sorted(addends):
+            if addend > 0:
+                pos += addend
+            if addend < 0:
+                neg += addend
+        return pos + neg
 
 
 def get_harmonic_series_addends(k):
@@ -52,16 +63,17 @@ def get_e_taylor_series_2_addends(x, k):
 def main():
 
     s = Sum()
+    k_set = map(lambda y: 2**y, range(1, 21))
 
     print("Partial sum of harmonic series")
 
-    for k in map(lambda x: 2**x, range(1, 20)):
+    for k in k_set:
         start = time.clock()
         addends = get_harmonic_series_addends(Decimal(k))
         print("k = " + str(k))
         r1 = s.sum_indices(addends)
         print("   added by indices: " + str(r1))
-        r2 = s.sum_ordered_ascendends(addends)
+        r2 = s.sum_ordered(addends)
         print("   added by size:    " + str(r2))
         print(" > elapsed time: " + str(time.clock() - start) + "s")
         print()
@@ -70,17 +82,21 @@ def main():
     print("==================================================================")
     print()
 
+    k_set = map(lambda y: 2**y, range(1, 13))
+
     print("First Taylor series to approximate e^x")
 
     for x in [-20, -1, 1, 20]:
-        for k in map(lambda y: 2**y, range(1, 20)):
+        for k in k_set:
             start = time.clock()
             addends = get_e_taylor_series_addends(Decimal(x), Decimal(k))
             print("x = " + str(x) + ", k = " + str(k))
             r1 = s.sum_indices(addends)
             print("   added by indices: " + str(r1))
-            r2 = s.sum_ordered_ascendends(addends)
+            r2 = s.sum_ordered(addends)
             print("   added by size:    " + str(r2))
+            r3 = s.sum_ordered_grouped_by_sign(addends)
+            print("   added by sign:    " + str(r3))
             print(" > elapsed time: " + str(time.clock() - start) + "s")
             print()
         print()
@@ -92,14 +108,16 @@ def main():
     print("Second Taylor series to approximate e^x")
 
     for x in [-20, -1, 1, 20]:
-        for k in map(lambda y: 2**y, range(1, 20)):
+        for k in k_set:
             start = time.clock()
             addends = get_e_taylor_series_2_addends(Decimal(x), Decimal(k))
             print("x = " + str(x) + ", k = " + str(k))
             r1 = s.sum_indices(addends)
             print("   added by indices: " + str(r1))
-            r2 = s.sum_ordered_ascendends(addends)
+            r2 = s.sum_ordered(addends)
             print("   added by size:    " + str(r2))
+            r3 = s.sum_ordered_grouped_by_sign(addends)
+            print("   added by sign:    " + str(r3))
             print(" > elapsed time: " + str(time.clock() - start) + "s")
             print()
         print()
