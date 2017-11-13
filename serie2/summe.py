@@ -22,23 +22,34 @@ def separator2():
 # Implementation
 
 class Sum:
+    """Provides implementations of summation algorithms"""
 
     def __init__(self):
         pass
 
     def sum_indices(self, addends):
+        """
+        Sums the given addends, starting by the first number and following the list
+        """
         result = 0
         for addend in addends:
             result += addend
         return result
 
     def sum_ordered(self, addends):
+        """
+        Sums the given addends, starting be the smallest and following the natural order.
+        """
         result = 0
         for addend in sorted(addends):
             result += addend
         return result
 
     def sum_ordered_grouped_by_sign(self, addends):
+        """
+        Sums the given addends; All negative and all positive values are added separately
+        and will be added together in the last step.
+        """
         pos = 0
         neg = 0
         for addend in sorted(addends):
@@ -83,7 +94,7 @@ class TestRunner:
     def run_test(self):
 
         s = Sum()
-        k_set = map(lambda y: 2**y, range(1, 21))
+        k_set = map(lambda y: 2**y, range(1, 26))
 
         print("Partial sum of harmonic series")
         print()
