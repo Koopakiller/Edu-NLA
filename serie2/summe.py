@@ -64,10 +64,45 @@ def main():
         r2 = s.sum_ordered_ascendends(addends)
         print("   added by size:    " + str(r2))
         print(" > elapsed time: " + str(time.clock() - start) + "s")
+        print()
 
     print()
     print("==================================================================")
     print()
+
+    print("First Taylor series to approximate e^x")
+
+    for x in [-20, -1, 1, 20]:
+        for k in map(lambda y: 2**y, range(1, 20)):
+            start = time.clock()
+            addends = get_e_taylor_series_addends(Decimal(x), Decimal(k))
+            print("x = " + str(x) + ", k = " + str(k))
+            r1 = s.sum_indices(addends)
+            print("   added by indices: " + str(r1))
+            r2 = s.sum_ordered_ascendends(addends)
+            print("   added by size:    " + str(r2))
+            print(" > elapsed time: " + str(time.clock() - start) + "s")
+            print()
+        print()
+
+    print()
+    print("==================================================================")
+    print()
+
+    print("Second Taylor series to approximate e^x")
+
+    for x in [-20, -1, 1, 20]:
+        for k in map(lambda y: 2**y, range(1, 20)):
+            start = time.clock()
+            addends = get_e_taylor_series_2_addends(Decimal(x), Decimal(k))
+            print("x = " + str(x) + ", k = " + str(k))
+            r1 = s.sum_indices(addends)
+            print("   added by indices: " + str(r1))
+            r2 = s.sum_ordered_ascendends(addends)
+            print("   added by size:    " + str(r2))
+            print(" > elapsed time: " + str(time.clock() - start) + "s")
+            print()
+        print()
 
 
 
