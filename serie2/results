@@ -1,0 +1,2202 @@
+Test with numpy.float16
+
+Partial sum of harmonic series
+
+k = 2
+   added by indices: 1.5
+   added by size:    1.5
+ > elapsed time: 0.000144s
+
+k = 4
+   added by indices: 2.08325195312
+   added by size:    2.08325195312
+ > elapsed time: 4.5e-05s
+
+k = 8
+   added by indices: 2.71765136719
+   added by size:    2.71765136719
+ > elapsed time: 5.5e-05s
+
+k = 16
+   added by indices: 3.38037109375
+   added by size:    3.38037109375
+ > elapsed time: 8.2e-05s
+
+k = 32
+   added by indices: 4.05810546875
+   added by size:    4.05810546875
+ > elapsed time: 0.000141s
+
+k = 64
+   added by indices: 4.74345397949
+   added by size:    4.74345397949
+ > elapsed time: 0.000258s
+
+k = 128
+   added by indices: 5.43268585205
+   added by size:    5.43268585205
+ > elapsed time: 0.000518s
+
+k = 256
+   added by indices: 6.12385559082
+   added by size:    6.12385559082
+ > elapsed time: 0.00092s
+
+k = 512
+   added by indices: 6.81600952148
+   added by size:    6.81600952148
+ > elapsed time: 0.001866s
+
+k = 1024
+   added by indices: 7.50866031647
+   added by size:    7.50866031647
+ > elapsed time: 0.003676s
+
+k = 2048
+   added by indices: 8.2015619278
+   added by size:    8.2015619278
+ > elapsed time: 0.007191s
+
+k = 4096
+   added by indices: 8.89458227158
+   added by size:    8.89458227158
+ > elapsed time: 0.014457s
+
+k = 8192
+   added by indices: 9.58766531944
+   added by size:    9.58766531944
+ > elapsed time: 0.029929s
+
+k = 16384
+   added by indices: 10.2807797194
+   added by size:    10.2807797194
+ > elapsed time: 0.074812s
+
+k = 32768
+   added by indices: 10.9739150405
+   added by size:    10.9739150405
+ > elapsed time: 0.155029s
+
+k = 65536
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 0.332938s
+
+k = 131072
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 0.682377s
+
+k = 262144
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 1.361844s
+
+k = 524288
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 2.693729s
+
+k = 1048576
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 5.488178s
+
+k = 2097152
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 10.89237s
+
+k = 4194304
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 21.769374s
+
+k = 8388608
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 42.440729s
+
+k = 16777216
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 84.248903s
+
+k = 33554432
+   added by indices: 11.6667976975
+   added by size:    11.6667976975
+ > elapsed time: 171.090716s
+
+
+-----------------------------------------------------------
+
+First Taylor series to approximate e^x
+
+x = -20, k = 2
+   added by indices: 180.0
+   added by size:    180.0
+   added by sign:    180.0
+ > elapsed time: 0.222672s
+
+x = -20, k = 4
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.000435999999979s
+
+x = -20, k = 8
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.000239000000022s
+
+x = -20, k = 16
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.000260000000026s
+
+x = -20, k = 32
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.000543999999991s
+
+x = -20, k = 64
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.00178999999997s
+
+/u/lambertt/NLA/serie2/summe.py:72: RuntimeWarning: overflow encountered in half_scalars
+  return result
+/u/lambertt/NLA/serie2/summe.py:32: RuntimeWarning: invalid value encountered in double_scalars
+  Sums the given addends, starting by the first number and following the list
+/u/lambertt/NLA/serie2/summe.py:38: RuntimeWarning: invalid value encountered in double_scalars
+  
+/u/lambertt/NLA/serie2/summe.py:49: RuntimeWarning: invalid value encountered in double_scalars
+  """
+x = -20, k = 128
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.00406299999997s
+
+/u/lambertt/NLA/serie2/summe.py:66: RuntimeWarning: overflow encountered in double_scalars
+  self.delegate = delegate
+/u/lambertt/NLA/serie2/summe.py:72: RuntimeWarning: invalid value encountered in divide
+  return result
+x = -20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.012391s
+
+x = -20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.044921s
+
+x = -20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.165883s
+
+x = -20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.62808s
+
+x = -20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 2.447124s
+
+
+x = -1, k = 2
+   added by indices: -0.5
+   added by size:    -0.5
+   added by sign:    -0.5
+ > elapsed time: 9.99999999749e-05s
+
+x = -1, k = 4
+   added by indices: -0.595486111111
+   added by size:    -0.595486111111
+   added by sign:    -0.595486111111
+ > elapsed time: 8.90000000027e-05s
+
+x = -1, k = 8
+   added by indices: -0.596965533311
+   added by size:    -0.596965533311
+   added by sign:    -0.596965533311
+ > elapsed time: 0.000125000000025s
+
+x = -1, k = 16
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000233999999978s
+
+x = -1, k = 32
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000494000000003s
+
+x = -1, k = 64
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00152199999997s
+
+x = -1, k = 128
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00328999999999s
+
+x = -1, k = 256
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.012803s
+
+x = -1, k = 512
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.038533s
+
+x = -1, k = 1024
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.160032s
+
+x = -1, k = 2048
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.621784s
+
+x = -1, k = 4096
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 2.434243s
+
+
+x = 1, k = 2
+   added by indices: 1.5
+   added by size:    1.5
+   added by sign:    1.5
+ > elapsed time: 7.99999999685e-05s
+
+x = 1, k = 4
+   added by indices: 1.62673611111
+   added by size:    1.62673611111
+   added by sign:    1.62673611111
+ > elapsed time: 7.30000000431e-05s
+
+x = 1, k = 8
+   added by indices: 1.62847368863
+   added by size:    1.62847368863
+   added by sign:    1.62847368863
+ > elapsed time: 0.000118999999984s
+
+x = 1, k = 16
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000225s
+
+x = 1, k = 32
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000480000000039s
+
+x = 1, k = 64
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00128699999999s
+
+x = 1, k = 128
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.003558s
+
+x = 1, k = 256
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.012792s
+
+x = 1, k = 512
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.042495s
+
+x = 1, k = 1024
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.159175s
+
+x = 1, k = 2048
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.620007s
+
+x = 1, k = 4096
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 2.438747s
+
+
+x = 20, k = 2
+   added by indices: 220.0
+   added by size:    220.0
+   added by sign:    220.0
+ > elapsed time: 8.50000000128e-05s
+
+x = 20, k = 4
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 8.0999999966e-05s
+
+x = 20, k = 8
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.000131999999951s
+
+x = 20, k = 16
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.000316999999995s
+
+x = 20, k = 32
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.000538000000006s
+
+x = 20, k = 64
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.00129499999997s
+
+x = 20, k = 128
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.00383400000004s
+
+x = 20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 0.011824s
+
+x = 20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 0.043084s
+
+x = 20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 0.155559s
+
+x = 20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 0.62912s
+
+x = 20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 2.446595s
+
+
+
+-----------------------------------------------------------
+
+Second Taylor series to approximate e^x
+
+x = -20, k = 2
+   added by indices: 220.0
+   added by size:    220.0
+   added by sign:    220.0
+ > elapsed time: 9.29999999926e-05s
+
+x = -20, k = 4
+   added by indices: 3608.88888889
+   added by size:    3608.88888889
+   added by sign:    3608.88888889
+ > elapsed time: 7.09999999913e-05s
+
+x = -20, k = 8
+   added by indices: 40046.1932967
+   added by size:    40046.1932967
+   added by sign:    40046.1932967
+ > elapsed time: 0.000109000000009s
+
+x = -20, k = 16
+   added by indices: 82860.1814915
+   added by size:    82860.1814915
+   added by sign:    82860.1814915
+ > elapsed time: 0.000208999999984s
+
+x = -20, k = 32
+   added by indices: 83331.4131653
+   added by size:    83331.4131653
+   added by sign:    83331.4131653
+ > elapsed time: 0.000485999999967s
+
+x = -20, k = 64
+   added by indices: 83331.4131681
+   added by size:    83331.4131681
+   added by sign:    83331.4131681
+ > elapsed time: 0.00115200000005s
+
+x = -20, k = 128
+   added by indices: 83331.4131681
+   added by size:    83331.4131681
+   added by sign:    83331.4131681
+ > elapsed time: 0.00310299999995s
+
+/u/lambertt/NLA/serie2/summe.py:80: RuntimeWarning: overflow encountered in power
+  def get_e_taylor_series_addends(self, x, k):
+/u/lambertt/NLA/serie2/summe.py:80: RuntimeWarning: invalid value encountered in double_scalars
+  def get_e_taylor_series_addends(self, x, k):
+x = -20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.012153s
+
+x = -20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.042702s
+
+x = -20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.152419s
+
+x = -20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.620269s
+
+x = -20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 2.432779s
+
+
+x = -1, k = 2
+   added by indices: 1.5
+   added by size:    1.5
+   added by sign:    1.5
+ > elapsed time: 7.40000000405e-05s
+
+x = -1, k = 4
+   added by indices: 1.62673611111
+   added by size:    1.62673611111
+   added by sign:    1.62673611111
+ > elapsed time: 6.70000000014e-05s
+
+x = -1, k = 8
+   added by indices: 1.62847368863
+   added by size:    1.62847368863
+   added by sign:    1.62847368863
+ > elapsed time: 0.000109000000009s
+
+x = -1, k = 16
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000206999999989s
+
+x = -1, k = 32
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000450000000001s
+
+x = -1, k = 64
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00110800000004s
+
+x = -1, k = 128
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00392399999998s
+
+x = -1, k = 256
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.011586s
+
+x = -1, k = 512
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.04188s
+
+x = -1, k = 1024
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.158406s
+
+x = -1, k = 2048
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.618382s
+
+x = -1, k = 4096
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 2.424009s
+
+
+x = 1, k = 2
+   added by indices: -0.5
+   added by size:    -0.5
+   added by sign:    -0.5
+ > elapsed time: 7.49999999812e-05s
+
+x = 1, k = 4
+   added by indices: -0.595486111111
+   added by size:    -0.595486111111
+   added by sign:    -0.595486111111
+ > elapsed time: 6.70000000014e-05s
+
+x = 1, k = 8
+   added by indices: -0.596965533311
+   added by size:    -0.596965533311
+   added by sign:    -0.596965533311
+ > elapsed time: 0.000108000000012s
+
+x = 1, k = 16
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000207999999986s
+
+x = 1, k = 32
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000452999999993s
+
+x = 1, k = 64
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00114500000001s
+
+x = 1, k = 128
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00317799999999s
+
+x = 1, k = 256
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.01258s
+
+x = 1, k = 512
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.039702s
+
+x = 1, k = 1024
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.154082s
+
+x = 1, k = 2048
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.619011s
+
+x = 1, k = 4096
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 2.410746s
+
+
+x = 20, k = 2
+   added by indices: 180.0
+   added by size:    180.0
+   added by sign:    180.0
+ > elapsed time: 7.60000000355e-05s
+
+x = 20, k = 4
+   added by indices: 1791.11111111
+   added by size:    1791.11111111
+   added by sign:    1791.11111111
+ > elapsed time: 6.89999999963e-05s
+
+x = 20, k = 8
+   added by indices: 6228.77455305
+   added by size:    6228.77455305
+   added by sign:    6228.77455305
+ > elapsed time: 0.000110000000006s
+
+x = 20, k = 16
+   added by indices: 185.537716546
+   added by size:    185.537716546
+   added by sign:    185.537716546
+ > elapsed time: 0.000209999999981s
+
+x = 20, k = 32
+   added by indices: 0.225295141613
+   added by size:    0.22529514163
+   added by sign:    0.225295141623
+ > elapsed time: 0.000455000000045s
+
+x = 20, k = 64
+   added by indices: 0.225293353069
+   added by size:    0.225293353084
+   added by sign:    0.225293353084
+ > elapsed time: 0.001125s
+
+x = 20, k = 128
+   added by indices: 0.225293353069
+   added by size:    0.225293353084
+   added by sign:    0.225293353084
+ > elapsed time: 0.00390900000002s
+
+x = 20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.012487s
+
+x = 20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.042647s
+
+x = 20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.160475s
+
+x = 20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.623995s
+
+x = 20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 2.435745s
+
+
+
+
+===========================================================
+
+
+Test with numpy.float32
+
+Partial sum of harmonic series
+
+k = 2
+   added by indices: 1.5
+   added by size:    1.5
+ > elapsed time: 4.50000000001e-05s
+
+k = 4
+   added by indices: 2.08333334327
+   added by size:    2.08333334327
+ > elapsed time: 3.70000000203e-05s
+
+k = 8
+   added by indices: 2.71785716712
+   added by size:    2.71785716712
+ > elapsed time: 4.79999999925e-05s
+
+k = 16
+   added by indices: 3.38072903454
+   added by size:    3.38072903454
+ > elapsed time: 7.69999999761e-05s
+
+k = 32
+   added by indices: 4.05849524587
+   added by size:    4.05849524587
+ > elapsed time: 0.00014299999998s
+
+k = 64
+   added by indices: 4.74389095977
+   added by size:    4.74389095977
+ > elapsed time: 0.000255999999979s
+
+k = 128
+   added by indices: 5.43314715195
+   added by size:    5.43314715195
+ > elapsed time: 0.000453999999991s
+
+k = 256
+   added by indices: 6.12434502319
+   added by size:    6.12434502319
+ > elapsed time: 0.00091900000001s
+
+k = 512
+   added by indices: 6.81651659636
+   added by size:    6.81651659636
+ > elapsed time: 0.00178199999999s
+
+k = 1024
+   added by indices: 7.50917573588
+   added by size:    7.50917573588
+ > elapsed time: 0.00394299999999s
+
+k = 2048
+   added by indices: 8.20207883627
+   added by size:    8.20207883627
+ > elapsed time: 0.007026s
+
+k = 4096
+   added by indices: 8.89510396228
+   added by size:    8.89510396228
+ > elapsed time: 0.019707s
+
+k = 8192
+   added by indices: 9.58819011162
+   added by size:    9.58819011162
+ > elapsed time: 0.033326s
+
+k = 16384
+   added by indices: 10.2813067756
+   added by size:    10.2813067756
+ > elapsed time: 0.071433s
+
+k = 32768
+   added by indices: 10.9744386976
+   added by size:    10.9744386976
+ > elapsed time: 0.161714s
+
+k = 65536
+   added by indices: 11.6675782488
+   added by size:    11.6675782488
+ > elapsed time: 0.328301s
+
+k = 131072
+   added by indices: 12.3607216147
+   added by size:    12.3607216147
+ > elapsed time: 0.653803s
+
+k = 262144
+   added by indices: 13.0538668879
+   added by size:    13.0538668879
+ > elapsed time: 1.309223s
+
+k = 524288
+   added by indices: 13.7470131148
+   added by size:    13.7470131148
+ > elapsed time: 2.614579s
+
+k = 1048576
+   added by indices: 14.4401598185
+   added by size:    14.4401598185
+ > elapsed time: 5.25205s
+
+k = 2097152
+   added by indices: 15.1333067607
+   added by size:    15.1333067607
+ > elapsed time: 10.485467s
+
+k = 4194304
+   added by indices: 15.826453822
+   added by size:    15.826453822
+ > elapsed time: 20.962871s
+
+k = 8388608
+   added by indices: 16.519600943
+   added by size:    16.519600943
+ > elapsed time: 41.935713s
+
+k = 16777216
+   added by indices: 17.2127480937
+   added by size:    17.2127480937
+ > elapsed time: 84.215091s
+
+k = 33554432
+   added by indices: 17.9058952594
+   added by size:    17.9058952594
+ > elapsed time: 164.537111s
+
+
+-----------------------------------------------------------
+
+First Taylor series to approximate e^x
+
+x = -20, k = 2
+/u/lambertt/NLA/serie2/summe.py:72: RuntimeWarning: overflow encountered in float_scalars
+  return result
+   added by indices: 180.0
+   added by size:    180.0
+   added by sign:    180.0
+ > elapsed time: 0.223815s
+
+x = -20, k = 4
+   added by indices: 1791.11111111
+   added by size:    1791.11111111
+   added by sign:    1791.11111111
+ > elapsed time: 0.000341999999932s
+
+x = -20, k = 8
+   added by indices: 6228.77455305
+   added by size:    6228.77455305
+   added by sign:    6228.77455305
+ > elapsed time: 0.000128000000018s
+
+x = -20, k = 16
+   added by indices: 185.537954038
+   added by size:    185.537954038
+   added by sign:    185.537954038
+ > elapsed time: 0.000236000000086s
+
+x = -20, k = 32
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.000568999999928s
+
+x = -20, k = 64
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.00157300000001s
+
+x = -20, k = 128
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.00391100000002s
+
+x = -20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.013555s
+
+x = -20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.040246s
+
+x = -20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.156002s
+
+x = -20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 0.633415s
+
+x = -20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    nan
+ > elapsed time: 2.424222s
+
+
+x = -1, k = 2
+   added by indices: -0.5
+   added by size:    -0.5
+   added by sign:    -0.5
+ > elapsed time: 8.90000000027e-05s
+
+x = -1, k = 4
+   added by indices: -0.595486111111
+   added by size:    -0.595486111111
+   added by sign:    -0.595486111111
+ > elapsed time: 7.90000000279e-05s
+
+x = -1, k = 8
+   added by indices: -0.596965533311
+   added by size:    -0.596965533311
+   added by sign:    -0.596965533311
+ > elapsed time: 0.000126000000023s
+
+x = -1, k = 16
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000235999999973s
+
+x = -1, k = 32
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000503000000094s
+
+x = -1, k = 64
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.0012549999999s
+
+x = -1, k = 128
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.003738s
+
+x = -1, k = 256
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.0128549999999s
+
+x = -1, k = 512
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.03868s
+
+x = -1, k = 1024
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.158975s
+
+x = -1, k = 2048
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.627562s
+
+x = -1, k = 4096
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 2.44877s
+
+
+x = 1, k = 2
+   added by indices: 1.5
+   added by size:    1.5
+   added by sign:    1.5
+ > elapsed time: 8.00000000254e-05s
+
+x = 1, k = 4
+   added by indices: 1.62673611111
+   added by size:    1.62673611111
+   added by sign:    1.62673611111
+ > elapsed time: 7.30000000431e-05s
+
+x = 1, k = 8
+   added by indices: 1.62847368863
+   added by size:    1.62847368863
+   added by sign:    1.62847368863
+ > elapsed time: 0.000121000000036s
+
+x = 1, k = 16
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000227999999993s
+
+x = 1, k = 32
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000493000000006s
+
+x = 1, k = 64
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00122499999998s
+
+x = 1, k = 128
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00323500000002s
+
+x = 1, k = 256
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.012729s
+
+x = 1, k = 512
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.040883s
+
+x = 1, k = 1024
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.161971s
+
+x = 1, k = 2048
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.624864s
+
+x = 1, k = 4096
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 2.437045s
+
+
+x = 20, k = 2
+   added by indices: 220.0
+   added by size:    220.0
+   added by sign:    220.0
+ > elapsed time: 8.59999998966e-05s
+
+x = 20, k = 4
+   added by indices: 3608.88888889
+   added by size:    3608.88888889
+   added by sign:    3608.88888889
+ > elapsed time: 7.89999999142e-05s
+
+x = 20, k = 8
+   added by indices: 40046.1932967
+   added by size:    40046.1932967
+   added by sign:    40046.1932967
+ > elapsed time: 0.00012700000002s
+
+x = 20, k = 16
+   added by indices: 82860.1812554
+   added by size:    82860.1812554
+   added by sign:    82860.1812554
+ > elapsed time: 0.000238000000081s
+
+x = 20, k = 32
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.000506999999971s
+
+x = 20, k = 64
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.00132899999994s
+
+x = 20, k = 128
+   added by indices: inf
+   added by size:    inf
+   added by sign:    inf
+ > elapsed time: 0.00387599999999s
+
+x = 20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 0.013641s
+
+x = 20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 0.039582s
+
+x = 20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 0.161229s
+
+x = 20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 0.63162s
+
+x = 20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    inf
+ > elapsed time: 2.465867s
+
+
+
+-----------------------------------------------------------
+
+Second Taylor series to approximate e^x
+
+x = -20, k = 2
+   added by indices: 220.0
+   added by size:    220.0
+   added by sign:    220.0
+ > elapsed time: 8.10000000229e-05s
+
+x = -20, k = 4
+   added by indices: 3608.88888889
+   added by size:    3608.88888889
+   added by sign:    3608.88888889
+ > elapsed time: 7.09999999344e-05s
+
+x = -20, k = 8
+   added by indices: 40046.1932967
+   added by size:    40046.1932967
+   added by sign:    40046.1932967
+ > elapsed time: 0.000111999999945s
+
+x = -20, k = 16
+   added by indices: 82860.1814915
+   added by size:    82860.1814915
+   added by sign:    82860.1814915
+ > elapsed time: 0.000214000000028s
+
+x = -20, k = 32
+   added by indices: 83331.4131653
+   added by size:    83331.4131653
+   added by sign:    83331.4131653
+ > elapsed time: 0.00046999999995s
+
+x = -20, k = 64
+   added by indices: 83331.4131681
+   added by size:    83331.4131681
+   added by sign:    83331.4131681
+ > elapsed time: 0.0011750000001s
+
+x = -20, k = 128
+   added by indices: 83331.4131681
+   added by size:    83331.4131681
+   added by sign:    83331.4131681
+ > elapsed time: 0.00315699999999s
+
+x = -20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.012283s
+
+x = -20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.044418s
+
+x = -20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.164076s
+
+x = -20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.624694s
+
+x = -20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 2.46279s
+
+
+x = -1, k = 2
+   added by indices: 1.5
+   added by size:    1.5
+   added by sign:    1.5
+ > elapsed time: 7.80000000304e-05s
+
+x = -1, k = 4
+   added by indices: 1.62673611111
+   added by size:    1.62673611111
+   added by sign:    1.62673611111
+ > elapsed time: 6.90000000532e-05s
+
+x = -1, k = 8
+   added by indices: 1.62847368863
+   added by size:    1.62847368863
+   added by sign:    1.62847368863
+ > elapsed time: 0.000144999999975s
+
+x = -1, k = 16
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000211000000036s
+
+x = -1, k = 32
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000458999999978s
+
+x = -1, k = 64
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00114400000007s
+
+x = -1, k = 128
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00341800000001s
+
+x = -1, k = 256
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.0129899999999s
+
+x = -1, k = 512
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.0430170000001s
+
+x = -1, k = 1024
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.158458s
+
+x = -1, k = 2048
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.627511s
+
+x = -1, k = 4096
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 2.437352s
+
+
+x = 1, k = 2
+   added by indices: -0.5
+   added by size:    -0.5
+   added by sign:    -0.5
+ > elapsed time: 7.5000000038e-05s
+
+x = 1, k = 4
+   added by indices: -0.595486111111
+   added by size:    -0.595486111111
+   added by sign:    -0.595486111111
+ > elapsed time: 0.000111000000061s
+
+x = 1, k = 8
+   added by indices: -0.596965533311
+   added by size:    -0.596965533311
+   added by sign:    -0.596965533311
+ > elapsed time: 0.000107999999955s
+
+x = 1, k = 16
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000207000000046s
+
+x = 1, k = 32
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000471999999945s
+
+x = 1, k = 64
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00123300000007s
+
+x = 1, k = 128
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00319000000002s
+
+x = 1, k = 256
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.012776s
+
+x = 1, k = 512
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.0429899999999s
+
+x = 1, k = 1024
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.165106s
+
+x = 1, k = 2048
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.6268s
+
+x = 1, k = 4096
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 2.45622s
+
+
+x = 20, k = 2
+   added by indices: 180.0
+   added by size:    180.0
+   added by sign:    180.0
+ > elapsed time: 7.69999999193e-05s
+
+x = 20, k = 4
+   added by indices: 1791.11111111
+   added by size:    1791.11111111
+   added by sign:    1791.11111111
+ > elapsed time: 6.90000000532e-05s
+
+x = 20, k = 8
+   added by indices: 6228.77455305
+   added by size:    6228.77455305
+   added by sign:    6228.77455305
+ > elapsed time: 0.000110999999947s
+
+x = 20, k = 16
+   added by indices: 185.537716546
+   added by size:    185.537716546
+   added by sign:    185.537716546
+ > elapsed time: 0.000212999999917s
+
+x = 20, k = 32
+   added by indices: 0.225295141613
+   added by size:    0.22529514163
+   added by sign:    0.225295141623
+ > elapsed time: 0.000468000000069s
+
+x = 20, k = 64
+   added by indices: 0.225293353069
+   added by size:    0.225293353084
+   added by sign:    0.225293353084
+ > elapsed time: 0.00118899999995s
+
+x = 20, k = 128
+   added by indices: 0.225293353069
+   added by size:    0.225293353084
+   added by sign:    0.225293353084
+ > elapsed time: 0.003198s
+
+x = 20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.012776s
+
+x = 20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.0437930000001s
+
+x = 20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.164208s
+
+x = 20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.636121s
+
+x = 20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 2.460248s
+
+
+
+
+===========================================================
+
+
+Test with numpy.float64
+
+Partial sum of harmonic series
+
+k = 2
+   added by indices: 1.5
+   added by size:    1.5
+ > elapsed time: 3.60000000228e-05s
+
+k = 4
+   added by indices: 2.08333333333
+   added by size:    2.08333333333
+ > elapsed time: 2.49999999369e-05s
+
+k = 8
+   added by indices: 2.71785714286
+   added by size:    2.71785714286
+ > elapsed time: 3.60000000228e-05s
+
+k = 16
+   added by indices: 3.38072899323
+   added by size:    3.38072899323
+ > elapsed time: 5.80000000809e-05s
+
+k = 32
+   added by indices: 4.05849519544
+   added by size:    4.05849519544
+ > elapsed time: 0.000157999999942s
+
+k = 64
+   added by indices: 4.74389090371
+   added by size:    4.74389090371
+ > elapsed time: 0.000198000000069s
+
+k = 128
+   added by indices: 5.43314709259
+   added by size:    5.43314709259
+ > elapsed time: 0.000380999999948s
+
+k = 256
+   added by indices: 6.12434496282
+   added by size:    6.12434496282
+ > elapsed time: 0.000756000000024s
+
+k = 512
+   added by indices: 6.81651653455
+   added by size:    6.81651653455
+ > elapsed time: 0.002072s
+
+k = 1024
+   added by indices: 7.50917567228
+   added by size:    7.50917567228
+ > elapsed time: 0.00386900000001s
+
+k = 2048
+   added by indices: 8.20207877182
+   added by size:    8.20207877182
+ > elapsed time: 0.00590499999998s
+
+k = 4096
+   added by indices: 8.89510389697
+   added by size:    8.89510389697
+ > elapsed time: 0.0115070000001s
+
+k = 8192
+   added by indices: 9.5881900461
+   added by size:    9.5881900461
+ > elapsed time: 0.030877s
+
+k = 16384
+   added by indices: 10.28130671
+   added by size:    10.28130671
+ > elapsed time: 0.045616s
+
+k = 32768
+   added by indices: 10.974438632
+   added by size:    10.974438632
+ > elapsed time: 0.132604s
+
+k = 65536
+   added by indices: 11.6675781832
+   added by size:    11.6675781832
+ > elapsed time: 0.251793s
+
+k = 131072
+   added by indices: 12.3607215491
+   added by size:    12.3607215491
+ > elapsed time: 0.529886s
+
+k = 262144
+   added by indices: 13.0538668223
+   added by size:    13.0538668223
+ > elapsed time: 1.055009s
+
+k = 524288
+   added by indices: 13.7470130492
+   added by size:    13.7470130492
+ > elapsed time: 2.173431s
+
+k = 1048576
+   added by indices: 14.4401597529
+   added by size:    14.4401597529
+ > elapsed time: 4.369008s
+
+k = 2097152
+   added by indices: 15.1333066951
+   added by size:    15.1333066951
+ > elapsed time: 8.855347s
+
+k = 4194304
+   added by indices: 15.8264537564
+   added by size:    15.8264537564
+ > elapsed time: 17.679227s
+
+k = 8388608
+   added by indices: 16.5196008774
+   added by size:    16.5196008774
+ > elapsed time: 35.533745s
+
+k = 16777216
+   added by indices: 17.2127480281
+   added by size:    17.2127480281
+ > elapsed time: 66.824764s
+
+k = 33554432
+   added by indices: 17.9058951938
+   added by size:    17.9058951938
+ > elapsed time: 135.873953s
+
+
+-----------------------------------------------------------
+
+First Taylor series to approximate e^x
+
+x = -20, k = 2
+   added by indices: 180.0
+   added by size:    180.0
+   added by sign:    180.0
+ > elapsed time: 0.223187s
+
+x = -20, k = 4
+   added by indices: 1791.11111111
+   added by size:    1791.11111111
+   added by sign:    1791.11111111
+ > elapsed time: 0.00012700000002s
+
+x = -20, k = 8
+   added by indices: 6228.77455305
+   added by size:    6228.77455305
+   added by sign:    6228.77455305
+ > elapsed time: 7.49999999243e-05s
+
+x = -20, k = 16
+   added by indices: 185.537716546
+   added by size:    185.537716546
+   added by sign:    185.537716546
+ > elapsed time: 0.000188999999978s
+
+x = -20, k = 32
+   added by indices: 0.225295141613
+   added by size:    0.22529514163
+   added by sign:    0.225295141623
+ > elapsed time: 0.000315999999998s
+
+x = -20, k = 64
+   added by indices: 0.225293353069
+   added by size:    0.225293353084
+   added by sign:    0.225293353084
+ > elapsed time: 0.00100099999997s
+
+x = -20, k = 128
+   added by indices: 0.225293353069
+   added by size:    0.225293353084
+   added by sign:    0.225293353084
+ > elapsed time: 0.00271800000007s
+
+x = -20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.00993699999992s
+
+/u/lambertt/NLA/serie2/summe.py:72: RuntimeWarning: overflow encountered in double_scalars
+  return result
+/u/lambertt/NLA/serie2/summe.py:72: RuntimeWarning: invalid value encountered in double_scalars
+  return result
+x = -20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.0354930000001s
+
+x = -20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.143045s
+
+x = -20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.608097s
+
+x = -20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 2.383957s
+
+
+x = -1, k = 2
+   added by indices: -0.5
+   added by size:    -0.5
+   added by sign:    -0.5
+ > elapsed time: 7.20000000456e-05s
+
+x = -1, k = 4
+   added by indices: -0.595486111111
+   added by size:    -0.595486111111
+   added by sign:    -0.595486111111
+ > elapsed time: 4.79999999925e-05s
+
+x = -1, k = 8
+   added by indices: -0.596965533311
+   added by size:    -0.596965533311
+   added by sign:    -0.596965533311
+ > elapsed time: 7.5000000038e-05s
+
+x = -1, k = 16
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000143999999977s
+
+x = -1, k = 32
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000399000000016s
+
+x = -1, k = 64
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000880000000052s
+
+x = -1, k = 128
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00282199999992s
+
+x = -1, k = 256
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.011277s
+
+x = -1, k = 512
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.041065s
+
+x = -1, k = 1024
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.153495s
+
+x = -1, k = 2048
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.604676s
+
+x = -1, k = 4096
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 2.362442s
+
+
+x = 1, k = 2
+   added by indices: 1.5
+   added by size:    1.5
+   added by sign:    1.5
+ > elapsed time: 5.80000000809e-05s
+
+x = 1, k = 4
+   added by indices: 1.62673611111
+   added by size:    1.62673611111
+   added by sign:    1.62673611111
+ > elapsed time: 4.30000000051e-05s
+
+x = 1, k = 8
+   added by indices: 1.62847368863
+   added by size:    1.62847368863
+   added by sign:    1.62847368863
+ > elapsed time: 6.89999999395e-05s
+
+x = 1, k = 16
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000133000000005s
+
+x = 1, k = 32
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000326000000086s
+
+x = 1, k = 64
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000816999999984s
+
+x = 1, k = 128
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00255700000002s
+
+x = 1, k = 256
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.0108329999999s
+
+x = 1, k = 512
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.037695s
+
+x = 1, k = 1024
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.15496s
+
+x = 1, k = 2048
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.596525s
+
+x = 1, k = 4096
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 2.374675s
+
+
+x = 20, k = 2
+   added by indices: 220.0
+   added by size:    220.0
+   added by sign:    220.0
+ > elapsed time: 5.89999999647e-05s
+
+x = 20, k = 4
+   added by indices: 3608.88888889
+   added by size:    3608.88888889
+   added by sign:    3608.88888889
+ > elapsed time: 4.59999999975e-05s
+
+x = 20, k = 8
+   added by indices: 40046.1932967
+   added by size:    40046.1932967
+   added by sign:    40046.1932967
+ > elapsed time: 7.10000000481e-05s
+
+x = 20, k = 16
+   added by indices: 82860.1814915
+   added by size:    82860.1814915
+   added by sign:    82860.1814915
+ > elapsed time: 0.000136999999995s
+
+x = 20, k = 32
+   added by indices: 83331.4131653
+   added by size:    83331.4131653
+   added by sign:    83331.4131653
+ > elapsed time: 0.000314000000003s
+
+x = 20, k = 64
+   added by indices: 83331.4131681
+   added by size:    83331.4131681
+   added by sign:    83331.4131681
+ > elapsed time: 0.00082400000008s
+
+x = 20, k = 128
+   added by indices: 83331.4131681
+   added by size:    83331.4131681
+   added by sign:    83331.4131681
+ > elapsed time: 0.00253699999996s
+
+x = 20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.00883699999997s
+
+x = 20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.037007s
+
+x = 20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.148737s
+
+x = 20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.608827s
+
+x = 20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 2.390873s
+
+
+
+-----------------------------------------------------------
+
+Second Taylor series to approximate e^x
+
+x = -20, k = 2
+   added by indices: 220.0
+   added by size:    220.0
+   added by sign:    220.0
+ > elapsed time: 6.00000000759e-05s
+
+x = -20, k = 4
+   added by indices: 3608.88888889
+   added by size:    3608.88888889
+   added by sign:    3608.88888889
+ > elapsed time: 4.40000000026e-05s
+
+x = -20, k = 8
+   added by indices: 40046.1932967
+   added by size:    40046.1932967
+   added by sign:    40046.1932967
+ > elapsed time: 6.59999999471e-05s
+
+x = -20, k = 16
+   added by indices: 82860.1814915
+   added by size:    82860.1814915
+   added by sign:    82860.1814915
+ > elapsed time: 0.000125000000025s
+
+x = -20, k = 32
+   added by indices: 83331.4131653
+   added by size:    83331.4131653
+   added by sign:    83331.4131653
+ > elapsed time: 0.000290000000064s
+
+x = -20, k = 64
+   added by indices: 83331.4131681
+   added by size:    83331.4131681
+   added by sign:    83331.4131681
+ > elapsed time: 0.000806000000011s
+
+x = -20, k = 128
+   added by indices: 83331.4131681
+   added by size:    83331.4131681
+   added by sign:    83331.4131681
+ > elapsed time: 0.00297899999998s
+
+/u/lambertt/NLA/serie2/summe.py:80: RuntimeWarning: overflow encountered in double_scalars
+  def get_e_taylor_series_addends(self, x, k):
+x = -20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.010706s
+
+x = -20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.0387019999999s
+
+x = -20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.152504s
+
+x = -20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 0.606493s
+
+x = -20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    83331.4131681
+ > elapsed time: 2.391323s
+
+
+x = -1, k = 2
+   added by indices: 1.5
+   added by size:    1.5
+   added by sign:    1.5
+ > elapsed time: 5.89999999647e-05s
+
+x = -1, k = 4
+   added by indices: 1.62673611111
+   added by size:    1.62673611111
+   added by sign:    1.62673611111
+ > elapsed time: 4.20000000076e-05s
+
+x = -1, k = 8
+   added by indices: 1.62847368863
+   added by size:    1.62847368863
+   added by sign:    1.62847368863
+ > elapsed time: 6.40000000658e-05s
+
+x = -1, k = 16
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000121999999919s
+
+x = -1, k = 32
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000280999999973s
+
+x = -1, k = 64
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.000815999999986s
+
+x = -1, k = 128
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.00288999999998s
+
+x = -1, k = 256
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.009863s
+
+x = -1, k = 512
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.0380200000001s
+
+x = -1, k = 1024
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.150483s
+
+x = -1, k = 2048
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 0.597763s
+
+x = -1, k = 4096
+   added by indices: 1.6284737129
+   added by size:    1.6284737129
+   added by sign:    1.6284737129
+ > elapsed time: 2.377847s
+
+
+x = 1, k = 2
+   added by indices: -0.5
+   added by size:    -0.5
+   added by sign:    -0.5
+ > elapsed time: 5.69999999698e-05s
+
+x = 1, k = 4
+   added by indices: -0.595486111111
+   added by size:    -0.595486111111
+   added by sign:    -0.595486111111
+ > elapsed time: 4.20000000076e-05s
+
+x = 1, k = 8
+   added by indices: -0.596965533311
+   added by size:    -0.596965533311
+   added by sign:    -0.596965533311
+ > elapsed time: 6.49999999496e-05s
+
+x = 1, k = 16
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000123000000031s
+
+x = 1, k = 32
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000309000000016s
+
+x = 1, k = 64
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.000780999999961s
+
+x = 1, k = 128
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00296700000001s
+
+x = 1, k = 256
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.00986s
+
+x = 1, k = 512
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.0339750000001s
+
+x = 1, k = 1024
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.14598s
+
+x = 1, k = 2048
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 0.599448s
+
+x = 1, k = 4096
+   added by indices: -0.596965555578
+   added by size:    -0.596965555578
+   added by sign:    -0.596965555578
+ > elapsed time: 2.374725s
+
+
+x = 20, k = 2
+   added by indices: 180.0
+   added by size:    180.0
+   added by sign:    180.0
+ > elapsed time: 5.79999999673e-05s
+
+x = 20, k = 4
+   added by indices: 1791.11111111
+   added by size:    1791.11111111
+   added by sign:    1791.11111111
+ > elapsed time: 4.40000000026e-05s
+
+x = 20, k = 8
+   added by indices: 6228.77455305
+   added by size:    6228.77455305
+   added by sign:    6228.77455305
+ > elapsed time: 6.60000000607e-05s
+
+x = 20, k = 16
+   added by indices: 185.537716546
+   added by size:    185.537716546
+   added by sign:    185.537716546
+ > elapsed time: 0.000126000000023s
+
+x = 20, k = 32
+   added by indices: 0.225295141613
+   added by size:    0.22529514163
+   added by sign:    0.225295141623
+ > elapsed time: 0.000311000000011s
+
+x = 20, k = 64
+   added by indices: 0.225293353069
+   added by size:    0.225293353084
+   added by sign:    0.225293353084
+ > elapsed time: 0.000781999999958s
+
+x = 20, k = 128
+   added by indices: 0.225293353069
+   added by size:    0.225293353084
+   added by sign:    0.225293353084
+ > elapsed time: 0.00301200000001s
+
+x = 20, k = 256
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.009905s
+
+x = 20, k = 512
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.038997s
+
+x = 20, k = 1024
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.152457s
+
+x = 20, k = 2048
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 0.608415s
+
+x = 20, k = 4096
+   added by indices: nan
+   added by size:    nan
+   added by sign:    0.225293353084
+ > elapsed time: 2.389988s
+
