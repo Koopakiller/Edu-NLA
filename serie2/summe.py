@@ -6,15 +6,15 @@ class Sum:
     def __init__(self):
         pass
 
-    def sum_indices(self, values):
+    def sum_indices(self, addends):
         result = 0
-        for value in values:
+        for value in addends:
             result += value
         return result
 
-    def sum_ordered_ascendends(self, values):
+    def sum_ordered_ascendends(self, addends):
         result = 0
-        for value in sorted(values):
+        for value in sorted(addends):
             result += value
         return result
 
@@ -43,6 +43,19 @@ def get_e_taylor_series_2_addends(x, k):
 
 
 def main():
+
+    sum = Sum()
+
+    print("Partial sum of harmonic series")
+
+    for k in map(lambda x: 2**x, range(1, 20)):
+        addends = get_harmonic_series_addends(k)
+        print("k = " + str(k))
+        r1 = sum.sum_indices(addends)
+        print("  added by indices: " + str(r1))
+        r2 = sum.sum_ordered_ascendends(addends)
+        print("  added by size:    " + str(r2))
+
     pass
 
 
