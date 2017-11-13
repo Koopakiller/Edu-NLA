@@ -91,7 +91,7 @@ class TestRunner:
                           / self.factorial(i))
         return result
 
-    def run_test(self):
+    def run_harmonic_series_test(self):
 
         s = Sum()
         k_set = map(lambda y: 2**y, range(1, 26))
@@ -110,8 +110,8 @@ class TestRunner:
             print(" > elapsed time: " + str(time.clock() - start) + "s")
             print()
 
-        separator1()
-
+    def run_taylor_e_test_1(self):
+        s = Sum()
         k_set = map(lambda y: 2**y, range(1, 13))
 
         print("First Taylor series to approximate e^x")
@@ -132,7 +132,9 @@ class TestRunner:
                 print()
             print()
 
-        separator1()
+    def run_taylor_e_test_2(self):
+        s = Sum()
+        k_set = map(lambda y: 2**y, range(1, 13))
 
         print("Second Taylor series to approximate e^x")
         print()
@@ -151,6 +153,18 @@ class TestRunner:
                 print(" > elapsed time: " + str(time.clock() - start) + "s")
                 print()
             print()
+
+    def run_test(self):
+
+        self.run_harmonic_series_test()
+
+        separator1()
+
+        self.run_taylor_e_test_1()
+
+        separator1()
+
+        self.run_taylor_e_test_2()
 
 
 def main():
