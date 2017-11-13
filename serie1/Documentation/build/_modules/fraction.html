@@ -40,15 +40,17 @@
           <div class="body" role="main">
             
   <h1>Source code for fraction</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span></span><span class="c1"># Authors: Tom Lambert (lambertt) and Yuuma Odaka-Falush (odafaluy)</span>
 
+
+<span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">from</span> <span class="nn">prime</span> <span class="k">import</span> <span class="n">Prime</span>
 
 
-<div class="viewcode-block" id="Fraction"><a class="viewcode-back" href="../fraction.html#bruch.Fraction">[docs]</a><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+<div class="viewcode-block" id="Fraction"><a class="viewcode-back" href="../fraction.html#fraction.Fraction">[docs]</a><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Represents a fraction with two integers.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Fraction.__init__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__init__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initializes a new Fraction-Instance with a value.</span>
 
 <span class="sd">        :param numerator: The numerator in the instance to created.</span>
@@ -60,13 +62,13 @@
 
     <span class="c1"># Reduce and Clone this object</span>
 
-<div class="viewcode-block" id="Fraction.reduce"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.reduce"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Reduces the fraction by removing all common prime factors.&quot;&quot;&quot;</span>
         <span class="n">q</span> <span class="o">=</span> <span class="n">Prime</span><span class="o">.</span><span class="n">get_greatest_common_divisor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numerator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">numerator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">numerator</span> <span class="o">/</span> <span class="n">q</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">denominator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">denominator</span> <span class="o">/</span> <span class="n">q</span></div>
 
-<div class="viewcode-block" id="Fraction.clone"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.clone"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a copy of this instance.</span>
 
 <span class="sd">        :return: A new instance with the same value as this fraction.</span>
@@ -75,7 +77,7 @@
 
     <span class="c1"># Calculation Operators</span>
 
-<div class="viewcode-block" id="Fraction.__add__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__add__">[docs]</a>    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__add__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__add__">[docs]</a>    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds an integer or another fraction to this instance and returns the result.</span>
 
 <span class="sd">        :param other: The other value to add; it can be a Fraction, int or long.</span>
@@ -88,7 +90,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Fraction.__radd__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__radd__">[docs]</a>    <span class="k">def</span> <span class="nf">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__radd__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__radd__">[docs]</a>    <span class="k">def</span> <span class="nf">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds an integer or another fraction to this instance and returns the result.</span>
 
 <span class="sd">        :param other: The other value to add; it can be a Fraction, int or long.</span>
@@ -96,7 +98,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Fraction.__sub__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__sub__">[docs]</a>    <span class="k">def</span> <span class="nf">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__sub__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__sub__">[docs]</a>    <span class="k">def</span> <span class="nf">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Subtracts an integer or another fraction from this instance and returns the result.</span>
 
 <span class="sd">        :param other: The other value to subtract; it can be a Fraction, int or long.</span>
@@ -104,7 +106,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="o">-</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Fraction.__rsub__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__rsub__">[docs]</a>    <span class="k">def</span> <span class="nf">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__rsub__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__rsub__">[docs]</a>    <span class="k">def</span> <span class="nf">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Subtracts this instance from an integer or another fraction and returns the result.</span>
 
 <span class="sd">        :param other: The other value to subtract from; it can be a Fraction, int or long.</span>
@@ -112,7 +114,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="o">-</span><span class="bp">self</span> <span class="o">+</span> <span class="n">other</span></div>
 
-<div class="viewcode-block" id="Fraction.__mul__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__mul__">[docs]</a>    <span class="k">def</span> <span class="nf">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__mul__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__mul__">[docs]</a>    <span class="k">def</span> <span class="nf">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Multiplies an integer or another fraction with this instance and returns the result.</span>
 
 <span class="sd">        :param other: The other value to multiply with; it can be a Fraction, int or long.</span>
@@ -124,7 +126,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Fraction.__rmul__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__rmul__">[docs]</a>    <span class="k">def</span> <span class="nf">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__rmul__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__rmul__">[docs]</a>    <span class="k">def</span> <span class="nf">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Multiplies an integer or another fraction with this instance and returns the result.</span>
 
 <span class="sd">        :param other: The other value to multiply with; it can be a Fraction, int or long.</span>
@@ -132,7 +134,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Fraction.__div__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__div__">[docs]</a>    <span class="k">def</span> <span class="nf">__div__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__div__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__div__">[docs]</a>    <span class="k">def</span> <span class="nf">__div__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Divides this instance by an integer or another fraction and returns the result.</span>
 
 <span class="sd">        :param other: The other value to divide with; it can be a Fraction, int or long.</span>
@@ -144,7 +146,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__div__</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Fraction.__rdiv__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__rdiv__">[docs]</a>    <span class="k">def</span> <span class="nf">__rdiv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__rdiv__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__rdiv__">[docs]</a>    <span class="k">def</span> <span class="nf">__rdiv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Divides an integer or another fraction with this instance and returns the result.</span>
 
 <span class="sd">        :param other: The other value to divide; it can be a Fraction, int or long.</span>
@@ -156,7 +158,7 @@
             <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">__div__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Fraction.__neg__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__neg__">[docs]</a>    <span class="k">def</span> <span class="nf">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__neg__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__neg__">[docs]</a>    <span class="k">def</span> <span class="nf">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Negates the value of this instance and returns it.</span>
 
 <span class="sd">        :return: A new Fraction instance with the negated value of this instance</span>
@@ -165,7 +167,7 @@
 
     <span class="c1"># Equality Operators</span>
 
-<div class="viewcode-block" id="Fraction.__eq__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__eq__">[docs]</a>    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__eq__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__eq__">[docs]</a>    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Compares this Fraction with another Fraction, float, int or long for value-equality.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction, float, int or long</span>
@@ -181,7 +183,7 @@
         <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span> <span class="o">-</span> <span class="n">other</span>
         <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">numerator</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">a</span><span class="o">.</span><span class="n">denominator</span> <span class="o">!=</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="Fraction.__ne__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__ne__">[docs]</a>    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__ne__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__ne__">[docs]</a>    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Compares this Fraction with another Fraction, float, int or long for value-inequality.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction, float, int or long</span>
@@ -189,7 +191,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Fraction.__lt__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__lt__">[docs]</a>    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__lt__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__lt__">[docs]</a>    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is less then another value.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction float, int or long</span>
@@ -205,7 +207,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">numerator</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span> \
             <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">numerator</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Fraction.__le__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__le__">[docs]</a>    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__le__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__le__">[docs]</a>    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is less or equal than another value.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction float, int or long</span>
@@ -213,7 +215,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__lt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Fraction.__gt__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__gt__">[docs]</a>    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__gt__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__gt__">[docs]</a>    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is greater than another value.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction float, int or long</span>
@@ -221,7 +223,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__le__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Fraction.__ge__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__ge__">[docs]</a>    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__ge__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__ge__">[docs]</a>    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Checks if the value of this instance is greater or equal than another value.</span>
 
 <span class="sd">        :param other: The other value to compare with; it can be another Fraction float, int or long</span>
@@ -231,7 +233,7 @@
 
     <span class="c1"># Type conversation</span>
 
-<div class="viewcode-block" id="Fraction.__str__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__str__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a string representation for this instance.</span>
 
 <span class="sd">        :return: * &quot;NaN&quot; if the denominator is 0;</span>
@@ -247,7 +249,7 @@
             <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numerator</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numerator</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; / &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Fraction.__float__"><a class="viewcode-back" href="../fraction.html#bruch.Fraction.__float__">[docs]</a>    <span class="k">def</span> <span class="nf">__float__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Fraction.__float__"><a class="viewcode-back" href="../fraction.html#fraction.Fraction.__float__">[docs]</a>    <span class="k">def</span> <span class="nf">__float__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Converts the value of this instance into a float-value. The result must not be exact.</span>
 
 <span class="sd">        :return: A approximated float-value of this instances value.</span>
