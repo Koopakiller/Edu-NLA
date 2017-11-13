@@ -1,6 +1,25 @@
 from __future__ import print_function
-from decimal import *
 import time
+import numpy as np
+
+
+# Helper Methods for an unique style
+
+def separator1():
+    print()
+    print("-----------------------------------------------------------")
+    print()
+
+
+def separator2():
+    print()
+    print()
+    print("===========================================================")
+    print()
+    print()
+
+
+# Implementation
 
 class Sum:
 
@@ -30,99 +49,118 @@ class Sum:
         return pos + neg
 
 
-def get_harmonic_series_addends(k):
-    result = []
-    for i in range(1, k + 1):
-        result.append(Decimal(1) / Decimal(i))
-    return result
+class TestRunner:
 
+    def __init__(self, delegate):
+        self.delegate = delegate
 
-def factorial(k):
-    result = Decimal(1)
-    for i in range(2, k + 1):
-        result *= k
-    return result
+    def get_harmonic_series_addends(self, k):
+        result = []
+        for i in range(1, k + 1):
+            result.append(self.delegate(1) / self.delegate(i))
+        return result
 
+    def factorial(self, k):
+        result = self.delegate(1)
+        for i in range(2, k + 1):
+            result *= k
+        return result
 
-def get_e_taylor_series_addends(x, k):
-    result = []
-    for i in range(1, k + 1):
-        result.append((x ** Decimal(i)) / factorial(i))
-    return result
+    def get_e_taylor_series_addends(self, x, k):
+        result = []
+        for i in range(1, k + 1):
+            result.append((x ** self.delegate(i)) / self.factorial(i))
+        return result
 
+    def get_e_taylor_series_2_addends(self, x, k):
+        result = []
+        for i in range(1, k + 1):
+            result.append((1 if i % 2 == 0 else -1)
+                          * (x ** i)
+                          / self.factorial(i))
+        return result
 
-def get_e_taylor_series_2_addends(x, k):
-    result = []
-    for i in range(1, k + 1):
-        result.append((1 if i % 2 == 0 else -1)
-                      * (x ** i)
-                      / factorial(i))
-    return result
+    def run_test(self):
+
+        s = Sum()
+        k_set = map(lambda y: 2**y, range(1, 21))
+
+        print("Partial sum of harmonic series")
+        print()
+
+        for k in k_set:
+            start = time.clock()
+            addends = self.get_harmonic_series_addends(k)
+            print("k = " + str(k))
+            r1 = s.sum_indices(addends)
+            print("   added by indices: " + str(r1))
+            r2 = s.sum_ordered(addends)
+            print("   added by size:    " + str(r2))
+            print(" > elapsed time: " + str(time.clock() - start) + "s")
+            print()
+
+        separator1()
+
+        k_set = map(lambda y: 2**y, range(1, 13))
+
+        print("First Taylor series to approximate e^x")
+        print()
+
+        for x in [-20, -1, 1, 20]:
+            for k in k_set:
+                start = time.clock()
+                addends = self.get_e_taylor_series_addends(self.delegate(x), k)
+                print("x = " + str(x) + ", k = " + str(k))
+                r1 = s.sum_indices(addends)
+                print("   added by indices: " + str(r1))
+                r2 = s.sum_ordered(addends)
+                print("   added by size:    " + str(r2))
+                r3 = s.sum_ordered_grouped_by_sign(addends)
+                print("   added by sign:    " + str(r3))
+                print(" > elapsed time: " + str(time.clock() - start) + "s")
+                print()
+            print()
+
+        separator1()
+
+        print("Second Taylor series to approximate e^x")
+        print()
+
+        for x in [-20, -1, 1, 20]:
+            for k in k_set:
+                start = time.clock()
+                addends = self.get_e_taylor_series_2_addends(self.delegate(x), k)
+                print("x = " + str(x) + ", k = " + str(k))
+                r1 = s.sum_indices(addends)
+                print("   added by indices: " + str(r1))
+                r2 = s.sum_ordered(addends)
+                print("   added by size:    " + str(r2))
+                r3 = s.sum_ordered_grouped_by_sign(addends)
+                print("   added by sign:    " + str(r3))
+                print(" > elapsed time: " + str(time.clock() - start) + "s")
+                print()
+            print()
 
 
 def main():
-
-    s = Sum()
-    k_set = map(lambda y: 2**y, range(1, 21))
-
-    print("Partial sum of harmonic series")
-
-    for k in k_set:
-        start = time.clock()
-        addends = get_harmonic_series_addends(Decimal(k))
-        print("k = " + str(k))
-        r1 = s.sum_indices(addends)
-        print("   added by indices: " + str(r1))
-        r2 = s.sum_ordered(addends)
-        print("   added by size:    " + str(r2))
-        print(" > elapsed time: " + str(time.clock() - start) + "s")
-        print()
-
+    print("Test with numpy.float16")
     print()
-    print("==================================================================")
+    runner = TestRunner(lambda x: np.float16(x))
+    runner.run_test()
+
+    separator2()
+
+    print("Test with numpy.float32")
     print()
+    runner = TestRunner(lambda x: np.float32(x))
+    runner.run_test()
 
-    k_set = map(lambda y: 2**y, range(1, 13))
+    separator2()
 
-    print("First Taylor series to approximate e^x")
-
-    for x in [-20, -1, 1, 20]:
-        for k in k_set:
-            start = time.clock()
-            addends = get_e_taylor_series_addends(Decimal(x), Decimal(k))
-            print("x = " + str(x) + ", k = " + str(k))
-            r1 = s.sum_indices(addends)
-            print("   added by indices: " + str(r1))
-            r2 = s.sum_ordered(addends)
-            print("   added by size:    " + str(r2))
-            r3 = s.sum_ordered_grouped_by_sign(addends)
-            print("   added by sign:    " + str(r3))
-            print(" > elapsed time: " + str(time.clock() - start) + "s")
-            print()
-        print()
-
+    print("Test with numpy.float64")
     print()
-    print("==================================================================")
-    print()
-
-    print("Second Taylor series to approximate e^x")
-
-    for x in [-20, -1, 1, 20]:
-        for k in k_set:
-            start = time.clock()
-            addends = get_e_taylor_series_2_addends(Decimal(x), Decimal(k))
-            print("x = " + str(x) + ", k = " + str(k))
-            r1 = s.sum_indices(addends)
-            print("   added by indices: " + str(r1))
-            r2 = s.sum_ordered(addends)
-            print("   added by size:    " + str(r2))
-            r3 = s.sum_ordered_grouped_by_sign(addends)
-            print("   added by sign:    " + str(r3))
-            print(" > elapsed time: " + str(time.clock() - start) + "s")
-            print()
-        print()
-
-
+    runner = TestRunner(lambda x: np.float64(x))
+    runner.run_test()
 
 if __name__ == "__main__":
     main()
