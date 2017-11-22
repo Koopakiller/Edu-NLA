@@ -14,14 +14,6 @@ class Bruch(Fraction):
     For UnitTests see FractionTests.
     """
 
-    def __init__(self, zaehler, nenner):
-        """Initializes a  new instance.
-
-        :param zaehler: The numerator of the instance to crate.
-        :param nenner: The denominator of the instance to create.
-        """
-        Fraction.__init__(zaehler, nenner)
-
 
 def run_test(class_name, fx):
     """Runs a given unit-test and prints the result.
