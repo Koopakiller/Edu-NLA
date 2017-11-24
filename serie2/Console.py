@@ -91,16 +91,21 @@ def read_yesno(msg="[Y/n]", error_msg="Unrecognized input!", default_input=None)
     return read_yesno(msg, error_msg)
 
 
-def read_integer_list_in_range(msg=None, minimum=None, maximum=None):
+def read_integer_list_in_range(msg=None, minimum=None, maximum=None, default_if_empty=None):
     """
     Asks the user to input a list of integers.
 
     :param msg: The message, displayed to the user.
     :param minimum: The smallest number the list can contain.
     :param maximum: The greatest number the list can contain.
+    :param default_if_empty: The value to return if the user typed an empty string.
     :return: An array of integers, typed by the user.
     """
     input = raw_input(msg)
+
+    if len(input) == 0:
+        return default_if_empty
+
     result = []
 
     for str in input.split(","):
