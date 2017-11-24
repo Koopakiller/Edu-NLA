@@ -1,69 +1,25 @@
+# Authors: Tom Lambert (lambertt) and Yuuma Odaka-Falush (odafaluy)
+
+
 from __future__ import print_function
 import time
 import numpy as np
+import Console as Console
+import Sum as Sum
 
 
-# Helper Methods for an unique style
-
-def separator1():
-    print()
-    print("-----------------------------------------------------------")
-    print()
-
-
-def separator2():
-    print()
-    print()
-    print("===========================================================")
-    print()
-    print()
-
-
-# Implementation
-
-class Sum:
-    """Provides implementations of summation algorithms"""
-
-    def __init__(self):
-        pass
-
-    def sum_indices(self, addends):
-        """
-        Sums the given addends, starting by the first number and following the list
-        """
-        result = 0
-        for addend in addends:
-            result += addend
-        return result
-
-    def sum_ordered(self, addends):
-        """
-        Sums the given addends, starting be the smallest and following the natural order.
-        """
-        result = 0
-        for addend in sorted(addends):
-            result += addend
-        return result
-
-    def sum_ordered_grouped_by_sign(self, addends):
-        """
-        Sums the given addends; All negative and all positive values are added separately
-        and will be added together in the last step.
-        """
-        pos = 0
-        neg = 0
-        for addend in sorted(addends):
-            if addend > 0:
-                pos += addend
-            if addend < 0:
-                neg += addend
-        return pos + neg
-
-
-class TestRunner:
+class AddendGenerator:
 
     def __init__(self, delegate):
         self.delegate = delegate
+
+
+    def factorial(self, k):
+        result = self.delegate(1)
+        for i in range(2, k + 1):
+            result *= i
+        return result
+
 
     def get_harmonic_series_addends(self, k):
         result = []
@@ -71,121 +27,116 @@ class TestRunner:
             result.append(self.delegate(1) / self.delegate(i))
         return result
 
-    def factorial(self, k):
-        result = self.delegate(1)
-        for i in range(2, k + 1):
-            result *= k
-        return result
-
-    def get_e_taylor_series_addends(self, x, k):
+    def get_e_taylor_series_1_addends(self, x, k):
         result = []
         for i in range(1, k + 1):
-            result.append((x ** self.delegate(i)) / self.factorial(i))
+            result.append((self.delegate(x) ** self.delegate(i)) / self.factorial(i))
         return result
 
     def get_e_taylor_series_2_addends(self, x, k):
         result = []
         for i in range(1, k + 1):
-            result.append((1 if i % 2 == 0 else -1)
-                          * (x ** i)
-                          / self.factorial(i))
+            result.append(self.delegate(1 if i % 2 == 0 else -1)
+                          * (self.delegate(x) ** self.delegate(i))
+                          / self.delegate(self.factorial(i)))
         return result
-
-    def run_harmonic_series_test(self):
-
-        s = Sum()
-        k_set = map(lambda y: 2**y, range(1, 26))
-
-        print("Partial sum of harmonic series")
-        print()
-
-        for k in k_set:
-            start = time.clock()
-            addends = self.get_harmonic_series_addends(k)
-            print("k = " + str(k))
-            r1 = s.sum_indices(addends)
-            print("   added by indices: " + str(r1))
-            r2 = s.sum_ordered(addends)
-            print("   added by size:    " + str(r2))
-            print(" > elapsed time: " + str(time.clock() - start) + "s")
-            print()
-
-    def run_taylor_e_test_1(self):
-        s = Sum()
-        k_set = map(lambda y: 2**y, range(1, 13))
-
-        print("First Taylor series to approximate e^x")
-        print()
-
-        for x in [-20, -1, 1, 20]:
-            for k in k_set:
-                start = time.clock()
-                addends = self.get_e_taylor_series_addends(self.delegate(x), k)
-                print("x = " + str(x) + ", k = " + str(k))
-                r1 = s.sum_indices(addends)
-                print("   added by indices: " + str(r1))
-                r2 = s.sum_ordered(addends)
-                print("   added by size:    " + str(r2))
-                r3 = s.sum_ordered_grouped_by_sign(addends)
-                print("   added by sign:    " + str(r3))
-                print(" > elapsed time: " + str(time.clock() - start) + "s")
-                print()
-            print()
-
-    def run_taylor_e_test_2(self):
-        s = Sum()
-        k_set = map(lambda y: 2**y, range(1, 13))
-
-        print("Second Taylor series to approximate e^x")
-        print()
-
-        for x in [-20, -1, 1, 20]:
-            for k in k_set:
-                start = time.clock()
-                addends = self.get_e_taylor_series_2_addends(self.delegate(x), k)
-                print("x = " + str(x) + ", k = " + str(k))
-                r1 = self.delegate(1) / s.sum_indices(addends)
-                print("   added by indices: " + str(r1))
-                r2 = self.delegate(1) / s.sum_ordered(addends)
-                print("   added by size:    " + str(r2))
-                r3 = self.delegate(1) / s.sum_ordered_grouped_by_sign(addends)
-                print("   added by sign:    " + str(r3))
-                print(" > elapsed time: " + str(time.clock() - start) + "s")
-                print()
-            print()
-
-    def run_test(self):
-
-        self.run_harmonic_series_test()
-
-        separator1()
-
-        self.run_taylor_e_test_1()
-
-        separator1()
-
-        self.run_taylor_e_test_2()
 
 
 def main():
-    print("Test with numpy.float16")
-    print()
-    runner = TestRunner(lambda x: np.float16(x))
-    runner.run_test()
 
-    separator2()
+    while True:
 
-    print("Test with numpy.float32")
-    print()
-    runner = TestRunner(lambda x: np.float32(x))
-    runner.run_test()
+        print("This program calculates sums.")
+        print(" [0] Exit")
+        print(" [1] Calculate partial sum of harmonic series")
+        print(" [2] Calculate Taylor series for e^x")
 
-    separator2()
+        kind = Console.read_integer_interval("Your Choose: ", "Please input 1 or 2", 0, 2)
 
-    print("Test with numpy.float64")
-    print()
-    runner = TestRunner(lambda x: np.float64(x))
-    runner.run_test()
+        if kind==0:
+            return
+
+        print("")
+        print("How many addends do you like to sum? You can specify multiple values separated by comma (,)")
+        addend_counts = Console.read_integer_list_in_range("", 1, None)
+
+        x_values = []
+        if kind == 2:
+            print()
+            print("Which x in e^x do you want to calculate? You can specify multiple values separated by comma (,)")
+            x_values = Console.read_integer_list_in_range("", None, None)
+
+        print()
+        print("Which type do you like to use for the calculation? You can specify multiple values separated by comma (,)")
+        print(" [1] Numpy.float16")
+        print(" [2] Numpy.float32")
+        print(" [3] Numpy.float64")
+        types = Console.read_integer_list_in_range("", 1, 3)
+
+
+        Console.print_separator1()
+
+
+        for type in types:
+            delegate = [lambda y: np.float16(y), lambda y: np.float32(y), lambda y: np.float64(y)][type - 1]
+            type_name = ["float16", "float32", "float64"][type - 1]
+
+            for addend_count in addend_counts:
+
+                ag = AddendGenerator(delegate)
+
+                if kind==1:
+                    print("Type: {0}; Addend Count: {1}".format(type_name, addend_count))
+
+                    start = time.clock()
+
+                    addends = ag.get_harmonic_series_addends(addend_count)
+                    r1 = Sum.sum_indices(addends)
+                    print("   added by indices: " + str(r1))
+                    r2 = Sum.sum_ordered(addends)
+                    print("   added by size:    " + str(r2))
+                    r3 = Sum.sum_ordered_grouped_by_sign(addends)
+                    print("   added by sign:    " + str(r3))
+
+                    print(" > elapsed time: " + str(time.clock() - start) + "s")
+                    print()
+
+                if kind==2:
+                    for x in x_values:
+                        print("Type: {0}; Addend Count: {1}; x = {2}".format(type_name, addend_count, x))
+
+                        start = time.clock()
+
+                        print("Algorithm 1:")
+                        addends = ag.get_e_taylor_series_1_addends(x, addend_count)
+                        r1 = Sum.sum_indices(addends)
+                        print("   added by indices: " + str(r1))
+                        r2 = Sum.sum_ordered(addends)
+                        print("   added by size:    " + str(r2))
+                        r3 = Sum.sum_ordered_grouped_by_sign(addends)
+                        print("   added by sign:    " + str(r3))
+
+                        print(" > elapsed time: " + str(time.clock() - start) + "s")
+                        print()
+
+                        start = time.clock()
+
+                        print("Algorithm 2:")
+                        addends = ag.get_e_taylor_series_2_addends(x, addend_count)
+                        r1 = delegate(1) / Sum.sum_indices(addends)
+                        print("   added by indices: " + str(r1))
+                        r2 = delegate(1) / Sum.sum_ordered(addends)
+                        print("   added by size:    " + str(r2))
+                        r3 = delegate(1) / Sum.sum_ordered_grouped_by_sign(addends)
+                        print("   added by sign:    " + str(r3))
+
+                        print(" > elapsed time: " + str(time.clock() - start) + "s")
+                        print()
+                    Console.print_separator3()
+
+            Console.print_separator2()
+
+        Console.print_separator1()
 
 if __name__ == "__main__":
     main()
