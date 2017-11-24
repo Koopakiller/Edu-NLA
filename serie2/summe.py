@@ -95,8 +95,8 @@ def main():
             print("Press [Enter] to use 1,2,5,10,100,1000,330000,1000000")
             addend_counts = Console.read_integer_list_in_range("", 1, None, [1,2,5,10,100,1000,330000, 1000000])
         if kind == 2:
-            print("Press [Enter] to use 1,2,5,10,100,1000,100000")
-            addend_counts = Console.read_integer_list_in_range("", 1, None, [1,2,5,10,100,1000,100000])
+            print("Press [Enter] to use 1,2,5,10,100,1000,10000")
+            addend_counts = Console.read_integer_list_in_range("", 1, None, [1,2,5,10,100,1000,10000])
 
         x_values = []
         if kind == 2:
