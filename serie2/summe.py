@@ -9,12 +9,24 @@ import Sum as Sum
 
 
 class AddendGenerator:
+    """Provides algorithms to generate addends for series."""
 
     def __init__(self, delegate):
+        """
+        Initializes a new instance of this class.
+
+        :param delegate: A function which creates a numeric type to use in the calculation from a given value x.
+        """
         self.delegate = delegate
 
 
     def factorial(self, k):
+        """
+        Calculates the factorial of k.
+
+        :param k: An integer or long to calculate its factorial.
+        :return: The factorial of Parameter k.
+        """
         result = self.delegate(1)
         for i in range(2, k + 1):
             result *= i
@@ -22,18 +34,38 @@ class AddendGenerator:
 
 
     def get_harmonic_series_addends(self, k):
+        """
+        Calculates addends for an harmonic series.
+
+        :param k: The number of addends to generate.
+        :return: An array of all generated addends.
+        """
         result = []
         for i in range(1, k + 1):
             result.append(self.delegate(1) / self.delegate(i))
         return result
 
     def get_e_taylor_series_1_addends(self, x, k):
+        """
+        Calculates addends for a Taylor series to calculate e^x.
+
+        :param x: The x to use to calculate e^x.
+        :param k: The number of addends to generate.
+        :return: An array of all generated addends.
+        """
         result = []
         for i in range(1, k + 1):
             result.append((self.delegate(x) ** self.delegate(i)) / self.factorial(i))
         return result
 
     def get_e_taylor_series_2_addends(self, x, k):
+        """
+        Calculates addends for a Taylor series to calculate e^x. The sum of the result-array is the reciprocal of e^x.
+
+        :param x: The x to use to calculate e^x.
+        :param k: The number of addends to generate.
+        :return: An array of all generated addends.
+        """
         result = []
         for i in range(1, k + 1):
             result.append(self.delegate(1 if i % 2 == 0 else -1)
@@ -43,6 +75,7 @@ class AddendGenerator:
 
 
 def main():
+    """Executes the main program including user-interaction"""
 
     while True:
 

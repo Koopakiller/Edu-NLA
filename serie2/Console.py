@@ -2,18 +2,21 @@
 
 
 def print_separator3():
+    """Prints a visual separator for Header 3"""
     print("")
     print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
     print("")
 
 
 def print_separator2():
+    """Prints a visual separator for Header 2"""
     print("")
     print("--------------------------------------------------------------------------")
     print("")
 
 
 def print_separator1():
+    """Prints a visual separator for Header 1"""
     print("")
     print("")
     print("==========================================================================================")
@@ -24,6 +27,7 @@ def print_separator1():
 def read_integer(msg=None, error_msg=None):
     """
     Asks the user for an integer value (int or long)
+
     :param msg: The message, displayed to the user.
     :param error_msg: The message, displayed to the user, in case he did not entered a valid int or long.
     :return: An int or a long from the user.
@@ -48,6 +52,7 @@ def read_integer(msg=None, error_msg=None):
 def read_integer_interval(msg=None, error_msg=None, minimum=None, maximum=None):
     """
     Asks the user for an integer value (int or long)
+
     :param msg: The message, displayed to the user.
     :param error_msg: The message, displayed to the user, in case he did not entered a valid int or long.
     :param minimum: The minimum for the returned value. This border is ignored if this parameter is None.
@@ -67,6 +72,7 @@ def read_integer_interval(msg=None, error_msg=None, minimum=None, maximum=None):
 def read_yesno(msg="[Y/n]", error_msg="Unrecognized input!", default_input=None):
     """
     Asks the user to input yes or no.
+
     :param msg: The message, displayed to the user.
     :param error_msg: The message, displayed to the user, in case he did not entered "y", "yes", "n" or "no".
     :param default_input: The value to return, in case the user entered "". Pass None to ask the user again.
@@ -86,6 +92,14 @@ def read_yesno(msg="[Y/n]", error_msg="Unrecognized input!", default_input=None)
 
 
 def read_integer_list_in_range(msg=None, minimum=None, maximum=None):
+    """
+    Asks the user to input a list of integers.
+
+    :param msg: The message, displayed to the user.
+    :param minimum: The smallest number the list can contain.
+    :param maximum: The greatest number the list can contain.
+    :return: An array of integers, typed by the user.
+    """
     input = raw_input(msg)
     result = []
 
