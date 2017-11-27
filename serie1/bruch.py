@@ -8,6 +8,8 @@ from fraction_tests import test_fraction
 from prime_tests import test_prime
 from fraction import Fraction
 
+import user
+
 
 class Bruch(Fraction):
     """A derivative of the Fraction-class without other implementations.
@@ -40,12 +42,15 @@ def run_test(class_name, fx):
 def main():
     """The main program. It runs unittests to test the main-modules."""
     print("The implemented unit tests will be executed.")
-    print
+    print("")
     run_test("Fraction", test_fraction)
-    print
+    print("")
     run_test("Prime", test_prime)
-    print
+    print("")
     print("All tests run.")
+    print("")
+
+    user.main()
 
 
 if __name__ == "__main__":
