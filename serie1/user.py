@@ -32,6 +32,10 @@ def main():
         else:
             b = long(b)
 
+    print("")
+    if not isinstance(a, Fraction) and not isinstance(b, Fraction):
+        print("Neither the first nor the second operator is a fraction...")
+
     if show_basic_ops:
         print_operation(a, " +", b, a + b)
         print_operation(a, " -", b, a - b)
