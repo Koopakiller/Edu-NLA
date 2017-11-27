@@ -39,12 +39,12 @@ def read_integer(msg=None, error_msg=None):
 
     try:
         return int(res)
-    except TypeError or ValueError:
+    except (TypeError, ValueError):
         pass
 
     try:
         return long(res)
-    except TypeError or ValueError:
+    except (TypeError, ValueError):
         pass
 
     if error_msg is not None:
@@ -115,7 +115,7 @@ def read_integer_list_in_range(msg=None, minimum=None, maximum=None, default_if_
 
         try:
             value = long(s)
-        except TypeError or ValueError:
+        except (TypeError, ValueError):
             print("{0} is not an integer. Try Again.".format(s))
             return read_integer_list_in_range(msg, minimum, maximum)
 
@@ -144,7 +144,7 @@ def read_decimal(msg, error_msg=None):
 
     try:
         return Decimal(res)
-    except TypeError or ValueError:
+    except (TypeError, ValueError):
         pass
 
     if error_msg is not None:
@@ -164,7 +164,7 @@ def read_float(msg, error_msg=None):
 
     try:
         return float(res)
-    except TypeError or ValueError:
+    except (TypeError, ValueError):
         pass
 
     if error_msg is not None:
