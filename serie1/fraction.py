@@ -22,9 +22,12 @@ class Fraction:
 
     def reduce(self):
         """Reduces the fraction by removing all common prime factors."""
-        q = Prime.get_greatest_common_divisor(self.numerator, self.denominator)
-        self.numerator = self.numerator / q
-        self.denominator = self.denominator / q
+        if self.denominator == 0:
+            self.numerator = 1
+        else:
+            q = Prime.get_greatest_common_divisor(self.numerator, self.denominator)
+            self.numerator = self.numerator / q
+            self.denominator = self.denominator / q
 
     def clone(self):
         """Creates a copy of this instance.
