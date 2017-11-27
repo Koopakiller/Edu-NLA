@@ -12,7 +12,7 @@ def main():
     show_comparison = True
     show_basic_ops = True
 
-    if Console.read_yesno("The first operator, is it another fraction? [Y/n] ", default_input=True):
+    if Console.read_yesno("Is the first operand a fraction? [Y/n] ", default_input=True):
         x1 = Console.read_integer("Please enter the numerator of the first fraction: ")
         x2 = Console.read_integer("Next, enter the denominator of the first fraction: ")
         a = Fraction(x1, x2)
@@ -23,7 +23,7 @@ def main():
         else:
             a = long(a)
 
-    if Console.read_yesno("The second operator, is it another fraction? [Y/n] ", default_input=True):
+    if Console.read_yesno("Is the second operand a fraction? [Y/n] ", default_input=True):
         x1 = Console.read_integer("Please enter the numerator of the second fraction: ")
         x2 = Console.read_integer("Lastly, enter the denominator of the second fraction: ")
         b = Fraction(x1, x2)
