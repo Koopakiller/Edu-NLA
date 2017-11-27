@@ -7,15 +7,19 @@ def print_operation(a, operator, b, result):
 
 
 def main():
-
-    x1 = Console.read_integer("Please enter two fractions. They may be improper. First, enter the numerator of the "
-                              "first fraction: ")
-    x2 = Console.read_integer("Next, enter the denominator of the second fraction: ")
-
-    a = Fraction(x1, x2)
-
     show_comparison = True
     show_basic_ops = True
+
+    if Console.read_yesno("The first operator, is it another fraction? [Y/n] "):
+        x1 = Console.read_integer("Please enter the numerator of the first fraction: ")
+        x2 = Console.read_integer("Next, enter the denominator of the first fraction: ")
+        a = Fraction(x1, x2)
+    else:
+        a = Console.read_float("Please enter a float or integer value: ")
+        if long(a) != a:
+            show_basic_ops = False
+        else:
+            a = long(a)
 
     if Console.read_yesno("The second operator, is it another fraction? [Y/n] "):
         x1 = Console.read_integer("Please enter the numerator of the second fraction: ")
@@ -41,3 +45,7 @@ def main():
         print_operation(a, "<=", b, a <= b)
         print_operation(a, ">=", b, a >= b)
         print_operation(a, "!=", b, a != b)
+
+
+if __name__ == "__main__":
+    main()
