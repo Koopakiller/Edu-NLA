@@ -1,0 +1,65 @@
+\begin{sphinxtheindex}
+\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+
+  \bigletter {Symbols}
+  \item \_\_add\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_div\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_eq\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_float\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_ge\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_gt\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_init\_\_() (bruch.Bruch method), \hyperpage{5}
+  \item \_\_init\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_init\_\_() (prime.Prime method), \hyperpage{8}
+  \item \_\_le\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_lt\_\_() (fraction.Fraction method), \hyperpage{6}
+  \item \_\_mul\_\_() (fraction.Fraction method), \hyperpage{7}
+  \item \_\_ne\_\_() (fraction.Fraction method), \hyperpage{7}
+  \item \_\_neg\_\_() (fraction.Fraction method), \hyperpage{7}
+  \item \_\_radd\_\_() (fraction.Fraction method), \hyperpage{7}
+  \item \_\_rdiv\_\_() (fraction.Fraction method), \hyperpage{7}
+  \item \_\_rmul\_\_() (fraction.Fraction method), \hyperpage{7}
+  \item \_\_rsub\_\_() (fraction.Fraction method), \hyperpage{7}
+  \item \_\_str\_\_() (fraction.Fraction method), \hyperpage{7}
+  \item \_\_sub\_\_() (fraction.Fraction method), \hyperpage{7}
+
+  \indexspace
+  \bigletter A
+  \item append\_next\_to\_cache() (prime.Prime static method), \hyperpage{8}
+
+  \indexspace
+  \bigletter B
+  \item Bruch (class in bruch), \hyperpage{5}
+  \item bruch (module), \hyperpage{5}
+
+  \indexspace
+  \bigletter C
+  \item cache (prime.Prime attribute), \hyperpage{8}
+  \item clone() (fraction.Fraction method), \hyperpage{8}
+
+  \indexspace
+  \bigletter F
+  \item Fraction (class in fraction), \hyperpage{6}
+  \item fraction (module), \hyperpage{6}
+
+  \indexspace
+  \bigletter G
+  \item get\_greatest\_common\_divisor() (prime.Prime static method), \hyperpage{8}
+  \item get\_prime() (prime.Prime static method), \hyperpage{8}
+  \item get\_prime\_factors() (prime.Prime static method), \hyperpage{8}
+
+  \indexspace
+  \bigletter M
+  \item main() (in module bruch), \hyperpage{5}
+
+  \indexspace
+  \bigletter P
+  \item Prime (class in prime), \hyperpage{8}
+  \item prime (module), \hyperpage{8}
+
+  \indexspace
+  \bigletter R
+  \item reduce() (fraction.Fraction method), \hyperpage{8}
+  \item run\_test() (in module bruch), \hyperpage{5}
+
+\end{sphinxtheindex}
