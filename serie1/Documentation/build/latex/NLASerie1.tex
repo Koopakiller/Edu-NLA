@@ -54,7 +54,7 @@
 
 
 \title{NLA Serie 1 Documentation}
-\date{Nov 23, 2017}
+\date{Nov 27, 2017}
 \release{1.0}
 \author{Tom Lambert, Yuuma Odaka-Falush}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -68,35 +68,33 @@
 \phantomsection\label{\detokenize{index::doc}}
 
 
+
+\chapter{Welcome to NLA Series 1’s documentation!}
+\label{\detokenize{index:welcome-to-nla-series-1-s-documentation}}\label{\detokenize{index:nothing-to-see-here}}
 This is our implementation for Series 1, Numerical Linear Algebra.
+The task was to create a class which can create and execute operations on fractions.
+Operations include addition, subtraction, multiplication, division, equality and inequality.
+
 The main topic in the problem is object-oriented programming in Python, more specifically working with fractions.
 The following documentation explains how our class Fraction and its associated programs work.
 
 A number of automated unit tests were carried out to guarantee the correct execution of the Fraction and Prime classes.
 The tests were carried out in the implemented main program.
 
+We imported a number of python modules to support our implementation:
 
-\chapter{Indices and tables}
-\label{\detokenize{index:welcome-to-nla-series-1-s-documentation}}\label{\detokenize{index:indices-and-tables}}\begin{itemize}
-\item {} 
-\DUrole{xref,std,std-ref}{genindex}
+Console provided us with functions which make it easier to accept and process user inputs.
 
-\item {} 
-\DUrole{xref,std,std-ref}{modindex}
-
-\item {} 
-\DUrole{xref,std,std-ref}{search}
-
-\end{itemize}
+Numpy is a package that contains many useful mathematical functions.
 
 
-\chapter{Modules}
+\section{Modules}
 \label{\detokenize{index:modules}}
 
-\section{bruch module}
+\subsection{bruch module}
 \label{\detokenize{bruch::doc}}\label{\detokenize{bruch:bruch-module}}
 
-\subsection{Bruch class}
+\subsubsection{Bruch class}
 \label{\detokenize{bruch:bruch-class}}
 Bruch class exists only to fulfill the task. The actual implementation is in Fraction class.
 Bruch inherits from Fraction, thus it has all of the members of Fraction.
@@ -104,30 +102,11 @@ See {\hyperref[\detokenize{fraction:fraction-class}]{\sphinxcrossref{\DUrole{std
 \phantomsection\label{\detokenize{bruch:module-bruch}}\index{bruch (module)}\index{Bruch (class in bruch)}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{bruch:bruch.Bruch}}\pysiglinewithargsret{\sphinxbfcode{class }\sphinxcode{bruch.}\sphinxbfcode{Bruch}}{\emph{zaehler}, \emph{nenner}}{}
+\phantomsection\label{\detokenize{bruch:bruch.Bruch}}\pysiglinewithargsret{\sphinxbfcode{class }\sphinxcode{bruch.}\sphinxbfcode{Bruch}}{\emph{numerator}, \emph{denominator}}{}
 Bases: {\hyperref[\detokenize{fraction:fraction.Fraction}]{\sphinxcrossref{\sphinxcode{fraction.Fraction}}}}
 
 A derivative of the Fraction-class without other implementations.
 For UnitTests see FractionTests.
-\index{\_\_init\_\_() (bruch.Bruch method)}
-
-\begin{fulllineitems}
-\phantomsection\label{\detokenize{bruch:bruch.Bruch.__init__}}\pysiglinewithargsret{\sphinxbfcode{\_\_init\_\_}}{\emph{zaehler}, \emph{nenner}}{}
-Initializes a  new instance.
-\begin{quote}\begin{description}
-\item[{Parameters}] \leavevmode\begin{itemize}
-\item {} 
-\sphinxstyleliteralstrong{zaehler} \textendash{} The numerator of the instance to crate.
-
-\item {} 
-\sphinxstyleliteralstrong{nenner} \textendash{} The denominator of the instance to create.
-
-\end{itemize}
-
-\end{description}\end{quote}
-
-\end{fulllineitems}
-
 
 \end{fulllineitems}
 
@@ -163,16 +142,18 @@ A result-object with the result of the tests.
 
 
 
-\section{fraction module}
+\subsection{fraction module}
 \label{\detokenize{fraction:fraction-module}}\label{\detokenize{fraction::doc}}
 
-\subsection{Mathematical background}
+\subsubsection{Mathematical background}
 \label{\detokenize{fraction:mathematical-background}}
+A Fraction objects consists of its instance, a numerator and a denominator.
 All calculations obey the rules governing adding, subtracting, multiplying and dividing fractions.
+If the denominator of a fraction is 0, any calculations involivng it will return “NaN”.
 Subtraction and division default to modified addition and multiplication, and the greatest common divisors are always reduced.
 
 
-\subsection{Members of Fraction class}
+\subsubsection{Members of Fraction class}
 \label{\detokenize{fraction:members-of-fraction-class}}\label{\detokenize{fraction:fraction-class}}\label{\detokenize{fraction:module-fraction}}\index{fraction (module)}\index{Fraction (class in fraction)}
 
 \begin{fulllineitems}
@@ -500,16 +481,16 @@ Reduces the fraction by removing all common prime factors.
 
 
 
-\section{prime module}
+\subsection{prime module}
 \label{\detokenize{prime:prime-module}}\label{\detokenize{prime::doc}}
 
-\subsection{Mathematical background}
+\subsubsection{Mathematical background}
 \label{\detokenize{prime:mathematical-background}}
 Prime numbers are a special subset of the naturals.
 They can be effectively utilized to find the greatest common divisor of two numbers.
 
 
-\subsection{Members of Prime class}
+\subsubsection{Members of Prime class}
 \label{\detokenize{prime:module-prime}}\label{\detokenize{prime:members-of-prime-class}}\index{prime (module)}\index{Prime (class in prime)}
 
 \begin{fulllineitems}
@@ -604,7 +585,7 @@ An array of prime factors of num.
 
 
 
-\subsection{Remarks}
+\subsubsection{Remarks}
 \label{\detokenize{prime:remarks}}
 The generation of prime numbers is accelerated with a cache of already known prime numbers in the RAM.
 

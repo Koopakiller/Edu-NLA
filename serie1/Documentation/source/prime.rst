@@ -7,6 +7,7 @@ Mathematical background
 Prime numbers are a special subset of the naturals.
 They can be effectively utilized to find the greatest common divisor of two numbers.
 
+
 Members of Prime class
 ----------------------
 
