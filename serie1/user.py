@@ -3,7 +3,9 @@ import Console
 
 
 def print_operation(a, operator, b, result):
-    print("( ({0}) {1} ({2}) ) = {3}".format(a, operator, b, result))
+    str_a = "({0})" if isinstance(a, Fraction) else "{0}"
+    str_b = "({2})" if isinstance(b, Fraction) else "{2}"
+    print(("( " + str_a + " {1} " + str_b + " ) = {3}").format(a, operator, b, result))
 
 
 def main():
