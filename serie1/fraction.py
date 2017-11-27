@@ -43,7 +43,7 @@ class Fraction:
         """
         if isinstance(other, Fraction):
             return Fraction(self.numerator * other.denominator + other.numerator * self.denominator,
-                         self.denominator * other.denominator)
+                            self.denominator * other.denominator)
         if isinstance(other, int) or isinstance(other, long):
             return self.__add__(Fraction(other, 1))
         raise TypeError()
@@ -147,7 +147,7 @@ class Fraction:
         :param other: The other value to compare with; it can be another Fraction, float, int or long
         :return: False, if the values are equal; otherwise True.
         """
-        return not self.__eq__(other)
+        return not self.__eq__(other) and self.denominator != 0 and (not isinstance(other, Fraction) or other.denominator != 0)
 
     def __lt__(self, other):
         """Checks if the value of this instance is less then another value.
@@ -163,7 +163,7 @@ class Fraction:
             raise ValueError()
 
         return self.numerator * numpy.abs(other.denominator) * numpy.sign(self.denominator) \
-            < other.numerator * numpy.abs(self.denominator) * numpy.sign(other.denominator)
+               < other.numerator * numpy.abs(self.denominator) * numpy.sign(other.denominator)
 
     def __le__(self, other):
         """Checks if the value of this instance is less or equal than another value.
@@ -171,7 +171,7 @@ class Fraction:
         :param other: The other value to compare with; it can be another Fraction float, int or long
         :return: True if this instances value is less or equal then the other value; otherwise False.
         """
-        return self.__lt__(other) or self.__eq__(other)
+        return (self.__lt__(other) or self.__eq__(other)) and self.denominator != 0 and (not isinstance(other, Fraction) or other.denominator != 0)
 
     def __gt__(self, other):
         """Checks if the value of this instance is greater than another value.
@@ -179,7 +179,7 @@ class Fraction:
         :param other: The other value to compare with; it can be another Fraction float, int or long
         :return: True if this instances value is greater then the other value; otherwise False.
         """
-        return not self.__le__(other)
+        return not self.__le__(other) and self.denominator != 0 and (not isinstance(other, Fraction) or other.denominator != 0)
 
     def __ge__(self, other):
         """Checks if the value of this instance is greater or equal than another value.
@@ -187,7 +187,7 @@ class Fraction:
         :param other: The other value to compare with; it can be another Fraction float, int or long
         :return: True if this instances value is greater or equal then the other value; otherwise False.
         """
-        return not self.__lt__(other)
+        return not self.__lt__(other) and self.denominator != 0 and (not isinstance(other, Fraction) or other.denominator != 0)
 
     # Type conversation
 
