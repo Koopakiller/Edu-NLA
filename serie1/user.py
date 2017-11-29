@@ -12,7 +12,6 @@ def print_intro():
     print("This program is the implementation of Series 1. "
           "This program was written to test and use the Fraction class. "
           "A ready-made set of inputs will be processed if the user chooses the appropriate option.")
-    # TODO: complete
 
 
 def get_test_values_from_user():
