@@ -10,6 +10,7 @@ def sum_indices(addends):
         result += addend
     return result
 
+
 def sum_ordered(addends):
     """
     Sums the given addends, starting by the smallest and following the natural order.
@@ -18,6 +19,7 @@ def sum_ordered(addends):
     for addend in sorted(addends):
         result += addend
     return result
+
 
 def sum_ordered_grouped_by_sign(addends):
     """

@@ -19,7 +19,6 @@ class AddendGenerator:
         """
         self.delegate = delegate
 
-
     def factorial(self, k):
         """
         Calculates the factorial of k.
@@ -31,7 +30,6 @@ class AddendGenerator:
         for i in range(2, k + 1):
             result *= i
         return result
-
 
     def get_harmonic_series_addends(self, k):
         """
@@ -86,7 +84,7 @@ def main():
 
         kind = Console.read_integer_interval("Your Choose: ", "Please input 1 or 2", 0, 2)
 
-        if kind==0:
+        if kind == 0:
             return
 
         addend_counts = []
@@ -94,29 +92,28 @@ def main():
         print("How many addends do you like to sum? You can specify multiple values separated by comma (,).")
         if kind == 1:
             print("Press [Enter] to use 1,2,5,10,100,1000,330000,1000000")
-            addend_counts = Console.read_integer_list_in_range("", 1, None, [1,2,5,10,100,1000,330000, 1000000])
+            addend_counts = Console.read_integer_list_in_range("", 1, None, [1, 2, 5, 10, 100, 1000, 330000, 1000000])
         if kind == 2:
             print("Press [Enter] to use 1,2,5,10,100,1000,10000")
-            addend_counts = Console.read_integer_list_in_range("", 1, None, [1,2,5,10,100,1000,10000])
+            addend_counts = Console.read_integer_list_in_range("", 1, None, [1, 2, 5, 10, 100, 1000, 10000])
 
         x_values = []
         if kind == 2:
             print()
             print("Which x in e^x do you want to calculate? You can specify multiple values separated by comma (,)")
             print("Press [Enter] to use -20,-1,1,20")
-            x_values = Console.read_integer_list_in_range("", None, None, [-20,-1,1,20])
+            x_values = Console.read_integer_list_in_range("", None, None, [-20, -1, 1, 20])
 
         print()
-        print("Which type do you like to use for the calculation? You can specify multiple values separated by comma (,)")
+        print("Which type do you like to use for the calculation? You can specify multiple values separated by comma "
+              "(,)")
         print(" [1] Numpy.float16")
         print(" [2] Numpy.float32")
         print(" [3] Numpy.float64")
         print("Press [Enter] to use all.")
-        types = Console.read_integer_list_in_range("", 1, 3, [1,2,3])
-
+        types = Console.read_integer_list_in_range("", 1, 3, [1, 2, 3])
 
         Console.print_separator1()
-
 
         for type in types:
             delegate = [lambda y: np.float16(y), lambda y: np.float32(y), lambda y: np.float64(y)][type - 1]
@@ -126,7 +123,7 @@ def main():
 
                 ag = AddendGenerator(delegate)
 
-                if kind==1:
+                if kind == 1:
                     print("Type: {0}; Addend Count: {1}".format(type_name, addend_count))
 
                     start = time.clock()
@@ -142,7 +139,7 @@ def main():
                     print(" > elapsed time: " + str(time.clock() - start) + "s")
                     print()
 
-                if kind==2:
+                if kind == 2:
                     for x in x_values:
                         print("Type: {0}; Addend Count: {1}; x = {2}".format(type_name, addend_count, x))
 
@@ -178,6 +175,7 @@ def main():
             Console.print_separator2()
 
         Console.print_separator1()
+
 
 if __name__ == "__main__":
     main()
