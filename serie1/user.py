@@ -8,19 +8,14 @@ def print_operation(a, operator, b, result):
     print(("( " + str_a + " {1} " + str_b + " ) = {3}").format(a, operator, b, result))
 
 
-def main():
-    show_comparison = True
-    show_basic_ops = True
-
+def get_test_values_from_user():
     if Console.read_yesno("Is the first operand a fraction? [Y/n] ", default_input=True):
         x1 = Console.read_integer("Please enter the numerator of the first fraction: ")
         x2 = Console.read_integer("Next, enter the denominator of the first fraction: ")
         a = Fraction(x1, x2)
     else:
         a = Console.read_float("Please enter a float or integer value: ")
-        if long(a) != a:
-            show_basic_ops = False
-        else:
+        if long(a) == a:
             a = long(a)
 
     if Console.read_yesno("Is the second operand a fraction? [Y/n] ", default_input=True):
@@ -29,22 +24,42 @@ def main():
         b = Fraction(x1, x2)
     else:
         b = Console.read_float("Please enter a float or integer value: ")
-        if long(b) != b:
-            show_basic_ops = False
-        else:
+        if long(b) == b:
             b = long(b)
 
-    print("")
-    if not isinstance(a, Fraction) and not isinstance(b, Fraction):
-        print("Neither the first nor the second operator is a fraction...")
+    return a, b
 
-    if show_basic_ops:
-        print_operation(a, " +", b, a + b)
-        print_operation(a, " -", b, a - b)
-        print_operation(a, " *", b, a * b)
-        print_operation(a, " /", b, a / b)
 
-    if show_comparison:
+def main():
+    tests = []
+    if Console.read_yesno("Do you want to test your own values? [y/N]", default_input=False):
+        tests.append(get_test_values_from_user())
+    else:
+        tests.append((Fraction(1, 2), Fraction(1, 3)))
+        tests.append((Fraction(1, 0), Fraction(1, 1)))
+        tests.append((Fraction(1, 2), Fraction(1, 0)))
+        tests.append((Fraction(1, 2), Fraction(1, 2)))
+
+        tests.append((Fraction(1, 2), 1))
+        tests.append((Fraction(1, 2), 1.5))
+        tests.append((1, Fraction(1, 2)))
+        tests.append((1.5, Fraction(1, 2)))
+
+    for test in tests:
+        a, b = test
+
+        print("")
+        print("Test for {0} and {1}".format(a, b))
+
+        if not isinstance(a, Fraction) and not isinstance(b, Fraction):
+            print("Neither the first nor the second operator is a fraction...")
+
+        if not isinstance(a, float) and not isinstance(b, float):
+            print_operation(a, " +", b, a + b)
+            print_operation(a, " -", b, a - b)
+            print_operation(a, " *", b, a * b)
+            print_operation(a, " /", b, a / b)
+
         print_operation(a, " <", b, a < b)
         print_operation(a, " >", b, a > b)
         print_operation(a, "==", b, a == b)

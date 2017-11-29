@@ -202,10 +202,10 @@ class Fraction:
                  * the numerator-value as a string if the denominator is 1;
                  * otherwise "numerator / denominator"
         """
-        if self.numerator == 0:
-            return "0"
         if self.denominator == 0:
             return "NaN"
+        if self.numerator == 0:
+            return "0"
         if self.denominator == 1:
             return str(self.numerator)
         return str(self.numerator) + " / " + str(self.denominator)
