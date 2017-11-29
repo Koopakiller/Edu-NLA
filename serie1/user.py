@@ -44,13 +44,14 @@ def main():
         tests.append(get_test_values_from_user())
     else:
         tests.append((Fraction(1, 2), Fraction(1, 3)))
-        tests.append((Fraction(1, 0), Fraction(1, 1)))
-        tests.append((Fraction(1, 2), Fraction(1, 0)))
         tests.append((Fraction(1, 2), Fraction(1, 2)))
+        tests.append((Fraction(1, 2), Fraction(0, 1)))
+        tests.append((Fraction(1, 0), Fraction(1, 2)))
+        tests.append((Fraction(1, 2), Fraction(1, 0)))
 
-        tests.append((Fraction(1, 2), 1))
+        tests.append((Fraction(1, 2), 2))
         tests.append((Fraction(1, 2), 1.5))
-        tests.append((1, Fraction(1, 2)))
+        tests.append((2, Fraction(1, 2)))
         tests.append((1.5, Fraction(1, 2)))
 
     for test in tests:
