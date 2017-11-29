@@ -58,7 +58,9 @@ def main():
         a, b = test
 
         print("")
-        print("Test for {0} and {1}".format(a, b))
+        print("Test for {2}{0} and {3}{1}".format(a, b,
+                                                  "fraction " if isinstance(a, Fraction) else "number ",
+                                                  "fraction " if isinstance(b, Fraction) else "number "))
 
         if not isinstance(a, Fraction) and not isinstance(b, Fraction):
             print("Neither the first nor the second operator is a fraction...")
