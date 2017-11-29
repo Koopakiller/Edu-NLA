@@ -91,7 +91,7 @@ def read_yesno(msg="[Y/n]", error_msg="Unrecognized input!", default_input=None)
 
     if error_msg is not None:
         print(error_msg)
-    return read_yesno(msg, error_msg)
+    return read_yesno(msg=msg, error_msg=error_msg, default_input=default_input)
 
 
 def read_integer_list_in_range(msg=None, minimum=None, maximum=None, default_if_empty=None):
