@@ -89,6 +89,7 @@ def main():
         if kind==0:
             return
 
+        addend_counts = []
         print("")
         print("How many addends do you like to sum? You can specify multiple values separated by comma (,).")
         if kind == 1:
