@@ -230,7 +230,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'NLASerie1.tex', u'NLA Serie 1 Documentation',
-     u'Tom Lambert, Yuuma Odaka-Falush', 'manual'),
+     u'Tom Lambert, Yuuma Odaka-Falush', 'howto'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
