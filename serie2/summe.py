@@ -82,14 +82,14 @@ def main():
         print(" [1] Calculate partial sum of harmonic series")
         print(" [2] Calculate Taylor series for e^x")
 
-        kind = Console.read_integer_interval("Your Choose: ", "Please input 1 or 2", 0, 2)
+        kind = Console.read_integer_interval("Please Choose: ", "Please input 1 or 2", 0, 2)
 
         if kind == 0:
             return
 
         addend_counts = []
         print("")
-        print("How many addends do you like to sum? You can specify multiple values separated by comma (,).")
+        print("How many addends do you like to sum? You can specify multiple values separated by commas (,).")
         if kind == 1:
             print("Press [Enter] to use 1,2,5,10,100,1000,330000,1000000")
             addend_counts = Console.read_integer_list_in_range("", 1, None, [1, 2, 5, 10, 100, 1000, 330000, 1000000])
@@ -100,13 +100,13 @@ def main():
         x_values = []
         if kind == 2:
             print()
-            print("Which x in e^x do you want to calculate? You can specify multiple values separated by comma (,)")
+            print("For which x in e^x do you want to calculate? You can specify multiple values separated by commas (,)")
             print("Press [Enter] to use -20,-1,1,20")
             x_values = Console.read_integer_list_in_range("", None, None, [-20, -1, 1, 20])
 
         print()
-        print("Which type do you like to use for the calculation? You can specify multiple values separated by comma "
-              "(,)")
+        print("Which data type do you like to use for the calculation? You can specify multiple values separated by"
+              " commas" "(,)")
         print(" [1] Numpy.float16")
         print(" [2] Numpy.float32")
         print(" [3] Numpy.float64")
