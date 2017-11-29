@@ -8,6 +8,11 @@ def print_operation(a, operator, b, result):
     print(("( " + str_a + " {1} " + str_b + " ) = {3}").format(a, operator, b, result))
 
 
+def print_intro():
+    print("This program is the implementation of Series 1.")
+    # TODO: complete
+
+
 def get_test_values_from_user():
     if Console.read_yesno("Is the first operand a fraction? [Y/n] ", default_input=True):
         x1 = Console.read_integer("Please enter the numerator of the first fraction: ")
@@ -31,6 +36,9 @@ def get_test_values_from_user():
 
 
 def main():
+    print_intro()
+    print("")
+
     tests = []
     if Console.read_yesno("Do you want to test your own values? [y/N]", default_input=False):
         tests.append(get_test_values_from_user())
