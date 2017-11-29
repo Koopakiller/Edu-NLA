@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for opensuse.org) (preloaded format=pdflatex 2017.10.5)  27 NOV 2017 14:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for opensuse.org) (preloaded format=pdflatex 2017.10.5)  29 NOV 2017 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,22 +6,21 @@ entering extended mode
 (./NLASerie1.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(./sphinxmanual.cls
-Document Class: sphinxmanual 2017/03/26 v1.6 Document class (Sphinx manual)
-(/usr/share/texmf/tex/latex/base/report.cls
-Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(./sphinxhowto.cls
+Document Class: sphinxhowto 2017/03/26 v1.6 Document class (Sphinx HOWTO)
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texmf/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -377,13 +376,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texmf/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count88
+\inf@bad=\count87
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count89
-\leftroot@=\count90
+\uproot@=\count88
+\leftroot@=\count89
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count91
-\DOTSCASE@=\count92
+\classnum@=\count90
+\DOTSCASE@=\count91
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
@@ -392,15 +391,15 @@ LaTeX Info: Redefining \cdots on input line 518.
 \big@size=\dimen105
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count93
-\c@MaxMatrixCols=\count94
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
 \dotsspace@=\muskip10
-\c@parentequation=\count95
-\dspbrk@lvl=\count96
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
 \tag@help=\toks17
-\row@=\count97
-\column@=\count98
-\maxfields@=\count99
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
 \andhelp@=\toks18
 \eqnshift@=\dimen106
 \alignsep@=\dimen107
@@ -433,7 +432,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texmf/tex/generic/babel/babel.def
 File: babel.def 2016/04/23 3.9r Babel common definitions
-\babel@savecnt=\count100
+\babel@savecnt=\count99
 \U@D=\dimen112
 )
 \l@canadian = a dialect from \language\l@american 
@@ -452,8 +451,8 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \py=\skip50
 \pyy=\skip51
 \pxx=\skip52
-\c@AlphaCnt=\count101
-\c@AlphaDecCnt=\count102
+\c@AlphaCnt=\count100
+\c@AlphaDecCnt=\count101
 ) (./sphinx.sty
 Package: sphinx 2017/07/24 v1.6.4 LaTeX package (Sphinx markup)
 
@@ -484,7 +483,7 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 (/usr/share/texmf/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-\Gread@gobject=\count103
+\Gread@gobject=\count102
 ))
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
@@ -679,7 +678,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip64
 \backup@length=\skip65
 )
-\TY@count=\count104
+\TY@count=\count103
 \TY@linewidth=\dimen122
 \tymin=\dimen123
 \tymax=\dimen124
@@ -691,22 +690,22 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTright=\skip67
 \LTpre=\skip68
 \LTpost=\skip69
-\LTchunksize=\count105
+\LTchunksize=\count104
 \LTcapwidth=\dimen126
 \LT@head=\box29
 \LT@firsthead=\box30
 \LT@foot=\box31
 \LT@lastfoot=\box32
-\LT@cols=\count106
-\LT@rows=\count107
-\c@LT@tables=\count108
-\c@LT@chunks=\count109
+\LT@cols=\count105
+\LT@rows=\count106
+\c@LT@tables=\count107
+\c@LT@chunks=\count108
 \LT@p@ftn=\toks24
 )
 (/usr/share/texmf/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box33
-\sift@deathcycles=\count110
+\sift@deathcycles=\count109
 \@vwid@loff=\dimen127
 \@vwid@roff=\dimen128
 ) (./sphinxmulticell.sty
@@ -747,11 +746,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count111
+\FV@CodeLineNo=\count110
 \FV@InFile=\read1
 \FV@TabBox=\box34
-\c@FancyVerbLine=\count112
-\FV@StepNumber=\count113
+\c@FancyVerbLine=\count111
+\FV@StepNumber=\count112
 \FV@OutFile=\write3
 ) (./footnotehyper-sphinx.sty
 Package: footnotehyper-sphinx 2017/03/07 v1.6 hyperref aware footnote.sty for s
@@ -761,7 +760,7 @@ phinx (JFB)
 )
 (/usr/share/texmf/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count114
+\c@float@type=\count113
 \float@exts=\toks25
 \float@box=\box36
 \@float@everytoks=\toks26
@@ -770,7 +769,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (/usr/share/texmf/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen135
 \WF@size=\dimen136
-\c@WF@wrappedlines=\count115
+\c@WF@wrappedlines=\count114
 \WF@box=\box38
 \WF@everypar=\toks27
 Package: wrapfig 2003/01/31  v 3.6
@@ -818,7 +817,7 @@ Package etexcmds Info: Could not find \expanded.
 \sphinxshadowrule=\dimen141
 \spx@notice@border=\dimen142
 \spx@image@box=\box39
-\c@literalblock=\count116
+\c@literalblock=\count115
 \spx@Verbatim@TitleBox=\box40
 \sphinxcontinuationbox=\box41
 \sphinxvisiblespacebox=\box42
@@ -839,9 +838,9 @@ Package ifvtex Info: VTeX not detected.
 (/usr/share/texmf/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count117
-\Gm@cntv=\count118
-\c@Gm@tempcnt=\count119
+\Gm@cnth=\count116
+\Gm@cntv=\count117
+\c@Gm@tempcnt=\count118
 \Gm@bindingoffset=\dimen143
 \Gm@wd@mp=\dimen144
 \Gm@odd@mp=\dimen145
@@ -897,15 +896,15 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen151
-\Hy@linkcounter=\count120
-\Hy@pagecounter=\count121
+\Hy@linkcounter=\count119
+\Hy@pagecounter=\count120
 
 (/usr/share/texmf/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count122
+\Hy@SavedSpaceFactor=\count121
 
 (/usr/share/texmf/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -926,7 +925,7 @@ Package hyperref Info: Plain pages OFF on input line 4461.
 Package hyperref Info: Backreferencing OFF on input line 4466.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4691.
-\c@Hy@tempcnt=\count123
+\c@Hy@tempcnt=\count122
 
 (/usr/share/texmf/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
@@ -934,7 +933,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5044.
 \XeTeXLinkMargin=\dimen152
-\Fld@menulength=\count124
+\Fld@menulength=\count123
 \Field@Width=\dimen153
 \Fld@charsize=\dimen154
 Package hyperref Info: Hyper figures OFF on input line 6298.
@@ -946,17 +945,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6323.
 Package hyperref Info: PDF/A mode OFF on input line 6328.
 LaTeX Info: Redefining \ref on input line 6368.
 LaTeX Info: Redefining \pageref on input line 6372.
-\Hy@abspage=\count125
-\c@Item=\count126
-\c@Hfootnote=\count127
+\Hy@abspage=\count124
+\c@Item=\count125
+\c@Hfootnote=\count126
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texmf/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
-\Fld@listcount=\count128
-\c@bookmark@seq@number=\count129
+\Fld@listcount=\count127
+\c@bookmark@seq@number=\count128
 
 (/usr/share/texmf/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
@@ -1005,16 +1004,16 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/share/texmf/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
+\scratchcounter=\count129
 \scratchdimen=\dimen155
 \scratchbox=\box43
-\nofMPsegments=\count131
-\nofMParguments=\count132
+\nofMPsegments=\count130
+\nofMParguments=\count131
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count133
+\MPscratchCnt=\count132
 \MPscratchDim=\dimen156
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
+\MPnumerator=\count133
+\makeMPintoPDFobject=\count134
 \everyMPtoPDFconversion=\toks30
 ) (/usr/share/texmf/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1073,7 +1072,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texmf/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count136
+\c@section@level=\count135
 )
 LaTeX Info: Redefining \ref on input line 64.
 LaTeX Info: Redefining \pageref on input line 64.
@@ -1083,7 +1082,6 @@ LaTeX Info: Redefining \nameref on input line 64.
 \@outlinefile=\write5
 \openout5 = `NLASerie1.out'.
 
-Package hyperref Info: Option `pageanchor' set `false' on input line 67.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 67.
  (/usr/share/texmf/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -1096,11 +1094,11 @@ LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
 (Font)              Font shape `T1/phv/b/it' tried instead on input line 67.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 67.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <17.28> not available
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/it' tried instead on input line 67.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <17.28> not available
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 67.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
 <<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
 LaTeX Font Info:    Try loading font information for U+msa on input line 67.
@@ -1111,59 +1109,42 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 
 (/usr/share/texmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-]
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
- (./NLASerie1.toc
+) (./NLASerie1.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
 )
 \tf@toc=\write6
 \openout6 = `NLASerie1.toc'.
 
- [1
-
-] [2
-
-]
-Chapter 1.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 94.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 1.
+
 (/usr/share/texmf/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 1.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 1.
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 128.
 
-
-(/usr/share/texmf/tex/latex/psnfss/ts1ptm.fd
+ (/usr/share/texmf/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [1
-
-] [2] [3] [4] [5] [6
-
-] [7
+) [2] [3]
+[4] [5] [6
 
 
-]
-(./NLASerie1.ind [8
-
-
-]
+] (./NLASerie1.ind
 Underfull \hbox (badness 10000) in paragraph at lines 46--47
 []\T1/ptm/m/n/10 get_greatest_common_divisor() (prime.Prime static
  []
 
-[9
+[7
+
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 608.
@@ -1172,17 +1153,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 608.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 608.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 608.
 Package rerunfilecheck Info: File `NLASerie1.out' has not changed.
-(rerunfilecheck)             Checksum: 98D973F46D9F78C9FE30A241C99FADF8;1965.
+(rerunfilecheck)             Checksum: E9AB16B7354C408FB09BD4155879FB32;1918.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 608.
  ) 
 Here is how much of TeX's memory you used:
- 13560 strings out of 493014
- 184745 string characters out of 6141590
- 282120 words of memory out of 5000000
- 16749 multiletter control sequences out of 15000+600000
- 47711 words of font info for 67 fonts, out of 8000000 for 9000
+ 13527 strings out of 493014
+ 184282 string characters out of 6141590
+ 280428 words of memory out of 5000000
+ 16728 multiletter control sequences out of 15000+600000
+ 43435 words of font info for 59 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 37i,11n,45p,305b,635s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,45p,305b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/u
 rw/courier/ucrb8a.pfb></usr/share/texmf/fonts/type1/urw/courier/ucrr8a.pfb></us
 r/share/texmf/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf/fonts/type1
@@ -1190,10 +1171,10 @@ r/share/texmf/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf/fonts/type1
 ></usr/share/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf/fonts/
 type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NLASerie1.pdf (13 pages, 106988 bytes).
+Output written on NLASerie1.pdf (7 pages, 103504 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

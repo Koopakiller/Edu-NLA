@@ -1,34 +1,34 @@
-\indexentry{bruch (module)|hyperpage}{1}
-\indexentry{Bruch (class in bruch)|hyperpage}{1}
-\indexentry{main() (in module bruch)|hyperpage}{1}
-\indexentry{run\_test() (in module bruch)|hyperpage}{1}
+\indexentry{bruch (module)|hyperpage}{2}
+\indexentry{Bruch (class in bruch)|hyperpage}{2}
+\indexentry{main() (in module bruch)|hyperpage}{2}
+\indexentry{run\_test() (in module bruch)|hyperpage}{2}
 \indexentry{fraction (module)|hyperpage}{2}
 \indexentry{Fraction (class in fraction)|hyperpage}{2}
 \indexentry{\_\_add\_\_() (fraction.Fraction method)|hyperpage}{2}
 \indexentry{\_\_div\_\_() (fraction.Fraction method)|hyperpage}{2}
 \indexentry{\_\_eq\_\_() (fraction.Fraction method)|hyperpage}{2}
-\indexentry{\_\_float\_\_() (fraction.Fraction method)|hyperpage}{2}
-\indexentry{\_\_ge\_\_() (fraction.Fraction method)|hyperpage}{2}
-\indexentry{\_\_gt\_\_() (fraction.Fraction method)|hyperpage}{2}
-\indexentry{\_\_init\_\_() (fraction.Fraction method)|hyperpage}{2}
+\indexentry{\_\_float\_\_() (fraction.Fraction method)|hyperpage}{3}
+\indexentry{\_\_ge\_\_() (fraction.Fraction method)|hyperpage}{3}
+\indexentry{\_\_gt\_\_() (fraction.Fraction method)|hyperpage}{3}
+\indexentry{\_\_init\_\_() (fraction.Fraction method)|hyperpage}{3}
 \indexentry{\_\_le\_\_() (fraction.Fraction method)|hyperpage}{3}
 \indexentry{\_\_lt\_\_() (fraction.Fraction method)|hyperpage}{3}
 \indexentry{\_\_mul\_\_() (fraction.Fraction method)|hyperpage}{3}
 \indexentry{\_\_ne\_\_() (fraction.Fraction method)|hyperpage}{3}
 \indexentry{\_\_neg\_\_() (fraction.Fraction method)|hyperpage}{3}
-\indexentry{\_\_radd\_\_() (fraction.Fraction method)|hyperpage}{3}
-\indexentry{\_\_rdiv\_\_() (fraction.Fraction method)|hyperpage}{3}
-\indexentry{\_\_rmul\_\_() (fraction.Fraction method)|hyperpage}{3}
-\indexentry{\_\_rsub\_\_() (fraction.Fraction method)|hyperpage}{3}
-\indexentry{\_\_str\_\_() (fraction.Fraction method)|hyperpage}{3}
+\indexentry{\_\_radd\_\_() (fraction.Fraction method)|hyperpage}{4}
+\indexentry{\_\_rdiv\_\_() (fraction.Fraction method)|hyperpage}{4}
+\indexentry{\_\_rmul\_\_() (fraction.Fraction method)|hyperpage}{4}
+\indexentry{\_\_rsub\_\_() (fraction.Fraction method)|hyperpage}{4}
+\indexentry{\_\_str\_\_() (fraction.Fraction method)|hyperpage}{4}
 \indexentry{\_\_sub\_\_() (fraction.Fraction method)|hyperpage}{4}
 \indexentry{clone() (fraction.Fraction method)|hyperpage}{4}
 \indexentry{reduce() (fraction.Fraction method)|hyperpage}{4}
-\indexentry{prime (module)|hyperpage}{4}
-\indexentry{Prime (class in prime)|hyperpage}{4}
-\indexentry{\_\_init\_\_() (prime.Prime method)|hyperpage}{4}
-\indexentry{append\_next\_to\_cache() (prime.Prime static method)|hyperpage}{4}
-\indexentry{cache (prime.Prime attribute)|hyperpage}{4}
-\indexentry{get\_greatest\_common\_divisor() (prime.Prime static method)|hyperpage}{4}
-\indexentry{get\_prime() (prime.Prime static method)|hyperpage}{4}
+\indexentry{prime (module)|hyperpage}{5}
+\indexentry{Prime (class in prime)|hyperpage}{5}
+\indexentry{\_\_init\_\_() (prime.Prime method)|hyperpage}{5}
+\indexentry{append\_next\_to\_cache() (prime.Prime static method)|hyperpage}{5}
+\indexentry{cache (prime.Prime attribute)|hyperpage}{5}
+\indexentry{get\_greatest\_common\_divisor() (prime.Prime static method)|hyperpage}{5}
+\indexentry{get\_prime() (prime.Prime static method)|hyperpage}{5}
 \indexentry{get\_prime\_factors() (prime.Prime static method)|hyperpage}{5}

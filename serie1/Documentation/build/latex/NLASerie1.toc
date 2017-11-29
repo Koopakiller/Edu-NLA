@@ -1,14 +1,14 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Welcome to NLA Series 1\IeC {\textquoteright }s documentation!}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Modules}{1}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}bruch module}{1}{subsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1.1}Bruch class}{1}{subsubsection.1.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}fraction module}{2}{subsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.2.1}Mathematical background}{2}{subsubsection.1.1.2.1}
-\contentsline {subsubsection}{\numberline {1.1.2.2}Members of Fraction class}{2}{subsubsection.1.1.2.2}
-\contentsline {subsection}{\numberline {1.1.3}prime module}{4}{subsection.1.1.3}
-\contentsline {subsubsection}{\numberline {1.1.3.1}Mathematical background}{4}{subsubsection.1.1.3.1}
-\contentsline {subsubsection}{\numberline {1.1.3.2}Members of Prime class}{4}{subsubsection.1.1.3.2}
-\contentsline {subsubsection}{\numberline {1.1.3.3}Remarks}{5}{subsubsection.1.1.3.3}
-\contentsline {chapter}{Python Module Index}{7}{section*.35}
-\contentsline {chapter}{Index}{9}{section*.36}
+\contentsline {section}{\numberline {1}Welcome to NLA Series 1\IeC {\textquoteright }s documentation!}{1}{section.1}
+\contentsline {section}{\numberline {2}Modules}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}bruch module}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Bruch class}{2}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}fraction module}{2}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Mathematical background}{2}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Members of Fraction class}{2}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}prime module}{5}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Mathematical background}{5}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Members of Prime class}{5}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Remarks}{5}{subsubsection.2.3.3}
+\contentsline {section}{Python Module Index}{6}{section*.34}
+\contentsline {section}{Index}{7}{section*.35}

@@ -5,35 +5,35 @@
   \item \_\_add\_\_() (fraction.Fraction method), \hyperpage{2}
   \item \_\_div\_\_() (fraction.Fraction method), \hyperpage{2}
   \item \_\_eq\_\_() (fraction.Fraction method), \hyperpage{2}
-  \item \_\_float\_\_() (fraction.Fraction method), \hyperpage{2}
-  \item \_\_ge\_\_() (fraction.Fraction method), \hyperpage{2}
-  \item \_\_gt\_\_() (fraction.Fraction method), \hyperpage{2}
-  \item \_\_init\_\_() (fraction.Fraction method), \hyperpage{2}
-  \item \_\_init\_\_() (prime.Prime method), \hyperpage{4}
+  \item \_\_float\_\_() (fraction.Fraction method), \hyperpage{3}
+  \item \_\_ge\_\_() (fraction.Fraction method), \hyperpage{3}
+  \item \_\_gt\_\_() (fraction.Fraction method), \hyperpage{3}
+  \item \_\_init\_\_() (fraction.Fraction method), \hyperpage{3}
+  \item \_\_init\_\_() (prime.Prime method), \hyperpage{5}
   \item \_\_le\_\_() (fraction.Fraction method), \hyperpage{3}
   \item \_\_lt\_\_() (fraction.Fraction method), \hyperpage{3}
   \item \_\_mul\_\_() (fraction.Fraction method), \hyperpage{3}
   \item \_\_ne\_\_() (fraction.Fraction method), \hyperpage{3}
   \item \_\_neg\_\_() (fraction.Fraction method), \hyperpage{3}
-  \item \_\_radd\_\_() (fraction.Fraction method), \hyperpage{3}
-  \item \_\_rdiv\_\_() (fraction.Fraction method), \hyperpage{3}
-  \item \_\_rmul\_\_() (fraction.Fraction method), \hyperpage{3}
-  \item \_\_rsub\_\_() (fraction.Fraction method), \hyperpage{3}
-  \item \_\_str\_\_() (fraction.Fraction method), \hyperpage{3}
+  \item \_\_radd\_\_() (fraction.Fraction method), \hyperpage{4}
+  \item \_\_rdiv\_\_() (fraction.Fraction method), \hyperpage{4}
+  \item \_\_rmul\_\_() (fraction.Fraction method), \hyperpage{4}
+  \item \_\_rsub\_\_() (fraction.Fraction method), \hyperpage{4}
+  \item \_\_str\_\_() (fraction.Fraction method), \hyperpage{4}
   \item \_\_sub\_\_() (fraction.Fraction method), \hyperpage{4}
 
   \indexspace
   \bigletter A
-  \item append\_next\_to\_cache() (prime.Prime static method), \hyperpage{4}
+  \item append\_next\_to\_cache() (prime.Prime static method), \hyperpage{5}
 
   \indexspace
   \bigletter B
-  \item Bruch (class in bruch), \hyperpage{1}
-  \item bruch (module), \hyperpage{1}
+  \item Bruch (class in bruch), \hyperpage{2}
+  \item bruch (module), \hyperpage{2}
 
   \indexspace
   \bigletter C
-  \item cache (prime.Prime attribute), \hyperpage{4}
+  \item cache (prime.Prime attribute), \hyperpage{5}
   \item clone() (fraction.Fraction method), \hyperpage{4}
 
   \indexspace
@@ -43,22 +43,22 @@
 
   \indexspace
   \bigletter G
-  \item get\_greatest\_common\_divisor() (prime.Prime static method), \hyperpage{4}
-  \item get\_prime() (prime.Prime static method), \hyperpage{4}
+  \item get\_greatest\_common\_divisor() (prime.Prime static method), \hyperpage{5}
+  \item get\_prime() (prime.Prime static method), \hyperpage{5}
   \item get\_prime\_factors() (prime.Prime static method), \hyperpage{5}
 
   \indexspace
   \bigletter M
-  \item main() (in module bruch), \hyperpage{1}
+  \item main() (in module bruch), \hyperpage{2}
 
   \indexspace
   \bigletter P
-  \item Prime (class in prime), \hyperpage{4}
-  \item prime (module), \hyperpage{4}
+  \item Prime (class in prime), \hyperpage{5}
+  \item prime (module), \hyperpage{5}
 
   \indexspace
   \bigletter R
   \item reduce() (fraction.Fraction method), \hyperpage{4}
-  \item run\_test() (in module bruch), \hyperpage{1}
+  \item run\_test() (in module bruch), \hyperpage{2}
 
 \end{sphinxtheindex}
