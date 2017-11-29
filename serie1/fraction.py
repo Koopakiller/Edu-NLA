@@ -23,7 +23,7 @@ class Fraction:
     def reduce(self):
         """Reduces the fraction by removing all common prime factors."""
         if self.denominator == 0:
-            self.numerator = 1
+            self.numerator = 0
         else:
             q = Prime.get_greatest_common_divisor(self.numerator, self.denominator)
             self.numerator = self.numerator / q
