@@ -1,6 +1,9 @@
 # Authors: Tom Lambert (lambertt) and Yuuma Odaka-Falush (odafaluy)
 
 
+from decimal import Decimal
+
+
 def print_separator3():
     """Prints a visual separator for Header 3"""
     print("")
@@ -36,12 +39,12 @@ def read_integer(msg=None, error_msg=None):
 
     try:
         return int(res)
-    except TypeError:
+    except (TypeError, ValueError):
         pass
 
     try:
         return long(res)
-    except TypeError:
+    except (TypeError, ValueError):
         pass
 
     if error_msg is not None:
@@ -101,21 +104,20 @@ def read_integer_list_in_range(msg=None, minimum=None, maximum=None, default_if_
     :param default_if_empty: The value to return if the user typed an empty string.
     :return: An array of integers, typed by the user.
     """
-    input = raw_input(msg)
+    inp = raw_input(msg)
 
-    if len(input) == 0:
+    if len(inp) == 0:
         return default_if_empty
 
     result = []
 
-    for str in input.split(","):
+    for s in inp.split(","):
 
         try:
-            value = long(str)
-        except:
-            print("{0} is not an integer. Try Again.".format(str))
+            value = long(s)
+        except (TypeError, ValueError):
+            print("{0} is not an integer. Try Again.".format(s))
             return read_integer_list_in_range(msg, minimum, maximum)
-
 
         if minimum is not None and value < minimum:
             print("{0} is less than the allowed minimum of {1}. Try Again.".format(value, minimum))
@@ -128,3 +130,43 @@ def read_integer_list_in_range(msg=None, minimum=None, maximum=None, default_if_
         result.append(value)
 
     return result
+
+
+def read_decimal(msg, error_msg=None):
+    """
+    Asks the user for an decimal value
+
+    :param msg: The message, displayed to the user.
+    :param error_msg: The message, displayed to the user, in case he did not entered a valid Decimal value.
+    :return: A Decimal from the user.
+    """
+    res = raw_input(msg)
+
+    try:
+        return Decimal(res)
+    except (TypeError, ValueError):
+        pass
+
+    if error_msg is not None:
+        print(error_msg)
+    return read_integer(msg=msg, error_msg=error_msg)
+
+
+def read_float(msg, error_msg=None):
+    """
+    Asks the user for an float value
+
+    :param msg: The message, displayed to the user.
+    :param error_msg: The message, displayed to the user, in case he did not entered a valid float value.
+    :return: A float from the user.
+    """
+    res = raw_input(msg)
+
+    try:
+        return float(res)
+    except (TypeError, ValueError):
+        pass
+
+    if error_msg is not None:
+        print(error_msg)
+    return read_integer(msg=msg, error_msg=error_msg)
