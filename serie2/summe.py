@@ -6,6 +6,9 @@ import time
 import numpy as np
 import Console as Console
 import Sum as Sum
+import warnings
+
+warnings.filterwarnings("ignore")
 
 
 class AddendGenerator:
@@ -28,7 +31,7 @@ class AddendGenerator:
         """
         result = self.delegate(1)
         for i in range(2, k + 1):
-            result *= i
+            result *= self.delegate(i)
         return result
 
     def get_harmonic_series_addends(self, k):
@@ -52,7 +55,7 @@ class AddendGenerator:
         :return: An array of all generated addends.
         """
         result = []
-        for i in range(1, k + 1):
+        for i in range(0, k + 1):
             result.append((self.delegate(x) ** self.delegate(i)) / self.factorial(i))
         return result
 
@@ -65,7 +68,7 @@ class AddendGenerator:
         :return: An array of all generated addends.
         """
         result = []
-        for i in range(1, k + 1):
+        for i in range(0, k + 1):
             result.append(self.delegate(1 if i % 2 == 0 else -1)
                           * (self.delegate(x) ** self.delegate(i))
                           / self.delegate(self.factorial(i)))
@@ -91,11 +94,13 @@ def main():
         print("")
         print("How many addends do you like to sum? You can specify multiple values separated by commas (,).")
         if kind == 1:
-            print("Press [Enter] to use 1,2,5,10,100,1000,330000,1000000")
-            addend_counts = Console.read_integer_list_in_range("", 1, None, [1, 2, 5, 10, 100, 1000, 330000, 1000000])
+            print("Press [Enter] to use 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192")
+            addend_counts = Console.read_integer_list_in_range("", 1, None, [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024,
+                                                                             2048, 4096, 8192])
         if kind == 2:
-            print("Press [Enter] to use 1,2,5,10,100,1000,10000")
-            addend_counts = Console.read_integer_list_in_range("", 1, None, [1, 2, 5, 10, 100, 1000, 10000])
+            print("Press [Enter] to use 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192")
+            addend_counts = Console.read_integer_list_in_range("", 1, None, [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024,
+                                                                             2048, 4096, 8192])
 
         x_values = []
         if kind == 2:
@@ -178,4 +183,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
