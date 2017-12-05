@@ -5,7 +5,10 @@ import matrix
 
 
 def main():
-    matrix.main()
+    mtypes = ["hilbert", "saite"]
+    dims = [3, 5, 7, 9]
+    dtypes = ["float16", "float32", "float64"]
+    matrix.main(mtypes, dims, dtypes)
 
 
 if __name__ == "__main__":

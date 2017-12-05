@@ -56,6 +56,9 @@ class Matrix:
         return numpy.linalg.cond(self.matrix, p="inf")
 
 
-def main():
-    # TODO: implement
+def main(mtypes, dims, dtypes):
+    for mtype in mtypes:
+        for dim in dims:
+            for dtype in dtypes:
+                pass
     pass
