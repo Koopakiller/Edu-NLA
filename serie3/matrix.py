@@ -2,12 +2,13 @@
 
 
 import numpy
+import scipy
 
 
 class Matrix:
 
     def __init__(self, mtype, dim, dtype):
-        if mtype not in ["hilbert", "saite"]:
+        if mtype not in ["saite", "hilbert"]:
             raise Exception("Unknown mtype. Allowed are 'hilbert' and 'saite'.")
         self.mtype = mtype
 
@@ -32,15 +33,29 @@ class Matrix:
         if self.dtype == "float64":
             self.dtype_constructor = lambda x: numpy.float64(x)
 
-    def create_matrix(self):
-        pass
+    def create_matrix_and_inv(self):
+        arr = []
+        if self.mtype == "saite":
+            for row in xrange(0, self.dim):
+                for col in xrange(0, self.dim):
+                    if row == col:
+                        arr.append(2)
+                    elif row - 1 == col or col - 1 == row:
+                        arr.append(-1)
+                    else:
+                        arr.append(0)
 
-    def create_inv(self):
-        pass
+        if self.mtype == "hilbert":
+            arr = scipy.linalg.hilbert(self.dim).tolist()
+
+        self.matrix = numpy.ndarray(shape=(self.dim, self.dim), dtype=self.dtype, buffer=numpy.array(arr))
+        self.inv = numpy.linalg.inv(self.matrix)
 
     def condition(self):
-        pass
+        # TODO: allowed to use numpy?
+        return numpy.linalg.cond(self.matrix, p="inf")
 
 
 def main():
+    # TODO: implement
     pass
