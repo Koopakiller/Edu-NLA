@@ -55,6 +55,9 @@ class Matrix:
         # TODO: allowed to use numpy?
         return numpy.linalg.cond(self.matrix, p="inf")
 
+    def solve(self, b):
+        pass
+
 
 def main(mtypes, dims, dtypes):
     for mtype in mtypes:
