@@ -1,3 +1,4 @@
+# coding=utf-8
 # Authors: Tom Lambert (lambertt) and Yuuma Odaka-Falush (odafaluy)
 
 
@@ -69,9 +70,9 @@ class AddendGenerator:
         """
         result = []
         for i in range(0, k + 1):
-            result.append(self.delegate(1 if i % 2 == 0 else -1)
-                          * (self.delegate(x) ** self.delegate(i))
-                          / self.delegate(self.factorial(i)))
+            numerator = self.delegate(1 if i % 2 == 0 else -1) * (self.delegate(x) ** self.delegate(i))
+            denominator = self.delegate(self.factorial(i))
+            result.append(0 if np.isinf(denominator) else (numerator / denominator))
         return result
 
 
@@ -105,7 +106,8 @@ def main():
         x_values = []
         if kind == 2:
             print()
-            print("For which x in e^x do you want to calculate? You can specify multiple values separated by commas (,)")
+            print("For which x in e^x do you want to calculate?"
+                  "You can specify multiple values separated by commas (,)")
             print("Press [Enter] to use -20,-1,1,20")
             x_values = Console.read_integer_list_in_range("", None, None, [-20, -1, 1, 20])
 
@@ -134,12 +136,18 @@ def main():
                     start = time.clock()
 
                     addends = ag.get_harmonic_series_addends(addend_count)
-                    r1 = Sum.sum_indices(addends)
-                    print("   added by indices: " + str(r1))
-                    r2 = Sum.sum_ordered(addends)
-                    print("   added by size:    " + str(r2))
-                    r3 = Sum.sum_ordered_grouped_by_sign(addends)
-                    print("   added by sign:    " + str(r3))
+
+                    problems = []
+                    r1 = Sum.sum_indices(addends, problems)
+                    print("   added by indices: " + str(r1) + (" (an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
+
+                    problems = []
+                    r2 = Sum.sum_ordered(addends, problems)
+                    print("   added by size:    " + str(r2) + (" (an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
+
+                    problems = []
+                    r3 = Sum.sum_ordered_grouped_by_sign(addends, problems)
+                    print("   added by sign:    " + str(r3) + (" (an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
 
                     print(" > elapsed time: " + str(time.clock() - start) + "s")
                     print()
@@ -152,12 +160,18 @@ def main():
 
                         print("Algorithm 1:")
                         addends = ag.get_e_taylor_series_1_addends(x, addend_count)
-                        r1 = Sum.sum_indices(addends)
-                        print("   added by indices: " + str(r1))
-                        r2 = Sum.sum_ordered(addends)
-                        print("   added by size:    " + str(r2))
-                        r3 = Sum.sum_ordered_grouped_by_sign(addends)
-                        print("   added by sign:    " + str(r3))
+
+                        problems = []
+                        r1 = Sum.sum_indices(addends, problems)
+                        print("   added by indices: " + str(r1) + (" (an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
+
+                        problems = []
+                        r2 = Sum.sum_ordered(addends, problems)
+                        print("   added by size:    " + str(r2) + (" (an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
+
+                        problems = []
+                        r3 = Sum.sum_ordered_grouped_by_sign(addends, problems)
+                        print("   added by sign:    " + str(r3) + (" (an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
 
                         print(" > elapsed time: " + str(time.clock() - start) + "s")
                         print()
@@ -166,12 +180,21 @@ def main():
 
                         print("Algorithm 2:")
                         addends = ag.get_e_taylor_series_2_addends(x, addend_count)
-                        r1 = delegate(1) / Sum.sum_indices(addends)
-                        print("   added by indices: " + str(r1))
-                        r2 = delegate(1) / Sum.sum_ordered(addends)
-                        print("   added by size:    " + str(r2))
-                        r3 = delegate(1) / Sum.sum_ordered_grouped_by_sign(addends)
-                        print("   added by sign:    " + str(r3))
+
+                        problems = []
+                        s = Sum.sum_indices(addends, problems)
+                        r1 = "1 / ±infinity = 0" if np.isinf(s) else str(delegate(1) / s)
+                        print("   added by indices: " + r1 + (" ( an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
+
+                        problems = []
+                        s = Sum.sum_ordered(addends, problems)
+                        r2 = "1 / ±infinity = 0" if np.isnan(s) else str(delegate(1) / s)
+                        print("   added by size:    " + r2 + (" ( an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
+
+                        problems = []
+                        s = Sum.sum_ordered_grouped_by_sign(addends, problems)
+                        r3 = "1 / ±infinity = 0" if np.isnan(s) else str(delegate(1) / s)
+                        print("   added by sign:    " + r3 + (" ( an addend was " + problems[0] + ")" if len(problems) > 0 else ""))
 
                         print(" > elapsed time: " + str(time.clock() - start) + "s")
                         print()
