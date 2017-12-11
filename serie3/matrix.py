@@ -26,6 +26,8 @@ class Matrix:
         self.matrix = None
         self.inv = None
 
+        self.l = self.u = None
+
         self.create_matrix_and_inv()
 
     def __init__dtype_constructor(self):
@@ -58,8 +60,16 @@ class Matrix:
     def condition(self):
         return numpy.linalg.norm(self.matrix, ord=numpy.inf) * numpy.linalg.norm(self.inv, ord=numpy.inf)
 
+    def lu(self):
+        if self.l is None or self.u is None:
+            self.l, self.u = scipy.linalg.lu(self.matrix, permute_l=True)
+        return self.l, self.u
+
     def solve(self, b):
-        pass
+        l, u = self.lu()
+        x = scipy.linalg.solve_triangular(u, b, lower=False)
+        x = scipy.linalg.solve_triangular(l, x, lower=True)
+        return x
 
 
 def main(mtypes, dims, dtypes, experiment):
