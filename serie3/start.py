@@ -14,9 +14,9 @@ def main():
     mtypes = ["hilbert", "saite"]
     dims = [5, 7, 9]
 
-    # Parameters for 3.2 B B (Hilbert)
+    # Parameters for 3.2 B
     n = [5, 8]
-    i = [1, 2, 3, 4, 5, 6, 7, 8]  # only i<=n will be used
+    i = [1, 2, 3, 4, 5, 6, 7, 8]  # only i <= n will be used
 
     matrix.main(experiment, mtypes, dims, dtypes, n, i)
 
