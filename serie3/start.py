@@ -6,9 +6,10 @@ import matrix
 
 def main():
     mtypes = ["hilbert", "saite"]
-    dims = [3, 5, 7, 9]
+    dims = [5, 7, 9]
     dtypes = ["float16", "float32", "float64"]
-    matrix.main(mtypes, dims, dtypes)
+    experiment = "3.1B"  # allowed are "3.1B"
+    matrix.main(mtypes, dims, dtypes, experiment)
 
 
 if __name__ == "__main__":
