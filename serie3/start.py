@@ -5,14 +5,15 @@ import matrix
 
 
 def main():
+    """Executes the main program with predefined values."""
     experiment = "3.2B - B"  # allowed are "3.1B", "3.2B - B"
 
-    # The type to use for the experiments
+    # The types to use for the experiments
     dtypes = ["float16", "float32", "float64"]
 
     # Parameters for 3.1A
-    mtypes = ["hilbert", "saite"]
-    dims = [5, 7, 9]
+    mtypes = ["hilbert", "saite"]   # The matrix types
+    dims = [5, 7, 9]                # The dimensions
 
     # Parameters for 3.2 B
     n = [5, 8]
