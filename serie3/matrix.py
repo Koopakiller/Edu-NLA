@@ -124,6 +124,10 @@ def main_31b(mtypes, dims, dtypes):
                 print("||M|| = {1}         || I - M M^(-1) || = {0}".format(condition, matrix.condition()))
 
 
+def main_32b_saite():
+    pass
+
+
 def main_32b_hilbert(i_max, dtype, n):
     """
     Executes experiments as described in 3.2B B. (Hilbert)
@@ -168,6 +172,8 @@ def main(experiment, mtypes=None, dims=None, dtypes=None, n_iterable=None, i_ite
     """
     if experiment == "3.1B":
         main_31b(mtypes, dims, dtypes)
+    elif experiment == "3.2B - A":
+        main_32b_saite()
     elif experiment == "3.2B - B":
         main_32b(dtypes, n_iterable, i_iterable)
     else:

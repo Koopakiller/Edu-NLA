@@ -6,7 +6,7 @@ import matrix
 
 def main():
     """Executes the main program with predefined values."""
-    experiment = "3.2B - B"  # allowed are "3.1B", "3.2B - B"
+    experiment = "3.2B - A"         # allowed are "3.1B", "3.2B - A", "3.2B - B"
 
     # The types to use for the experiments
     dtypes = ["float16", "float32", "float64"]
@@ -15,9 +15,9 @@ def main():
     mtypes = ["hilbert", "saite"]   # The matrix types
     dims = [5, 7, 9]                # The dimensions
 
-    # Parameters for 3.2 B
+    # Parameters for 3.2B
     n = [5, 8]
-    i = [1, 2, 3, 4, 5, 6, 7, 8]  # only i <= n will be used
+    i = [1, 2, 3, 4, 5, 6, 7, 8]    # only i <= n will be used
 
     matrix.main(experiment, mtypes, dims, dtypes, n, i)
 
