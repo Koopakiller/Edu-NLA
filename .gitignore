@@ -1,3 +1,4 @@
  gruppe.txt
-**/.idea/
-**/.vscode/
+/.idea
+**/.idea
+**/.vscode
