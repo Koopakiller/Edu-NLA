@@ -35,7 +35,8 @@ class Matrix:
         self.matrix = None
         self.inv = None
 
-        self.l = self.u = None
+        self.l = None
+        self.u = None
 
         self.create_matrix_and_inv()
 
@@ -128,7 +129,7 @@ def main_32b_hilbert(i_max, dtype, n):
     Executes experiments as described in 3.2B B. (Hilbert)
 
     :param i_max: The maximum i to use
-    :param dtype: the data-type to use (flaot16, float32 or float64)
+    :param dtype: the data-type to use (float16, float32 or float64)
     :param n: The dimension to use.
     :return: Nothing.
     """
@@ -145,7 +146,7 @@ def main_32b(dtypes, n_iterable, i_iterable):
     """
     Executes experiments as described in 3.2B
 
-    :param dtype: the data-type to use (float16, float32 or float64)
+    :param dtypes: the data-type to use (float16, float32 or float64)
     :param n_iterable: The n-values to use.
     :param i_iterable: The i-values to use. (if i>n it will be ignored).
     :return: Nothing.
