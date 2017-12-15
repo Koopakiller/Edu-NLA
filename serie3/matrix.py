@@ -124,7 +124,7 @@ def main_31b(mtypes, dims, dtypes):
                 print("||M|| = {1}         || I - M M^(-1) || = {0}".format(condition, matrix.condition()))
 
 
-def main_32b_saite():
+def main_32b_saite(n_iterable):
     print("Not Implemented")
 
 
