@@ -121,7 +121,7 @@ def main_31b(mtypes, dims, dtypes):
                     continue
 
                 condition = numpy.linalg.norm(m, ord=numpy.inf) * numpy.linalg.norm(m_inv, ord=numpy.inf)
-                print("||M|| = {1}         || I - M M^(-1) || = {0}".format(condition, matrix.condition()))
+                print("cond(M) = {1}         || I - M M^(-1) || = {0}".format(condition, matrix.condition()))
 
 
 def main_32b_saite():
