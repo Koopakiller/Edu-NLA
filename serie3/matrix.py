@@ -125,7 +125,7 @@ def main_31b(mtypes, dims, dtypes):
 
 
 def main_32b_saite():
-    pass
+    print("Not Implemented")
 
 
 def main_32b_hilbert(i_max, dtype, n):
