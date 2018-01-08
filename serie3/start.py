@@ -7,6 +7,7 @@ import matrix
 def main():
     """Executes the main program with predefined values."""
     experiment = "3.2B - A"         # allowed are "3.1B", "3.2B - A", "3.2B - B"
+    # Note: For "3.2B - A" is nothing implemented, only a "not implemented" message will be displayed
 
     # The types to use for the experiments
     dtypes = ["float16", "float32", "float64"]
