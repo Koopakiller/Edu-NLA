@@ -112,7 +112,7 @@ def main_31b(mtypes, dims, dtypes):
 
                 identity = numpy.identity(dim, dtype)
                 matrix = Matrix(mtype, dim, dtype)
-                m = identity - (matrix.matrix * matrix.inv)
+                m = identity - (numpy.dot(matrix.matrix, matrix.inv))
 
                 try:
                     m_inv = scipy.linalg.inv(m)
@@ -141,7 +141,7 @@ def main_32b_hilbert(i_max, dtype, n):
     print("Hilbert Matrix with n={0} and type {1}".format(n, dtype))
     result = numpy.identity(n, dtype=dtype)
     for i in xrange(1, i_max + 1):
-        result = result * matrix.matrix
+        result = numpy.dot(result, matrix.matrix)
         print("i = {0}, x^{0} = ".format(i))
         print(result)
 
