@@ -34,7 +34,7 @@ def get_d_list(n):
     return result
 
 
-def main(file_name="data.txt", n=7):
+def main(file_name="data.txt", n=5):
     data_list = read_data(file_name)
     b = get_b_from_data_list(data_list)
     parameter_list = []
@@ -70,4 +70,4 @@ if __name__ == "__main__":
     #  - data.txt          - from task sheet
     #  - data_subset.txt   - contains a subset from data.txt
     #  - data_sym.txt      - contains manipulated (symmetric) data from data.txt
-    main(file_name="data_sym.txt", n=7)
+    main(file_name="data_sym.txt", n=5)
