@@ -5,11 +5,20 @@ import matplotlib.pyplot as plt
 import numpy
 
 
-r = numpy.arange(0, 3.2, 0.1)
-plt.plot(r, numpy.sin(r), "go")
-plt.plot(r, numpy.sin(r), "-")
+def plot():
+    n = 5
+    h = 1.0 / n
 
-plt.xlabel("x")
-plt.ylabel("y")
+    r = numpy.arange(0, 0.25, 0.01)
+    plt.plot(r, numpy.sin(r*7)*0.685, "-")
 
-plt.show()
+    m = matrix.Matrix("saite", n, "float64")
+    b = numpy.array([1*h*h, 2*h*h, 3*h*h, 4*h*h, 5*h*h])
+    x = m.solve(b)
+
+    plt.plot(b, x, "ro")
+
+    plt.xlabel("x")
+    plt.ylabel("y")
+
+    plt.show()

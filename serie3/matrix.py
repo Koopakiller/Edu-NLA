@@ -4,6 +4,7 @@
 import numpy
 import scipy
 import scipy.linalg
+import plot
 
 
 class Matrix:
@@ -125,7 +126,7 @@ def main_31b(mtypes, dims, dtypes):
 
 
 def main_32b_saite():
-    print("Not Implemented")
+    plot.plot()
 
 
 def main_32b_hilbert(i_max, dtype, n):
