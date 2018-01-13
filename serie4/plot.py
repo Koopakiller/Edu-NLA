@@ -10,7 +10,7 @@ def plot(parameter_list, data_points_list):
 
     x = numpy.arange(0, 25, 0.01)
     for entry in parameter_list:
-        a, b, c, d, k, n = entry
+        a, b, c, d, k, n, _, _, _ = entry
         plt.plot(x, a * (e ** (d*x)) + b * (e ** (-d * x)) + c, "-", label="k={0}; n={1}".format(k, n))
 
     plt.plot(map(lambda pair: pair[0], data_points_list),
