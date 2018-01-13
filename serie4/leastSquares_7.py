@@ -1,6 +1,7 @@
 import numpy as np
 import numpy.linalg
 import math
+from plot import plot as plot
 
 
 def read_data(file_name):
@@ -34,14 +35,11 @@ def get_d_list(n):
     return result
 
 
-def plot():
-    pass
-
-
 def main():
     data_list = read_data("data.txt")
     b = get_b_from_data_list(data_list)
-    for d in get_d_list(9):
+    parameter_list = []
+    for d in get_d_list(3):
         a = get_a_from_data_list(data_list, d)
         q, r = np.linalg.qr(a)
         if np.linalg.matrix_rank(r) != 3 or np.linalg.matrix_rank(q) != 3:
@@ -49,7 +47,9 @@ def main():
         else:
             p = np.dot(q.T, b)
             x = np.dot(np.linalg.inv(r), p)
-            # print x
+            parameter_list.append((x.item(0), x.item(1), x.item(2), d))
+    plot(parameter_list)
+
 
 if __name__ == "__main__":
     main()
