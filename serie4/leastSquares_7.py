@@ -49,9 +49,17 @@ def main():
             p = np.dot(q.T, b)
             x = np.dot(np.linalg.inv(r), p)
             parameter_list.append((x.item(0), x.item(1), x.item(2), d, k, n))
+
             r = np.dot(a, x) - b
             print("Residuum r = Ax - b = ")
             print(str(r))
+
+            norm_r = np.linalg.norm(r)
+            print("Norm of Residuum: |r| = " + str(norm_r))
+
+            cond_a = np.linalg.cond(a)
+            cond_ata = np.linalg.cond(np.dot(a.T, a))
+            print("cond(A) = {0}; cond(A^T A) = {1}".format(cond_a, cond_ata))
 
         print("")
 
