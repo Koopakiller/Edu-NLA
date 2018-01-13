@@ -30,7 +30,7 @@ def get_d_list(n):
 
     result = []
     for k in range(0, n):
-        result.append(0.1 + 0.4 * k / (n - 1))
+        result.append((k, 0.1 + 0.4 * k / (n - 1)))
     return result
 
 
@@ -38,7 +38,8 @@ def main():
     data_list = read_data("data.txt")
     b = get_b_from_data_list(data_list)
     parameter_list = []
-    for d in get_d_list(7):
+    n = 7
+    for k, d in get_d_list(n):
         a = get_a_from_data_list(data_list, d)
         q, r = np.linalg.qr(a)
         if np.linalg.matrix_rank(r) != 3 or np.linalg.matrix_rank(q) != 3:
@@ -46,7 +47,7 @@ def main():
         else:
             p = np.dot(q.T, b)
             x = np.dot(np.linalg.inv(r), p)
-            parameter_list.append((x.item(0), x.item(1), x.item(2), d))
+            parameter_list.append((x.item(0), x.item(1), x.item(2), d, k, n))
     plot(parameter_list, data_list)
 
 
