@@ -1,5 +1,4 @@
 import numpy as np
-import numpy.linalg
 import math
 from plot import plot as plot
 
@@ -39,7 +38,7 @@ def main():
     data_list = read_data("data.txt")
     b = get_b_from_data_list(data_list)
     parameter_list = []
-    for d in get_d_list(3):
+    for d in get_d_list(7):
         a = get_a_from_data_list(data_list, d)
         q, r = np.linalg.qr(a)
         if np.linalg.matrix_rank(r) != 3 or np.linalg.matrix_rank(q) != 3:
@@ -48,7 +47,7 @@ def main():
             p = np.dot(q.T, b)
             x = np.dot(np.linalg.inv(r), p)
             parameter_list.append((x.item(0), x.item(1), x.item(2), d))
-    plot(parameter_list)
+    plot(parameter_list, data_list)
 
 
 if __name__ == "__main__":
