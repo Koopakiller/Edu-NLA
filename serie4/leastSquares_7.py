@@ -34,12 +34,22 @@ def get_d_list(n):
     return result
 
 
+def plot():
+    pass
+
+
 def main():
     data_list = read_data("data.txt")
     b = get_b_from_data_list(data_list)
-    for d in get_d_list(3):
+    for d in get_d_list(9):
         a = get_a_from_data_list(data_list, d)
         q, r = np.linalg.qr(a)
+        if np.linalg.matrix_rank(r) != 3 or np.linalg.matrix_rank(q) != 3:
+            print("Rank of r or q is not 3!")
+        else:
+            p = np.dot(q.T, b)
+            x = np.dot(np.linalg.inv(r), p)
+            # print x
 
 if __name__ == "__main__":
     main()
