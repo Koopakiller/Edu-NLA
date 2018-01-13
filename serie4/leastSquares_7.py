@@ -34,11 +34,10 @@ def get_d_list(n):
     return result
 
 
-def main():
-    data_list = read_data("data.txt")
+def main(file_name="data.txt", n=7):
+    data_list = read_data(file_name)
     b = get_b_from_data_list(data_list)
     parameter_list = []
-    n = 7
     for k, d in get_d_list(n):
         print("k={0}; n={1}".format(k, n))
         a = get_a_from_data_list(data_list, d)
@@ -67,4 +66,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # available files:
+    #  - data.txt          - from task sheet
+    #  - data_subset.txt   - contains a subset from data.txt
+    #  - data_sym.txt      - contains manipulated (symmetric) data from data.txt
+    main(file_name="data_sym.txt", n=7)
