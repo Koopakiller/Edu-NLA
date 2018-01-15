@@ -91,8 +91,8 @@ class Matrix:
         :return: The vector x from Ax=b.
         """
         l, u = self.lu()
-        x = scipy.linalg.solve_triangular(u, b, lower=False)
-        x = scipy.linalg.solve_triangular(l, x, lower=True)
+        x = scipy.linalg.solve_triangular(l, b, lower=True)
+        x = scipy.linalg.solve_triangular(u, x, lower=False)
         return x
 
 

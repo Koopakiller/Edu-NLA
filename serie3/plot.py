@@ -6,11 +6,7 @@ import numpy
 
 
 def plot():
-    n = 6
-    h = 1.0 / n
-
-    #r = numpy.arange(0, 1, 0.01)
-    #plt.plot(r, numpy.sin(r), "-")
+    n = 33
 
     m = matrix.Matrix("saite", n, "float64")
     axis = [float(i) / n for i in range(1, n+1)]
