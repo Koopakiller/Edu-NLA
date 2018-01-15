@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from plot import plot as plot
+import scipy.linalg
 
 
 def read_data(file_name):
@@ -57,8 +58,8 @@ def main(file_name="data.txt", n=7):
         if r_rank(r) != 3:
             print("Rank of r or q is not 3!")
         else:
-            p = np.dot(q.T, b)
-            x = np.dot(np.linalg.inv(r), p)
+            z = np.dot(q.T, b)
+            x = scipy.linalg.solve_triangular(r, z)
 
             r = np.dot(a, x) - b
             print("Residuum r = Ax - b = ")
@@ -83,4 +84,4 @@ if __name__ == "__main__":
     #  - data.txt          - from task sheet
     #  - data_subset.txt   - contains a subset from data.txt
     #  - data_sym.txt      - contains manipulated (symmetric) data from data.txt
-    main(file_name="data.txt", n=55)
+    main(file_name="data.txt", n=5)
