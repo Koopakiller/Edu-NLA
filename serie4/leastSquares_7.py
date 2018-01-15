@@ -34,7 +34,7 @@ def get_d_list(n):
     return result
 
 
-def main(file_name="data.txt", n=5):
+def main(file_name="data.txt", n=7):
     data_list = read_data(file_name)
     b = get_b_from_data_list(data_list)
     parameter_list = []
@@ -47,7 +47,6 @@ def main(file_name="data.txt", n=5):
         else:
             p = np.dot(q.T, b)
             x = np.dot(np.linalg.inv(r), p)
-            parameter_list.append((x.item(0), x.item(1), x.item(2), d, k, n))
 
             r = np.dot(a, x) - b
             print("Residuum r = Ax - b = ")
@@ -60,6 +59,8 @@ def main(file_name="data.txt", n=5):
             cond_ata = np.linalg.cond(np.dot(a.T, a))
             print("cond(A) = {0}; cond(A^T A) = {1}".format(cond_a, cond_ata))
 
+            parameter_list.append((x.item(0), x.item(1), x.item(2), d, k, n, norm_r, cond_a, cond_ata))
+
         print("")
 
     plot(parameter_list, data_list)
@@ -70,4 +71,4 @@ if __name__ == "__main__":
     #  - data.txt          - from task sheet
     #  - data_subset.txt   - contains a subset from data.txt
     #  - data_sym.txt      - contains manipulated (symmetric) data from data.txt
-    main(file_name="data_sym.txt", n=5)
+    main(file_name="data.txt", n=5)
