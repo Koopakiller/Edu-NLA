@@ -3,6 +3,6 @@ if np.linalg.matrix_rank(r) != 3 \
         or np.linalg.matrix_rank(q) != 3:
     print("Rank of r or q is not 3!")
 else:
-    # x = inv(r) * q^T * b
-    p = np.dot(q.T, b)
-    x = np.dot(np.linalg.inv(r), p)
+    # z = q^T * b; rx = z
+    z = np.dot(q.T, b)
+    x = scipy.linalg.solve_triangular(r, z)

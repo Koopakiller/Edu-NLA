@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from plot import plot as plot
+import scipy.linalg
 
 
 def read_data(file_name):
@@ -34,6 +35,18 @@ def get_d_list(n):
     return result
 
 
+def r_rank(r):
+    if r.shape[0] != r.shape[1]:
+        raise Exception("r is not quadratic")
+
+    counter = 0
+    eps = 10**-12
+    for i in range(0, r.shape[0]):
+        if not (-eps < r[i, i] < eps):
+            counter += 1
+    return counter
+
+
 def main(file_name="data.txt", n=7):
     data_list = read_data(file_name)
     b = get_b_from_data_list(data_list)
@@ -42,11 +55,11 @@ def main(file_name="data.txt", n=7):
         print("k={0}; n={1}".format(k, n))
         a = get_a_from_data_list(data_list, d)
         q, r = np.linalg.qr(a)
-        if np.linalg.matrix_rank(r) != 3 or np.linalg.matrix_rank(q) != 3:
+        if r_rank(r) != 3:
             print("Rank of r or q is not 3!")
         else:
-            p = np.dot(q.T, b)
-            x = np.dot(np.linalg.inv(r), p)
+            z = np.dot(q.T, b)
+            x = scipy.linalg.solve_triangular(r, z)
 
             r = np.dot(a, x) - b
             print("Residuum r = Ax - b = ")
