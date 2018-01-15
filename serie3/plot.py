@@ -5,9 +5,7 @@ import matplotlib.pyplot as plt
 import numpy
 
 
-def plot():
-    n = 33
-
+def plot(n=33):
     m = matrix.Matrix("saite", n, "float64")
     axis = [float(i) / n for i in range(1, n+1)]
     b = numpy.array([numpy.sin(float(z))/(n**2) for z in axis])
