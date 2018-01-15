@@ -13,3 +13,5 @@ def plot(parameter_list, data_points_list):
 
     plt.xlabel("k")
     plt.ylabel("norm(r)")
+
+    plt.show()

@@ -83,4 +83,4 @@ if __name__ == "__main__":
     #  - data.txt          - from task sheet
     #  - data_subset.txt   - contains a subset from data.txt
     #  - data_sym.txt      - contains manipulated (symmetric) data from data.txt
-    main(file_name="data.txt", n=5)
+    main(file_name="data.txt", n=55)
