@@ -125,8 +125,8 @@ def main_31b(mtypes, dims, dtypes):
                 print("cond(M) = {1}         || I - M M^(-1) || = {0}".format(condition, matrix.condition()))
 
 
-def main_32b_saite():
-    plot.plot()
+def main_32b_saite(n):
+    plot.plot(n)
 
 
 def main_32b_hilbert(i_max, dtype, n):
@@ -174,7 +174,8 @@ def main(experiment, mtypes=None, dims=None, dtypes=None, n_iterable=None, i_ite
     if experiment == "3.1B":
         main_31b(mtypes, dims, dtypes)
     elif experiment == "3.2B - A":
-        main_32b_saite()
+        for n in n_iterable:
+            main_32b_saite(n)
     elif experiment == "3.2B - B":
         main_32b(dtypes, n_iterable, i_iterable)
     else:
