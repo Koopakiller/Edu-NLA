@@ -1,6 +1,5 @@
 q, r = np.linalg.qr(a)
-if np.linalg.matrix_rank(r) != 3 \
-        or np.linalg.matrix_rank(q) != 3:
+if r_rank(r) != 3:
     print("Rank of r or q is not 3!")
 else:
     # z = q^T * b; rx = z
