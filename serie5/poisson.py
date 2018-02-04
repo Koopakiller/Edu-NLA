@@ -18,8 +18,9 @@ class Problem:
 
         return result_a, result_b
 
-    def exactu(self, x_1, x_2):
-        return x_1 * (1-x_1) * x_2 * (1-x_2)
+    @staticmethod
+    def exactu(x_1, x_2):
+        return x_1 * (1 - x_1) * x_2 * (1 - x_2)
 
 
 class Iterative:
@@ -59,6 +60,10 @@ class Iterative:
 
         return result
 
-    def get_error(self):
-        pass
-
+    def get_error(self, n, matrix, b):
+        max_error = 0
+        for x in range(0, n):
+            for y in range(0, n):
+                max_error = max(max_error, abs(self.diskreteLsgSOR(matrix, b) -
+                                               Problem.exactu(float(x) / float(n), float(y) / float(n))))
+        return max_error
