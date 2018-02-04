@@ -1,4 +1,4 @@
-import scipy
+import scipy.sparse
 import numpy
 
 
@@ -9,14 +9,17 @@ class Problem:
                 (2 * x_2 * x_1 * x_1 - 2 * x_2 * x_1 - x_1 * x_1 + x_1)
 
     def lgs(self, rhs, n):
-        result_a = scipy.dok_matrix((n*n, n*n))
-        result_b = scipy.dok_matrix((1, n*n))
-        # TODO: Fill result_a and result_b
+        result_a = scipy.sparse.dok_matrix((n, n))
+        result_b = scipy.sparse.dok_matrix((1, n))
+
+        for x in range(0, n):
+            for y in range(0, n):
+                result_a[x, y] = rhs(float(x) / float(n), float(y) / float(n))
+
         return result_a, result_b
 
     def exactu(self, x_1, x_2):
-        # TODO: Implement
-        pass
+        return x_1 * (1-x_1) * x_2 * (1-x_2)
 
 
 class Iterative:
@@ -24,13 +27,20 @@ class Iterative:
     def __init__(self, omega):
         self._omega = omega
 
-    def diskreteLsgSOR(self, matrix, b, x_0, error_border):
+    def diskreteLsgSOR(self, matrix, b, x_0=None, error_border=None):
         """
         :param matrix: The matrix A with the problem to solve
         :param b: The b in Ax-b<eps
         :param x_0: The start vector for the iterative procedure
         :param error_border: The algorithm stops when the error is less then this border
         """
+
+        if x_0 is None:
+            x_0 = matrix.shape[1]
+
+        if error_border is None:
+            error_border = 10**-12
+
         result = x_0
         error = error_border
         n = len(x_0)
