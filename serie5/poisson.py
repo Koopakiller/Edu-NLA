@@ -4,17 +4,19 @@ import numpy
 
 class Problem:
 
-    def rhs(self, x_1, x_2):
+    @staticmethod
+    def rhs(x_1, x_2):
         return -(2 * x_1 * x_2 * x_2 - 2 * x_1 * x_2 - x_2 * x_2 + x_2) - \
                 (2 * x_2 * x_1 * x_1 - 2 * x_2 * x_1 - x_1 * x_1 + x_1)
 
-    def lgs(self, rhs, n):
+    @staticmethod
+    def lgs(rhs, n):
         result_a = scipy.sparse.dok_matrix((n, n))
-        result_b = scipy.sparse.dok_matrix((1, n))
+        result_b = [0] * n
 
         for x in range(0, n):
             for y in range(0, n):
-                result_a[x, y] = rhs(float(x) / float(n), float(y) / float(n))
+                result_a[x, y] = rhs(float(x+1) / float(n), float(y+1) / float(n))
 
         return result_a, result_b
 
@@ -37,7 +39,7 @@ class Iterative:
         """
 
         if x_0 is None:
-            x_0 = matrix.shape[1]
+            x_0 = [0] * matrix.shape[1]
 
         if error_border is None:
             error_border = 10**-12
