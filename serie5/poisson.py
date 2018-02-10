@@ -36,9 +36,9 @@ def exactu(x_1, x_2):
 
 class Iterative:
 
-    def __init__(self, omega, error_limit):
+    def __init__(self, omega, error_border):
         self._omega = omega
-        self._error_limit = error_limit
+        self._error_border = error_border
 
     def diskreteLsgSOR(self, matrix, b, x_0=None):
         """
@@ -48,30 +48,29 @@ class Iterative:
         """
 
         if x_0 is None:
-            x_0 = [0] * matrix.shape[1]
+            x_0 = [0 for _ in range(0, matrix.shape[1])]
 
-        result = x_0
-        error = self._error_limit
+        error = self._error_border
         n = len(x_0)
-        while error <= self._error_limit:
-            for k in range(0, n):
-                sum1 = 0.0
-                for i in range(1, k-1):
-                    sum1 = sum1 + matrix[k, i] * result[i]
-                sum2 = 0.0
-                for i in range(k+1, n):
-                    sum2 = sum2 + matrix[k, i] * result[i]
+        while error >= self._error_border:
 
-                r2 = (1 - self._omega) * result[k] + self._omega / matrix[k, k] * (b[k] - sum1 - sum2)
-                error = max(error, abs(r2 - result[k]))
-                result[k] = r2
+            for i in range(1, n):
+                o = 0
+                for j in range(1, n):
+                    if i != j:
+                        o = o + x_0[j] * matrix[i, j]
+                x_1 = x_0[i]
+                x_0[i] = (1 - self._omega) * x_0[i] + \
+                         (self._omega / matrix[i, i]) * (b[i, 0] - o)
 
-        return result
+                error = min(error, abs(x_1 - x_0[i]))
+
+        return x_0
 
     def get_error(self, n, matrix, b):
         max_error = 0
-        for x in range(0, n):
-            for y in range(0, n):
-                max_error = max(max_error, abs(self.diskreteLsgSOR(matrix, b) -
-                                               exactu(float(x) / float(n), float(y) / float(n))))
+        it = self.diskreteLsgSOR(matrix, b)
+        for x in range(0, n - 1):
+            for y in range(0, n - 1):
+                max_error = max(max_error, abs(it[x * (n - 1) + y][0, 0] - exactu(float(x) / float(n), float(y) / float(n))))
         return max_error

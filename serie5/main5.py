@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import matplotlib
 matplotlib.use("TkAgg")
 
@@ -45,7 +44,7 @@ def plot_b(data):
         plot_matrix = np.zeros(((n + 1), (n + 1)))
         for i in range(0, (n - 1)):
             for j in range(0, (n - 1)):
-                val = l[i * (n - 1) + j][0, 0]
+                val = l[i * (n - 1) + j]
                 plot_matrix[i + 1, j + 1] = val
 
         ax.plot_surface(x, y, plot_matrix)
@@ -57,20 +56,23 @@ def plot_b(data):
 
 def plot_c(data):
 
-    iterative = p.Iterative(data["omega"])
-
     fig = plt.figure()
-    ax = fig.gca(projection='3d')
+    ax = fig.gca()
 
-    ns = [3, 4, 5]
-    ys = []
-    for n in ns:
-        matrix, b = p.lgs(p.rhs, n)
-        e = iterative.get_error(n, matrix, b)
-        ys.append(e)
+    for eps, style in data["eps"]:
 
-    ax.plot(ns, ys, "ro")
+        iterative = p.Iterative(data["omega"], eps)
 
+        ns = data["n"]
+        ys = []
+        for n in ns:
+            matrix, b = p.lgs(p.rhs, n)
+            e = iterative.get_error(n, matrix, b)
+            ys.append(e)
+
+        ax.loglog(ns, ys, style, basex=10, basey=10)
+    plt.grid(True)
+    plt.legend()
     plt.show()
 
 
