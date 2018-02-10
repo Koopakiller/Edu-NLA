@@ -25,6 +25,8 @@ def plot_b(data):
         ax.set_zlabel('u(ih, jh)')
         ax.plot_surface(x, y, p.exactu(x, y))
 
+        plt.title("Exact Plot for n=" + str(n))
+
         plt.show()
 
     for n in data["sor_plot"]:
@@ -47,6 +49,8 @@ def plot_b(data):
                 plot_matrix[i + 1, j + 1] = val
 
         ax.plot_surface(x, y, plot_matrix)
+
+        plt.title("SOR Plot for n=" + str(n))
 
         plt.show()
 
