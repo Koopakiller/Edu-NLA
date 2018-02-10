@@ -3,7 +3,7 @@ import scipy.sparse
 
 def get_matrix(n):
     size = (n-1)*(n-1)
-    result = scipy.zeros((size, size))
+    result = scipy.sparse.dok_matrix((size, size))
     for block in range(0, n - 1):
         for i in range(0, n - 1):
             result[(block * (n-1)) + i, (block * (n-1)) + i] = 4
