@@ -72,5 +72,5 @@ class Iterative:
         it = self.diskreteLsgSOR(matrix, b)
         for x in range(0, n - 1):
             for y in range(0, n - 1):
-                max_error = max(max_error, abs(it[x * (n - 1) + y][0, 0] - exactu(float(x) / float(n), float(y) / float(n))))
+                max_error = max(max_error, abs(it[x * (n - 1) + y] - exactu(float(x) / float(n), float(y) / float(n))))
         return max_error

@@ -59,7 +59,11 @@ def plot_c(data):
     fig = plt.figure()
     ax = fig.gca()
 
+    plt.grid(True)
+
     for eps, style in data["eps"]:
+
+        print("Plotting for eps={0}".format(eps))
 
         iterative = p.Iterative(data["omega"], eps)
 
@@ -70,8 +74,8 @@ def plot_c(data):
             e = iterative.get_error(n, matrix, b)
             ys.append(e)
 
-        ax.loglog(ns, ys, style, basex=10, basey=10)
-    plt.grid(True)
+        ax.loglog(ns, ys, style, basex=10, basey=10, label="eps={0}".format(eps))
+
     plt.legend()
     plt.show()
 
