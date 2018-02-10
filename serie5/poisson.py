@@ -3,10 +3,19 @@ import numpy
 
 
 def rhs(x_1, x_2):
+    """
+    Returns the result of f for the points x_1 and x_2
+    """
     return -2*(x_2*(x_2-1)+x_1*(x_1-1))
 
 
 def lgs(rhs, n):
+    """
+    Returns a tuple of a matrix A and a vector b which provides an approximation of the problem.
+    :param rhs: The rhs function to create the values in the b vector.
+    :param n: The dimension in each direction.
+    :return: (A, b)
+    """
     result_a = scipy.sparse.dok_matrix(((n-1)**2, (n-1)**2))
     result_b = scipy.sparse.dok_matrix(((n-1)**2, 1))
 
@@ -31,14 +40,22 @@ def lgs(rhs, n):
 
 
 def exactu(x_1, x_2):
+    """
+    Returns the exact solution for the points x_1 and x_2
+    """
     return x_1 * (1 - x_1) * x_2 * (1 - x_2)
 
 
 class Iterative:
 
-    def __init__(self, omega, error_border):
+    def __init__(self, omega, error_limit):
+        """
+        Initializes the class instance.
+        :param omega: The omega-value to use for the SOR method.
+        :param error_limit: The iterative algorithm stops when the difference between 2 steps is less then this value.
+        """
         self._omega = omega
-        self._error_border = error_border
+        self._error_limit = error_limit
 
     def diskreteLsgSOR(self, matrix, b, x_0=None):
         """
@@ -50,9 +67,9 @@ class Iterative:
         if x_0 is None:
             x_0 = [0 for _ in range(0, matrix.shape[1])]
 
-        error = self._error_border
+        error = self._error_limit
         n = len(x_0)
-        while error >= self._error_border:
+        while error >= self._error_limit:
 
             for i in range(1, n):
                 o = 0
@@ -68,6 +85,9 @@ class Iterative:
         return x_0
 
     def get_error(self, n, matrix, b):
+        """
+        Returns the maximum error from all points in the matrix with the vector b in the dimension n.
+        """
         max_error = 0
         it = self.diskreteLsgSOR(matrix, b)
         for x in range(0, n - 1):
