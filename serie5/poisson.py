@@ -36,27 +36,24 @@ def exactu(x_1, x_2):
 
 class Iterative:
 
-    def __init__(self, omega):
+    def __init__(self, omega, error_border):
         self._omega = omega
+        self._error_border = error_border
 
-    def diskreteLsgSOR(self, matrix, b, x_0=None, error_border=None):
+    def diskreteLsgSOR(self, matrix, b, x_0=None):
         """
         :param matrix: The matrix A with the problem to solve
         :param b: The b in Ax-b<eps
         :param x_0: The start vector for the iterative procedure
-        :param error_border: The algorithm stops when the error is less then this border
         """
 
         if x_0 is None:
             x_0 = [0] * matrix.shape[1]
 
-        if error_border is None:
-            error_border = 10**-12
-
         result = x_0
-        error = error_border
+        error = self._error_border
         n = len(x_0)
-        while error >= error_border:
+        while error <= self._error_border:
             for k in range(0, n):
                 sum1 = 0.0
                 for i in range(1, k-1):
@@ -76,5 +73,5 @@ class Iterative:
         for x in range(0, n):
             for y in range(0, n):
                 max_error = max(max_error, abs(self.diskreteLsgSOR(matrix, b) -
-                                               Problem.exactu(float(x) / float(n), float(y) / float(n))))
+                                               exactu(float(x) / float(n), float(y) / float(n))))
         return max_error

@@ -14,23 +14,46 @@ import poisson as p
 
 
 def plot_b(data):
-    n = data["n"]
-    h = 1.0/n
 
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    x, y = np.meshgrid(np.arange(0, 1 + h, h), np.arange(0, 1 + h, h))
-    ax.set_xlabel('ih')
-    ax.set_ylabel('jh')
-    ax.set_zlabel('u(ih, jh)')
-    ax.plot_surface(x, y, p.exactu(x, y))
+    for n in data["exact_plot"]:
+        h = 1.0/n
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        x, y = np.meshgrid(np.arange(0, 1 + h, h), np.arange(0, 1 + h, h))
+        ax.set_xlabel('ih')
+        ax.set_ylabel('jh')
+        ax.set_zlabel('u(ih, jh)')
+        ax.plot_surface(x, y, p.exactu(x, y))
 
-    plt.show()
+        plt.show()
+
+    for n in data["sor_plot"]:
+        h = 1.0/n
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        x, y = np.meshgrid(np.arange(0, 1 + h, h), np.arange(0, 1 + h, h))
+        ax.set_xlabel('ih')
+        ax.set_ylabel('jh')
+        ax.set_zlabel('u(ih, jh)')
+
+        a, b = p.lgs(p.rhs, n)
+        iterative = p.Iterative(data["omega"], data["eps"])
+        l = iterative.diskreteLsgSOR(a, b)
+
+        plot_matrix = np.zeros(((n + 1), (n + 1)))
+        for i in range(0, (n - 1)):
+            for j in range(0, (n - 1)):
+                val = l[i * (n - 1) + j][0, 0]
+                plot_matrix[i + 1, j + 1] = val
+
+        ax.plot_surface(x, y, plot_matrix)
+
+        plt.show()
 
 
-def plot_c(eps):
+def plot_c(data):
 
-    iterative = p.Iterative(5)
+    iterative = p.Iterative(data["omega"])
 
     fig = plt.figure()
     ax = fig.gca(projection='3d')

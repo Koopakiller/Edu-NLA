@@ -6,5 +6,6 @@ if __name__ == "__main__":
     #  First:  "b" or "c" for the Plots in 5.3 b respective 5.3 c
     #  Second: Parameters for the plots. e.g.:
     #    "b": {"n": 10}
+    #    "c": {"omega": 5}
 
-    main("b", {"n": 20})
+    main("b", {"omega": 5, "eps": 10**-2, "sor_plot": [4, 10], "exact_plot": []})
