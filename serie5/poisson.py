@@ -36,9 +36,9 @@ def exactu(x_1, x_2):
 
 class Iterative:
 
-    def __init__(self, omega, error_border):
+    def __init__(self, omega, error_limit):
         self._omega = omega
-        self._error_border = error_border
+        self._error_limit = error_limit
 
     def diskreteLsgSOR(self, matrix, b, x_0=None):
         """
@@ -51,9 +51,9 @@ class Iterative:
             x_0 = [0] * matrix.shape[1]
 
         result = x_0
-        error = self._error_border
+        error = self._error_limit
         n = len(x_0)
-        while error <= self._error_border:
+        while error <= self._error_limit:
             for k in range(0, n):
                 sum1 = 0.0
                 for i in range(1, k-1):
