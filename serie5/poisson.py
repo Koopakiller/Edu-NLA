@@ -2,39 +2,36 @@ import scipy.sparse
 import numpy
 
 
-class Problem:
+def rhs(x_1, x_2):
+    return -2*(x_2*(x_2-1)+x_1*(x_1-1))
 
-    @staticmethod
-    def rhs(x_1, x_2):
-        return -2*(x_2*(x_2-1)+x_1*(x_1-1))
 
-    @staticmethod
-    def lgs(rhs, n):
-        result_a = scipy.sparse.dok_matrix(((n-1)**2, (n-1)**2))
-        result_b = scipy.sparse.dok_matrix(((n-1)**2, 1))
+def lgs(rhs, n):
+    result_a = scipy.sparse.dok_matrix(((n-1)**2, (n-1)**2))
+    result_b = scipy.sparse.dok_matrix(((n-1)**2, 1))
 
-        for block in range(0, n - 1):
-            for i in range(0, n - 1):
-                result_a[(block * (n - 1)) + i, (block * (n - 1)) + i] = 4
-                if i > 0:
-                    result_a[(block * (n - 1)) + i, (block * (n - 1)) + i - 1] = -1
-                if i < n - 2:
-                    result_a[(block * (n - 1)) + i, (block * (n - 1)) + i + 1] = -1
-                if block > 0:
-                    result_a[(block * (n - 1)) + i, ((block - 1) * (n - 1)) + i] = -1
-                if block < n - 2:
-                    result_a[(block * (n - 1)) + i, ((block + 1) * (n - 1)) + i] = -1
+    for block in range(0, n - 1):
+        for i in range(0, n - 1):
+            result_a[(block * (n - 1)) + i, (block * (n - 1)) + i] = 4
+            if i > 0:
+                result_a[(block * (n - 1)) + i, (block * (n - 1)) + i - 1] = -1
+            if i < n - 2:
+                result_a[(block * (n - 1)) + i, (block * (n - 1)) + i + 1] = -1
+            if block > 0:
+                result_a[(block * (n - 1)) + i, ((block - 1) * (n - 1)) + i] = -1
+            if block < n - 2:
+                result_a[(block * (n - 1)) + i, ((block + 1) * (n - 1)) + i] = -1
 
-        z = n - 2.0
-        for i in range(0, (n - 1) * (n - 1)):
-            z = z + 1
-            result_b[i, 0] = (1.0/n) ** 2 * rhs((1.0/n) * (i % (n - 1) + 1), (1.0/n) * z / (n - 1))
+    z = n - 2.0
+    for i in range(0, (n - 1) * (n - 1)):
+        z = z + 1
+        result_b[i, 0] = (1.0/n) ** 2 * rhs((1.0/n) * (i % (n - 1) + 1), (1.0/n) * z / (n - 1))
 
-        return result_a, result_b
+    return result_a, result_b
 
-    @staticmethod
-    def exactu(x_1, x_2):
-        return x_1 * (1 - x_1) * x_2 * (1 - x_2)
+
+def exactu(x_1, x_2):
+    return x_1 * (1 - x_1) * x_2 * (1 - x_2)
 
 
 class Iterative:

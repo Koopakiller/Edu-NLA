@@ -1,35 +1,36 @@
+# -*- coding: utf-8 -*-
+import matplotlib
+matplotlib.use("TkAgg")
+
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
+
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import numpy as np
 
 
-from poisson import Problem, Iterative
+import poisson as p
 
 
-def plot_b():
+def plot_b(data):
+    n = data["n"]
+    h = 1.0/n
+
     fig = plt.figure()
-    ax = fig.gca(projection='3d')
-
-    n = 10
-    x = np.arange(0, 1, 1.0/n)
-    y = np.arange(0, 1, 1.0/n)
-
-    X, Y = np.meshgrid(x, y)
-
-    zs = np.array([Problem.exactu(x, y) for x, y in zip(np.ravel(X), np.ravel(Y))])
-    Z = zs.reshape(X.shape)
-
-    ax.plot_surface(X, Y, Z,
-                    shade=True)
+    ax = fig.add_subplot(111, projection='3d')
+    x, y = np.meshgrid(np.arange(0, 1 + h, h), np.arange(0, 1 + h, h))
+    ax.set_xlabel('ih')
+    ax.set_ylabel('jh')
+    ax.set_zlabel('u(ih, jh)')
+    ax.plot_surface(x, y, p.exactu(x, y))
 
     plt.show()
 
 
 def plot_c(eps):
 
-    iterative = Iterative(5)
+    iterative = p.Iterative(5)
 
     fig = plt.figure()
     ax = fig.gca(projection='3d')
@@ -37,7 +38,7 @@ def plot_c(eps):
     ns = [3, 4, 5]
     ys = []
     for n in ns:
-        matrix, b = Problem.lgs(Problem.rhs, n)
+        matrix, b = p.lgs(p.rhs, n)
         e = iterative.get_error(n, matrix, b)
         ys.append(e)
 
@@ -46,8 +47,8 @@ def plot_c(eps):
     plt.show()
 
 
-def main(plot, param):
+def main(plot, data):
     if plot == "b":
-        plot_b()
+        plot_b(data)
     if plot == "c":
-        plot_c(param)
+        plot_c(data)
