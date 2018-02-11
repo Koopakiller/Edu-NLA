@@ -13,6 +13,7 @@ import poisson as p
 
 
 def plot_b(data):
+    """Plots the exact- and the SOR solution"""
 
     for n in data["exact_plot"]:
         h = 1.0/n
@@ -22,7 +23,7 @@ def plot_b(data):
         ax.set_xlabel('ih')
         ax.set_ylabel('jh')
         ax.set_zlabel('u(ih, jh)')
-        ax.plot_surface(x, y, p.exactu(x, y))
+        ax.plot_surface(x, y, p.exactu(x, y), color="c")
 
         plt.title("Exact Plot for n=" + str(n))
 
@@ -55,28 +56,40 @@ def plot_b(data):
 
 
 def plot_c(data):
+    """Plots the maximum error with different epsilons and dimensions."""
 
     fig = plt.figure()
     ax = fig.gca()
 
+    plt.grid(True)
+
+    ns = data["n"]
+
+    # ax.loglog(ns, map(lambda x: x*x, ns), "-", basex=10, basey=10, label="x^2")
+
+    ax.set_xlabel('n')
+    ax.set_ylabel('Error')
+
     for eps, style in data["eps"]:
+
+        print("Plotting for eps={0}".format(eps))
 
         iterative = p.Iterative(data["omega"], eps)
 
-        ns = data["n"]
         ys = []
         for n in ns:
             matrix, b = p.lgs(p.rhs, n)
             e = iterative.get_error(n, matrix, b)
             ys.append(e)
 
-        ax.loglog(ns, ys, style, basex=10, basey=10)
-    plt.grid(True)
+        ax.loglog(ns, ys, style, basex=10, basey=10, label="eps={0}".format(eps))
+
     plt.legend()
     plt.show()
 
 
 def main(plot, data):
+    """Plots the given task."""
     if plot == "b":
         plot_b(data)
     if plot == "c":
